@@ -2,22 +2,19 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { TweenOneGroup } from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import { getChildrenToRender } from './utils';
 
-class Content5 extends React.PureComponent {
-  getChildrenToRender = (data) =>
-    data.map((item) => {
-      return (
-        <Col key={item.name} {...item}>
-          <div {...item.children.wrapper}>
-            <span {...item.children.img}>
-              <img src={item.children.img.children} height="100%" alt="img" />
-            </span>
-            <p {...item.children.content}>{item.children.content.children}</p>
-          </div>
-        </Col>
-      );
-    });
+class Content12 extends React.PureComponent {
+  getChildrenToRender = data => data.map((item) => {
+    return (
+      <Col key={item.name} {...item}>
+        <div {...item.children.wrapper}>
+          <span {...item.children.img}>
+            <img src={item.children.img.children} alt="img" />
+          </span>
+        </div>
+      </Col>
+    );
+  });
 
   render() {
     const { ...props } = this.props;
@@ -31,7 +28,19 @@ class Content5 extends React.PureComponent {
       <div {...props} {...dataSource.wrapper}>
         <div {...dataSource.page}>
           <div key="title" {...dataSource.titleWrapper}>
-            {dataSource.titleWrapper.children.map(getChildrenToRender)}
+            {dataSource.titleWrapper.children.map((item, i) => React.createElement(
+              item.name.indexOf('title') === 0 ? 'h1' : 'div',
+              { key: i.toString(), ...item },
+              item.children.match(
+                /\.(svg|gif|jpg|jpeg|png|JPG|PNG|GIF|JPEG)$/
+              )
+                ? React.createElement('img', {
+                  src: item.children,
+                  alt: 'img',
+                })
+                : item.children
+            )
+            )}
           </div>
           <OverPack
             className={`content-template ${props.className}`}
@@ -44,9 +53,9 @@ class Content5 extends React.PureComponent {
                 y: '+=30',
                 opacity: 0,
                 type: 'from',
-                ease: 'easeInOutQuad',
+                ease: 'easeOutQuad',
               }}
-              leave={{ y: '+=30', opacity: 0, ease: 'easeInOutQuad' }}
+              leave={{ y: '+=30', opacity: 0, ease: 'easeOutQuad' }}
               {...dataSource.block}
             >
               {childrenToRender}
@@ -58,4 +67,4 @@ class Content5 extends React.PureComponent {
   }
 }
 
-export default Content5;
+export default Content12;
