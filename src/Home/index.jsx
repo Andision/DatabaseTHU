@@ -5,17 +5,30 @@ import { enquireScreen } from 'enquire-js';
 
 
 import Banner0 from './Banner0';
-import Content0 from './Content0';
-import Content7 from './Content7';
-import Content13 from './Content13';
-import Content12 from './Content12';
+// import Banner3 from './Banner3';
+// import Content0 from './Content0';
+// import Content7 from './Content7';
+// import Content13 from './Content13';
+// import Content12 from './Content12';
+
+import Feature6 from './Feature6';
+// import Content1 from './Content1';
+// import Feature2 from './Feature2';
+import Feature40 from './Feature40';
+import Feature41 from './Feature41';
 
 import {
   Banner00DataSource,
-  Content00DataSource,
-  Content70DataSource,
-  Content130DataSource,
-  Content120DataSource,
+  // Content00DataSource,
+  // Content70DataSource,
+  // Content130DataSource,
+  // Content120DataSource,
+
+  Feature60DataSource,
+  // Content10DataSource,
+  // Feature20DataSource,
+  Feature40DataSource,
+  Feature41DataSource,
 } from './data.source.js';
 
 import './less/antMotionStyle.less';
@@ -62,28 +75,40 @@ export default class Home extends React.Component {
         dataSource={Banner00DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Content0
-        id="Content0_0"
-        key="Content0_0"
-        dataSource={Content00DataSource}
+      // <Content0
+      //   id="Content0_0"
+      //   key="Content0_0"
+      //   dataSource={Content00DataSource}
+      //   isMobile={this.state.isMobile}
+      // />,
+      // <Content7
+      //   id="Content7_0"
+      //   key="Content7_0"
+      //   dataSource={Content70DataSource}
+      //   isMobile={this.state.isMobile}
+      // />,
+      // <Content13
+      //   id="Content13_0"
+      //   key="Content13_0"
+      //   dataSource={Content130DataSource}
+      //   isMobile={this.state.isMobile}
+      // />,
+      <Feature40
+        id="Feature4_0"
+        key="Feature4_0"
+        dataSource={Feature40DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Content7
-        id="Content7_0"
-        key="Content7_0"
-        dataSource={Content70DataSource}
+      <Feature41
+        id="Feature4_1"
+        key="Feature4_1"
+        dataSource={Feature41DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Content13
-        id="Content13_0"
-        key="Content13_0"
-        dataSource={Content130DataSource}
-        isMobile={this.state.isMobile}
-      />,
-      <Content12
-        id="Content12_0"
-        key="Content12_0"
-        dataSource={Content120DataSource}
+      <Feature6
+        id="Feature6_0"
+        key="Feature6_0"
+        dataSource={Feature60DataSource}
         isMobile={this.state.isMobile}
       />,
     ];
