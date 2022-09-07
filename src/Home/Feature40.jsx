@@ -75,7 +75,7 @@ class Content7 extends React.Component {
             {...dataSource.img}
             component={Col}
           >
-            <img src={require('./assets/pic1.png')} width="90%" alt="img" style={{marginLeft:'10%'}}/>
+            <img src={require('https://s1.ax1x.com/2022/09/07/vH5191.png')} width="90%" alt="img" style={{marginLeft:'10%'}}/>
           </TweenOne>
         </OverPack>
       </div>

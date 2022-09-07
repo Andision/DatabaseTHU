@@ -40,7 +40,7 @@ function Content1(props) {
           }}
         >
           <span {...dataSource.img}>
-            <img src={require('./assets/pic1.svg')} width="100%" alt="img"/>
+            <img src={require('https://s1.ax1x.com/2022/09/07/vH5191.png')} width="100%" alt="img"/>
             {/* <img src={dataSource.img.children} width="100%" alt="img" /> */}
           </span>
         </TweenOne>

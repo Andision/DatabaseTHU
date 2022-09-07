@@ -689,7 +689,7 @@ export const Feature41DataSource = {
     ],
   },
   img: {
-    children: './assets/pic2.png',
+    children: 'https://s1.ax1x.com/2022/09/07/vH5QhR.png',
     className: 'content6-img',
     xs: 24,
     md: 14,
