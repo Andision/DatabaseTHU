@@ -54,7 +54,7 @@ class Content7 extends React.Component {
             {...dataSource.img}
             component={Col}
           >
-            <img src={require('https://s1.ax1x.com/2022/09/07/vH5QhR.png')} width="90%" alt="img" style={{marginRight:'10%'}}/>
+            <img src='https://s1.ax1x.com/2022/09/07/vH5QhR.png' width="90%" alt="img" style={{marginRight:'10%'}}/>
           </TweenOne>
           <QueueAnim
             key="text"
