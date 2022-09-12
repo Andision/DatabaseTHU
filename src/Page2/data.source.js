@@ -20,10 +20,10 @@ export const Content00DataSource = {
           icon: {
             className: 'icon',
             children:
-              'https://zos.alipayobjects.com/rmsportal/WBnVOjtIlGWbzyQivuyq.png',
+              'https://s1.ax1x.com/2022/09/12/vX28eS.png',
           },
-          title: { children: '一站式业务接入' },
-          content: { children: '支付、结算、核算接入产品效率翻四倍' },
+          title: { children: '特点1' },
+          content: { children: '一句话介绍一下特点' },
         },
       },
       {
@@ -35,10 +35,10 @@ export const Content00DataSource = {
           icon: {
             className: 'icon',
             children:
-              'https://zos.alipayobjects.com/rmsportal/YPMsLQuCEXtuEkmXTTdk.png',
+              'https://s1.ax1x.com/2022/09/12/vX28eS.png',
           },
-          title: { children: '一站式事中风险监控' },
-          content: { children: '在所有需求配置环节事前风险控制和质量控制能力' },
+          title: { children: '特点2' },
+          content: { children: '一句话介绍一下特点' },
         },
       },
       {
@@ -50,10 +50,10 @@ export const Content00DataSource = {
           icon: {
             className: 'icon',
             children:
-              'https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png',
+              'https://s1.ax1x.com/2022/09/12/vX28eS.png',
           },
-          title: { children: '一站式数据运营' },
-          content: { children: '沉淀产品接入效率和运营小二工作效率数据' },
+          title: { children: '特点3' },
+          content: { children: '一句话介绍一下特点' },
         },
       },
     ],
@@ -68,10 +68,10 @@ export const Content70DataSource = {
     children: [
       {
         name: 'title',
-        children: '蚂蚁金融云提供专业的服务',
+        children: '专业的服务',
         className: 'title-h1',
       },
-      { name: 'content', children: '基于阿里云计算强大的基础资源' },
+      { name: 'content', children: '定制化网页开发' },
     ],
   },
   tabsWrapper: { className: 'content7-tabs-wrapper' },
