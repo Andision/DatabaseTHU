@@ -5,6 +5,7 @@ import Header from './Home/Nav0';
 import Footer from './Home/Footer1';
 import Home from './Home';
 import Page from './Page2';
+import Detail from './Detail';
 
 import {
   Nav00DataSource,
@@ -36,7 +37,8 @@ class App extends Component {
         <div>
           <Header dataSource={Nav00DataSource} isMobile={this.state.isMobile} />
           <Route exact path="/" component={Home} />
-          <Route path="/abc" component={Page} />
+          <Route path="/search" component={Page} />
+          <Route path="/detail" component={Detail} />
           <Footer dataSource={Footer10DataSource} isMobile={this.state.isMobile} />
         </div>
       </Router>
