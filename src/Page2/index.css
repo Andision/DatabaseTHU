@@ -1,0 +1,36 @@
+.search-bg{
+    margin: auto;
+    width: 50%;
+}
+
+.search-result{
+    margin-top: 150px;
+    margin-bottom: 200px;
+}
+
+.search-title{
+    text-align: center;
+    margin: 50px 0px;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.detail-card-content{
+    width: 80%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+.detail-section{
+    margin-top: 50px;
+    font-size: x-large;
+}
+.detail-section-title{
+    text-align: left;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+.detail-section-content{
+    text-align: left;
+    margin: 10px 0px;
+}
