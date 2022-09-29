@@ -2,6 +2,7 @@
 /* eslint arrow-parens: 0 */
 import React from 'react';
 import { enquireScreen } from 'enquire-js';
+import { Divider } from 'antd';
 
 
 import Banner0 from './Banner0';
@@ -99,12 +100,14 @@ export default class Home extends React.Component {
         dataSource={Feature40DataSource}
         isMobile={this.state.isMobile}
       />,
+      <Divider />,
       <Feature41
         id="Feature4_1"
         key="Feature4_1"
         dataSource={Feature41DataSource}
         isMobile={this.state.isMobile}
       />,
+      <Divider />,
       <Feature6
         id="Feature6_0"
         key="Feature6_0"
