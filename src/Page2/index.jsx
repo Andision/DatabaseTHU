@@ -1,5 +1,7 @@
 import React from 'react';
 import { Row, List, Avatar, Input } from 'antd';
+import { withRouter } from 'react-router-dom';
+import querystring from "querystring"
 
 import './index.css'
 
@@ -15,10 +17,20 @@ const data = Array.from({ length: 23 }).map((_, i) => ({
     'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
 }));
 
-export default class Home extends React.Component {
+// const search = querystring.parse(this.props.location.search.slice(1))
+
+class Home extends React.Component {
+  componentDidMount(){
+    // console.log(this.props.location.search)
+    // console.log(querystring.parse(this.props.location.search.slice(1)))
+    // this.setState(querystring.parse(this.props.location.search.slice(1)))
+  }
   render() {
-    // const onSearch = () => {
-    // };
+    const onSearch = (search) => {
+      // this.setState({search:search})
+      // console.log(search)
+      window.history.pushState({},'','/search?search='+search);
+    };
     return (
       <div className='search-bg'>
         <Row className='search-title'>
@@ -26,8 +38,8 @@ export default class Home extends React.Component {
             数据检索
           </span>
         </Row>
-        <Row>
-          <Search placeholder="input search text" onSearch={value => console.log(value)} enterButton size="large" />
+        <Row className='search-searchbar-row'>
+          <Search className='search-searchbar' placeholder="搜索关键字" defaultValue={querystring.parse(this.props.location.search.slice(1)).search} onSearch={onSearch} enterButton allowClear size="large" />
         </Row>
         <Row className='search-result'>
           <List
@@ -79,3 +91,5 @@ export default class Home extends React.Component {
     )
   }
 }
+
+export default withRouter(Home);

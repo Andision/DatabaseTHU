@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route } from "react-router-dom";
+// import { HashRouter as Router, Route } from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import { enquireScreen } from 'enquire-js';
 import Header from './Home/Nav0';
 import Footer from './Home/Footer1';
@@ -33,7 +34,7 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
+      <BrowserRouter>
         <div>
           <Header dataSource={Nav00DataSource} isMobile={this.state.isMobile} />
           <Route exact path="/" component={Home} />
@@ -41,7 +42,7 @@ class App extends Component {
           <Route path="/detail" component={Detail} />
           <Footer dataSource={Footer10DataSource} isMobile={this.state.isMobile} />
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }

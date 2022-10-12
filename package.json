@@ -6,6 +6,7 @@
     "@ant-design/icons": "^4.7.0",
     "antd": "^3.14.1",
     "enquire-js": "^0.2.1",
+    "querystring": "^0.2.1",
     "rc-banner-anim": "^2.2.2",
     "rc-queue-anim": "^1.6.12",
     "rc-scroll-anim": "^2.5.6",
