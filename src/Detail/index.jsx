@@ -106,7 +106,7 @@ export default class Home extends React.Component {
             // </div>
             <div className='detail-bg'>
                 <Row gutter={40}>
-                    <Col span={16}>
+                    <Col xs={24} sm={24} md={16} lg={18} xl={18}>
                         <Row className='detail-title'>
                             <Title level={2}>{this.state.allData.title}</Title>
                         </Row>
@@ -122,7 +122,7 @@ export default class Home extends React.Component {
                                 </Row>)
                         })}
                     </Col>
-                    <Col span={8}>
+                    <Col xs={24} sm={24} md={8} lg={6} xl={6}>
                         <Row className='detail-section'>
                             <Title level={4}>{list_name.details}</Title>
                             {this.state.allData.details.map((sub_item, sub_index) => {

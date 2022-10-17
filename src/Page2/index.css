@@ -5,9 +5,9 @@
 
 .search-searchbar-row {
     text-align: center;
-    width: 50%;
+    width: 100%;
     margin: auto;
-    min-width: 600px;
+    max-width: 600px;
 }
 
 .search-searchbar {
