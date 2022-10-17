@@ -1,10 +1,17 @@
 import React from 'react';
-import { Row, Col, Card, Button } from 'antd';
+import { Row, Col, Typography, Button } from 'antd';
 
 import './index.css'
 
+const { Title, Paragraph, Text, Link } = Typography;
+
 const testData = {
     "title": "CLDAS土壤湿度分析产品（2018-2020）",
+    "details": {
+        "name": "数据细节",
+        "content": ["时间分辨率：小时", "空间分辨率：0.0625°", "格式：tif", "大小：3G", "时间范围：2018-2020"],
+        "className": ""
+    },
     "content": [
         {
             "name": "数据描述",
@@ -37,11 +44,6 @@ const testData = {
             "className": ""
         },
         {
-            "name": "数据细节",
-            "content": ["时间分辨率：小时", "空间分辨率：0.0625°", "格式：tif", "大小：3G", "时间范围：2018-2020"],
-            "className": ""
-        },
-        {
             "name": "数据资源提供者",
             "content": ["中国气象数据中心"],
             "className": ""
@@ -63,31 +65,78 @@ export default class Home extends React.Component {
     }
     render() {
         return (
-            <div className='detail-bg'>
-                <Row className='detail-title'>
-                    <span>
-                        {this.state.data.title}
-                    </span>
-                </Row>
-                <Row className='detail-download'>
-                    <Button type="primary" size="large" href={this.state.data.download} >下载数据</Button>
-                </Row>
-                <Card className='detail-card'>
-                    <Col className='detail-card-content'>
+            // <div className='detail-bg'>
+            //     <Row className='detail-title'>
+            //         <span>
+            //             {this.state.data.title}
+            //         </span>
+            //     </Row>
+            //     <Row className='detail-download'>
+            //         <Button type="primary" size="large" href={this.state.data.download} >下载数据</Button>
+            //     </Row>
+            //     <Card className='detail-card'>
+            //         <Col className='detail-card-content'>
 
+            //             {this.state.data.content.map((item, i) => {
+            //                 return (
+            //                     <Row className='detail-section'>
+            //                         <span className='detail-section-title'>{item.name}</span>
+            //                         {item.content.map((sub_item, sub_index) => {
+            //                             return (
+            //                                 <p className={item.className + ' detail-section-content'}>{sub_item}</p>
+            //                             )
+            //                         })}
+            //                     </Row>)
+            //             })}
+            //         </Col>
+            //     </Card>
+            // </div>
+            <div className='detail-bg'>
+                <Row gutter={40}>
+                    <Col span={16}>
+                        <Row className='detail-title'>
+                            <Title level={2}>{this.state.data.title}</Title>
+                        </Row>
                         {this.state.data.content.map((item, i) => {
                             return (
                                 <Row className='detail-section'>
-                                    <span className='detail-section-title'>{item.name}</span>
+                                    <Title level={4}>{item.name}</Title>
                                     {item.content.map((sub_item, sub_index) => {
                                         return (
-                                            <p className={item.className + ' detail-section-content'}>{sub_item}</p>
+                                            <Paragraph>{sub_item}</Paragraph>
                                         )
                                     })}
                                 </Row>)
                         })}
                     </Col>
-                </Card>
+                    <Col span={8}>
+                        <Row className='detail-section'>
+                            <Title level={4}>{this.state.data.details.name}</Title>
+                            {this.state.data.details.content.map((sub_item, sub_index) => {
+                                return (
+                                    <div>
+                                        <Text>{sub_item}</Text>
+                                        <br />
+                                    </div>
+                                )
+                            })}
+                        </Row>
+                        <Row className='detail-section'>
+                            <Row className='detail-button-row'>
+                                <Button icon="download">
+                                    文件列表
+                                </Button>
+
+                            </Row>
+                            <Row className='detail-button-row'>
+
+                                <Button type="primary" icon="download">
+                                    数据下载
+                                </Button>
+                            </Row>
+                        </Row>
+                    </Col>
+                </Row>
             </div>
         )
     }
