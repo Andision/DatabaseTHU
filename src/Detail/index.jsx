@@ -1,9 +1,9 @@
 import React from 'react';
-import { Row, Col, Typography, Button } from 'antd';
+import { Row, Col, Typography, Button, Modal, Table } from 'antd';
 
 import './index.css'
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 const testData = {
     "title": "CLDAS土壤湿度分析产品（2018-2020）",
@@ -16,14 +16,27 @@ const testData = {
     "copyright": ["为尊重知识产权、保障数据作者的权益、评估数据的应用潜力，请数据使用者在使用数据所产生的研究成果中（包括公开发表的论文、论著、数据产品和未公开发表的研究报告、数据产品等成果），明确注明数据来源和数据作者。对于转载（二次或多次发布） 的数据，作者还须注明原始数据来源。"],
     "author": ["中国气象数据中心"],
     "download": "https://s1.ax1x.com/2022/09/07/vH5QhR.png",
-    "file_list": ["filename1", "filename2"]
+    "file_list": [{ "name": "filename1", "size": "1.23MB" }, { "name": "filename2", "size": "4.56MB" }]
 }
 
 
 
 const first_child = ["description", "quality", "usage", "cite", "fund", "copyright", "author"]
 const second_child = ["details"]
-const list_name = { "description": "数据描述", "quality": "产品质量", "usage": "数据使用方法", "cite": "数据引用", "fund": "资助项目", "copyright": "数据使用条款", "author": "数据资源提供者", "details": "数据细节" }
+const list_name = {
+    "download": "数据下载", "description": "数据描述", "quality": "产品质量", "usage": "数据使用方法", "cite": "数据引用", "fund": "资助项目", "copyright": "数据使用条款", "author": "数据资源提供者", "details": "数据细节", "file_list": "文件列表"
+}
+const columns = [
+    {
+        title: '文件名',
+        dataIndex: 'name',
+        width: '80%'
+    },
+    {
+        title: '大小',
+        dataIndex: 'size',
+    },
+];
 export default class Home extends React.Component {
     constructor() {
         super();
@@ -47,12 +60,24 @@ export default class Home extends React.Component {
         this.state = {
             firstData: myFirstData,
             secondData: mySecondData,
-            allData: testData
+            allData: testData,
+            visible: false
         }
         console.log(myFirstData)
     }
     render() {
+        const showModal = () => {
+            this.setState({
+                visible: true,
+            });
+        };
+        const hideModal = () => {
+            this.setState({
+                visible: false,
+            });
+        };
         return (
+
             // <div className='detail-bg'>
             //     <Row className='detail-title'>
             //         <span>
@@ -111,20 +136,31 @@ export default class Home extends React.Component {
                         </Row>
                         <Row className='detail-section'>
                             <Row className='detail-button-row'>
-                                <Button icon="download">
+                                <Button icon="unordered-list" onClick={showModal}>
                                     文件列表
                                 </Button>
 
                             </Row>
                             <Row className='detail-button-row'>
 
-                                <Button type="primary" icon="download">
+                                <Button type="primary" icon="download" href={this.state.allData.download}>
                                     数据下载
                                 </Button>
                             </Row>
                         </Row>
                     </Col>
                 </Row>
+                <Modal
+                    title={list_name.file_list}
+                    visible={this.state.visible}
+                    onOk={hideModal}
+                    onCancel={hideModal}
+                    footer={[
+                        <Button key="confirm" type="primary" onClick={hideModal}>OK</Button>
+                    ]}
+                >
+                    <Table columns={columns} dataSource={this.state.allData.file_list} size="small" />
+                </Modal>
             </div>
         )
     }
