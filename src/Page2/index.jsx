@@ -77,11 +77,11 @@ class Home extends React.Component {
                   />
                 }
               >
-                <List.Item.Meta
+                {/* <List.Item.Meta
                   avatar={<Avatar src={item.avatar} />}
                   title={<a href={item.href}>{item.title}</a>}
                   description={item.description}
-                />
+                /> */}
                 {item.content}
               </List.Item>
             )}

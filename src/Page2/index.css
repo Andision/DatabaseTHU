@@ -5,10 +5,14 @@
 
 .search-searchbar-row{
     text-align: center;
+    width: 50%;
+    margin: auto;
+    min-width: 600px;
 }
 
 .search-searchbar{
-    width: 50%;
+    width: 100%;
+    /* min-width: 600px; */
     margin: auto;
 }
 
