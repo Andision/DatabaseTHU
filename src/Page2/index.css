@@ -1,31 +1,40 @@
-.search-bg{
+.search-bg {
     margin: auto;
     width: 60%;
 }
 
-.search-searchbar-row{
+.search-searchbar-row {
     text-align: center;
     width: 50%;
     margin: auto;
     min-width: 600px;
 }
 
-.search-searchbar{
+.search-searchbar {
     width: 100%;
     /* min-width: 600px; */
     margin: auto;
 }
 
-.search-result{
+.search-result {
     margin-top: 150px;
     margin-bottom: 200px;
 }
 
-.search-title{
+.search-title {
     text-align: center;
     margin: 50px 0px;
     font-size: 50px;
     font-weight: bolder;
+}
+
+.search-item {
+    color: rgba(0, 0, 0, 0.65);
+    background-color: aqua;
+}
+
+.search-item:hover {
+    box-shadow: 0 0 4px #eee;
 }
 
 /* .detail-card-content{

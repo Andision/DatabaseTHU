@@ -62,7 +62,7 @@ class Home extends React.Component {
               </div>
             }
             renderItem={item => (
-              <a href={item.href} style={{color:"rgba(0, 0, 0, 0.65)"}}>
+              <a className="search-item" href={item.href}>
 
                 <List.Item
                   key={item.title}
