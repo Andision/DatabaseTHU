@@ -31,6 +31,8 @@ class App extends Component {
     enquireScreen((b) => {
       this.setState({ isMobile: !!b });
     });
+    console.log("Code by Andision Zhang with ❤")
+    console.log("You can go to https://andisionzhang.com for more information about me.")
   }
   render() {
     return (

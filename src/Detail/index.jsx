@@ -48,7 +48,7 @@ export default class Home extends React.Component {
                     name: list_name[item],
                     content: testData[item]
                 })
-                console.log('good', item, testData[item])
+                // console.log('good', item, testData[item])
             }
             else if (second_child.indexOf(item) !== -1) {
                 mySecondData.push({
@@ -63,7 +63,7 @@ export default class Home extends React.Component {
             allData: testData,
             visible: false
         }
-        console.log(myFirstData)
+        // console.log(myFirstData)
     }
     render() {
         const showModal = () => {
@@ -112,11 +112,11 @@ export default class Home extends React.Component {
                         </Row>
                         {this.state.firstData.map((item, i) => {
                             return (
-                                <Row className='detail-section'>
+                                <Row className='detail-section' key={i}>
                                     <Title level={4}>{item.name}</Title>
                                     {item.content.map((sub_item, sub_index) => {
                                         return (
-                                            <Paragraph>{sub_item}</Paragraph>
+                                            <Paragraph key={sub_index}>{sub_item}</Paragraph>
                                         )
                                     })}
                                 </Row>)
@@ -127,7 +127,7 @@ export default class Home extends React.Component {
                             <Title level={4}>{list_name.details}</Title>
                             {this.state.allData.details.map((sub_item, sub_index) => {
                                 return (
-                                    <div>
+                                    <div key={sub_index}>
                                         <Text>{sub_item}</Text>
                                         <br />
                                     </div>
