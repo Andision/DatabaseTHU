@@ -8,7 +8,7 @@ import './index.css'
 const { Search } = Input;
 
 const data = Array.from({ length: 23 }).map((_, i) => ({
-  href: 'https://ant.design',
+  href: '/detail',
   title: `ant design part ${i}`,
   avatar: 'https://joeschmoe.io/api/v1/random',
   description:
@@ -20,7 +20,7 @@ const data = Array.from({ length: 23 }).map((_, i) => ({
 // const search = querystring.parse(this.props.location.search.slice(1))
 
 class Home extends React.Component {
-  componentDidMount(){
+  componentDidMount() {
     // console.log(this.props.location.search)
     // console.log(querystring.parse(this.props.location.search.slice(1)))
     // this.setState(querystring.parse(this.props.location.search.slice(1)))
@@ -29,7 +29,7 @@ class Home extends React.Component {
     const onSearch = (search) => {
       // this.setState({search:search})
       // console.log(search)
-      window.history.pushState({},'','/search?search='+search);
+      window.history.pushState({}, '', '/search?search=' + search);
     };
     return (
       <div className='search-bg'>
@@ -62,28 +62,31 @@ class Home extends React.Component {
               </div>
             }
             renderItem={item => (
-              <List.Item
-                key={item.title}
-                // actions={[
-                //   <IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
-                //   <IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />,
-                //   <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
-                // ]}
-                extra={
-                  <img
-                    width={272}
-                    alt="logo"
-                    src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-                  />
-                }
-              >
-                {/* <List.Item.Meta
+              <a href={item.href} style={{color:"rgba(0, 0, 0, 0.65)"}}>
+
+                <List.Item
+                  key={item.title}
+                  // actions={[
+                  //   <IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
+                  //   <IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />,
+                  //   <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
+                  // ]}
+                  extra={
+                    <img
+                      width={272}
+                      alt="logo"
+                      src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+                    />
+                  }
+                >
+                  {/* <List.Item.Meta
                   avatar={<Avatar src={item.avatar} />}
                   title={<a href={item.href}>{item.title}</a>}
                   description={item.description}
                 /> */}
-                {item.content}
-              </List.Item>
+                  {item.content}
+                </List.Item>
+              </a>
             )}
           />
         </Row>
