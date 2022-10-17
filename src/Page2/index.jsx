@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, List, Avatar, Input } from 'antd';
+import { Row, List, Input } from 'antd';
 import { withRouter } from 'react-router-dom';
 import querystring from "querystring"
 
