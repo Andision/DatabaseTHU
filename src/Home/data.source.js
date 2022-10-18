@@ -12,8 +12,8 @@ export const Nav00DataSource = {
     children: [
       { name: 'item0', a: { children: '首页', href: '/' } },
       { name: 'item1', a: { children: '搜索', href: '/search' } },
-      { name: 'item2', a: { children: '导航三', href: '' } },
-      { name: 'item3', a: { children: '导航四', href: '' } },
+      { name: 'item2', a: { children: '登录', href: '/login?source=/' } },
+      { name: 'item3', a: { children: '注册', href: '/register' } },
     ],
   },
   mobileMenu: { className: 'header0-mobile-menu' },
