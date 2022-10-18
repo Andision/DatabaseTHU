@@ -5,8 +5,10 @@ import { enquireScreen } from 'enquire-js';
 import Header from './Home/Nav0';
 import Footer from './Home/Footer1';
 import Home from './Home';
-import Page from './Page2';
+import Search from './Search';
 import Detail from './Detail';
+import Login from './Login';
+import Register from './Register';
 
 import {
   Nav00DataSource,
@@ -40,8 +42,10 @@ class App extends Component {
         <div>
           <Header dataSource={Nav00DataSource} isMobile={this.state.isMobile} />
           <Route exact path="/" component={Home} />
-          <Route path="/search" component={Page} />
+          <Route path="/search" component={Search} />
           <Route path="/detail" component={Detail} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Footer dataSource={Footer10DataSource} isMobile={this.state.isMobile} />
         </div>
       </BrowserRouter>
