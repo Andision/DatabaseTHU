@@ -1,0 +1,23 @@
+.register-card .register-form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.register-card .register-form-forgot {
+    float: right;
+}
+
+.register-card .register-form-button {
+    width: 100%;
+}
+
+.register-bg{
+    margin: 50px;
+    height: 80%;
+}
+
+.register-card{
+    width: 50%;
+    max-width: 500px;
+    margin: auto;
+}
