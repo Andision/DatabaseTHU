@@ -1,22 +1,22 @@
-.login-card .login-form {
-    max-width: 300px;
+.register-card .register-form {
+    max-width: 500px;
     margin: auto;
 }
 
-.login-card .login-form-forgot {
+.register-card .register-form-forgot {
     float: right;
 }
 
-.login-card .login-form-button {
+.register-card .register-form-button {
     width: 100%;
 }
 
-.login-bg{
+.register-bg{
     margin: 50px;
     height: 80%;
 }
 
-.login-card{
+.register-card{
     width: 50%;
     max-width: 500px;
     margin: auto;

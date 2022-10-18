@@ -3,7 +3,7 @@ import { Form, Input, Button, Card } from 'antd';
 
 import './index.css'
 
-class FormLogin extends React.Component {
+class FormRegister extends React.Component {
     state = {
         confirmDirty: false,
         autoCompleteResult: [],
@@ -12,11 +12,11 @@ class FormLogin extends React.Component {
         const formItemLayout = {
             labelCol: {
                 xs: { span: 24 },
-                sm: { span: 8 },
+                sm: { span: 4 },
             },
             wrapperCol: {
                 xs: { span: 24 },
-                sm: { span: 16 },
+                sm: { span: 18, offset: 2 },
             },
         };
         const tailFormItemLayout = {
@@ -26,8 +26,8 @@ class FormLogin extends React.Component {
                     offset: 0,
                 },
                 sm: {
-                    span: 16,
-                    offset: 8,
+                    span: 24,
+                    offset: 0,
                 },
             },
         };
@@ -63,10 +63,10 @@ class FormLogin extends React.Component {
         };
 
         return (
-            <div className='login-bg'>
-                <Card className='login-card' headStyle={{ textAlign: "center" }} title="注册">
+            <div className='register-bg'>
+                <Card className='register-card' headStyle={{ textAlign: "center" }} title="注册">
 
-                    <Form {...formItemLayout} onSubmit={handleSubmit}>
+                    <Form {...formItemLayout} onSubmit={handleSubmit} className="register-form">
                         <Form.Item label="账户名称" hasFeedback>
                             {getFieldDecorator('username', {
                                 rules: [
@@ -123,7 +123,7 @@ class FormLogin extends React.Component {
                             })(<Input.Password onBlur={handleConfirmBlur} />)}
                         </Form.Item>
                         <Form.Item {...tailFormItemLayout}>
-                            <Button type="primary" htmlType="submit">
+                            <Button type="primary" htmlType="submit" className='register-form-button'>
                                 Register
                             </Button>
                         </Form.Item>
@@ -134,4 +134,4 @@ class FormLogin extends React.Component {
     }
 }
 
-export default Form.create()(FormLogin)
+export default Form.create()(FormRegister)
