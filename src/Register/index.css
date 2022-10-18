@@ -1,0 +1,23 @@
+.login-card .login-form {
+    max-width: 300px;
+    margin: auto;
+}
+
+.login-card .login-form-forgot {
+    float: right;
+}
+
+.login-card .login-form-button {
+    width: 100%;
+}
+
+.login-bg{
+    margin: 50px;
+    height: 80%;
+}
+
+.login-card{
+    width: 50%;
+    max-width: 500px;
+    margin: auto;
+}
