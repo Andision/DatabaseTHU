@@ -1,48 +1,20 @@
-/* .detail-bg{
-    margin: auto;
-    width: 80%;
-}
-
-.detail-download{
-    text-align: center;
-}
-
-.detail-card{
-    margin-top: 50px;
-    margin-bottom: 200px;
-}
-
-.detail-title{
-    text-align: center;
-    margin: 50px 0px;
-    font-size: 50px;
-    font-weight: bolder;
-}
-
-.detail-card-content{
-    width: 80%;
-    margin: auto;
+.detail-background {
+    min-height: 100%;
+    background-color: aqua;
+    padding-top: 50px;
+    background-color: #f6f6f6;
     padding-bottom: 50px;
+
 }
 
-.detail-section{
-    margin-top: 50px;
-    font-size: x-large;
+.detail-keyword{
+    line-height: 30px;
 }
-.detail-section-title{
-    text-align: left;
-    font-size: xx-large;
-    font-weight: bolder;
-}
-.detail-section-content{
-    text-align: left;
-    margin: 10px 0px;
-} */
 
 .detail-bg {
     margin: auto;
     width: 80%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 .detail-title {
@@ -50,13 +22,17 @@
 }
 
 .detail-section {
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 
 .detail-section-title {
     background-color: chocolate;
 }
 
-.detail-button-row{
+.detail-button-row {
     margin-bottom: 10px;
+}
+
+.detail-button-row > .ant-btn {
+    width: 100%;
 }

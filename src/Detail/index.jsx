@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Typography, Button, Modal, Table } from 'antd';
+import { Row, Col, Typography, Button, Modal, Table, Card, Tag } from 'antd';
 
 import './index.css'
 
@@ -21,10 +21,10 @@ const testData = {
 
 
 
-const first_child = ["description", "quality", "usage", "cite", "fund", "copyright", "author"]
+const first_child = ["quality", "usage", "cite", "fund", "copyright", "author"]
 const second_child = ["details"]
 const list_name = {
-    "download": "数据下载", "description": "数据描述", "quality": "产品质量", "usage": "数据使用方法", "cite": "数据引用", "fund": "资助项目", "copyright": "数据使用条款", "author": "数据资源提供者", "details": "数据细节", "file_list": "文件列表"
+    "keyword": "关键词", "download": "数据下载", "description": "数据描述", "quality": "产品质量", "usage": "数据使用方法", "cite": "数据引用", "fund": "资助项目", "copyright": "数据使用条款", "author": "数据资源提供者", "details": "数据细节", "file_list": "文件列表"
 }
 const columns = [
     {
@@ -77,91 +77,128 @@ export default class Home extends React.Component {
             });
         };
         return (
+            <div className='detail-background'>
 
-            // <div className='detail-bg'>
-            //     <Row className='detail-title'>
-            //         <span>
-            //             {this.state.data.title}
-            //         </span>
-            //     </Row>
-            //     <Row className='detail-download'>
-            //         <Button type="primary" size="large" href={this.state.data.download} >下载数据</Button>
-            //     </Row>
-            //     <Card className='detail-card'>
-            //         <Col className='detail-card-content'>
+                <div className='detail-bg'>
+                    <Row gutter={20}>
+                        <Col xs={24} sm={24} md={15} lg={15} xl={15}>
+                            <Card>
+                                <Row className='detail-title'>
+                                    <Title level={2}>{this.state.allData.title}</Title>
+                                </Row>
+                                <Row className='detail-section'>
+                                    <Title level={4}>{list_name.description}</Title>
+                                    <Row gutter={20}>
+                                        <Col span={16}>
+                                            {this.state.allData.description.map((sub_item, sub_index) => {
+                                                return (
+                                                    <Paragraph key={sub_index}>{sub_item}</Paragraph>
+                                                )
+                                            })}
+                                        </Col>
+                                        <Col span={8}>
+                                            <img src="https://s1.ax1x.com/2022/09/07/vH5QhR.png" alt='alt' width="100%"></img>
+                                        </Col>
+                                    </Row>
+                                </Row>
+                                {this.state.firstData.map((item, i) => {
+                                    return (
+                                        <Row className='detail-section' key={i}>
+                                            <Title level={4}>{item.name}</Title>
+                                            {item.content.map((sub_item, sub_index) => {
+                                                return (
+                                                    <Paragraph key={sub_index}>{sub_item}</Paragraph>
+                                                )
+                                            })}
+                                        </Row>)
+                                })}
+                            </Card>
+                        </Col>
+                        <Col xs={24} sm={24} md={9} lg={9} xl={9}>
+                            <Row className='detail-section'>
+                                <Card className='detail-keyword'>
+                                    <Title level={4}>{list_name.keyword}</Title>
+                                    <Text>学科：</Text>
+                                    <br></br>
+                                    <Tag color="gold">土壤湿度</Tag>
+                                    <Tag color="gold">亚洲区域</Tag>
 
-            //             {this.state.data.content.map((item, i) => {
-            //                 return (
-            //                     <Row className='detail-section'>
-            //                         <span className='detail-section-title'>{item.name}</span>
-            //                         {item.content.map((sub_item, sub_index) => {
-            //                             return (
-            //                                 <p className={item.className + ' detail-section-content'}>{sub_item}</p>
-            //                             )
-            //                         })}
-            //                     </Row>)
-            //             })}
-            //         </Col>
-            //     </Card>
-            // </div>
-            <div className='detail-bg'>
-                <Row gutter={40}>
-                    <Col xs={24} sm={24} md={16} lg={18} xl={18}>
-                        <Row className='detail-title'>
-                            <Title level={2}>{this.state.allData.title}</Title>
-                        </Row>
-                        {this.state.firstData.map((item, i) => {
-                            return (
-                                <Row className='detail-section' key={i}>
-                                    <Title level={4}>{item.name}</Title>
-                                    {item.content.map((sub_item, sub_index) => {
+                                    <br></br>
+
+                                    <Text>主题：</Text>
+                                    <br></br>
+                                    <Tag color="green">地表水</Tag>
+                                    <Tag color="green">水文断面</Tag>
+                                    <Tag color="green">流量</Tag>
+                                    <Tag color="green">径流</Tag>
+                                    <br></br>
+
+                                    <Text>时间：</Text>
+                                    <br></br>
+                                    <Tag color="blue">2018</Tag>
+                                    <Tag color="blue">2019</Tag>
+                                    <Tag color="blue">2020</Tag>
+                                    <br></br>
+
+
+                                    {/* {this.state.allData.details.map((sub_item, sub_index) => {
                                         return (
-                                            <Paragraph key={sub_index}>{sub_item}</Paragraph>
+                                            <div key={sub_index}>
+                                                <Text>{sub_item}</Text>
+                                                <br />
+                                            </div>
+                                        )
+                                    })} */}
+                                </Card>
+                            </Row>
+
+                            <Row className='detail-section'>
+                                <Card>
+                                    <Title level={4}>{list_name.details}</Title>
+                                    {this.state.allData.details.map((sub_item, sub_index) => {
+                                        return (
+                                            <div key={sub_index}>
+                                                <Text>{sub_item}</Text>
+                                                <br />
+                                            </div>
                                         )
                                     })}
-                                </Row>)
-                        })}
-                    </Col>
-                    <Col xs={24} sm={24} md={8} lg={6} xl={6}>
-                        <Row className='detail-section'>
-                            <Title level={4}>{list_name.details}</Title>
-                            {this.state.allData.details.map((sub_item, sub_index) => {
-                                return (
-                                    <div key={sub_index}>
-                                        <Text>{sub_item}</Text>
-                                        <br />
-                                    </div>
-                                )
-                            })}
-                        </Row>
-                        <Row className='detail-section'>
-                            <Row className='detail-button-row'>
-                                <Button icon="unordered-list" onClick={showModal}>
-                                    文件列表
-                                </Button>
-
+                                </Card>
                             </Row>
-                            <Row className='detail-button-row'>
+                            <Row className='detail-section'>
+                                <Card>
+                                    <Title level={4}>{list_name.download}</Title>
 
-                                <Button type="primary" icon="download" href={this.state.allData.download}>
-                                    数据下载
-                                </Button>
+                                    <Row className='detail-button-row'>
+                                        <Button icon="unordered-list" onClick={showModal}>
+                                            文件列表
+                                        </Button>
+
+                                    </Row>
+                                    <Row className='detail-button-row'>
+
+                                        <Button type="primary" icon="download" href={this.state.allData.download}>
+                                            数据下载
+                                        </Button>
+                                    </Row>
+                                </Card>
                             </Row>
-                        </Row>
-                    </Col>
-                </Row>
-                <Modal
-                    title={list_name.file_list}
-                    visible={this.state.visible}
-                    onOk={hideModal}
-                    onCancel={hideModal}
-                    footer={[
-                        <Button key="confirm" type="primary" onClick={hideModal}>OK</Button>
-                    ]}
-                >
-                    <Table columns={columns} dataSource={this.state.allData.file_list} size="small" />
-                </Modal>
+                        </Col>
+                    </Row>
+                    <Modal
+                        title={list_name.file_list}
+                        visible={this.state.visible}
+                        onOk={hideModal}
+                        onCancel={hideModal}
+                        footer={[
+                            <Button key="confirm" type="primary" onClick={hideModal}>OK</Button>
+                        ]}
+                    >
+                        <Table columns={columns} dataSource={this.state.allData.file_list} size="small" />
+                    </Modal>
+                </div>
             </div>
+
         )
     }
 }
