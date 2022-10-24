@@ -1,15 +1,16 @@
 import React from 'react';
-import { Row, List, Input } from 'antd';
+import { Row, List, Input, Card } from 'antd';
 import { withRouter } from 'react-router-dom';
 import querystring from "querystring"
 
 import './index.css'
 
 const { Search } = Input;
+const { Meta } = Card;
 
 const data = Array.from({ length: 23 }).map((_, i) => ({
   href: '/detail',
-  title: `ant design part ${i}`,
+  title: i % 2 === 0 ? `part ${i}` : `CLDAS土壤湿度分析产品CLDAS土壤湿度分析产品 part ${i}`,
   avatar: 'https://joeschmoe.io/api/v1/random',
   description:
     'Ant Design, a design language for background applications, is refined by Ant UED Team.',
@@ -43,13 +44,14 @@ class Home extends React.Component {
         </Row>
         <Row className='search-result'>
           <List
+            grid={{ gutter: 16, column: 4 }}
             itemLayout="vertical"
             size="large"
             pagination={{
               onChange: page => {
                 console.log(page);
               },
-              pageSize: 5,
+              pageSize: 12,
               position: 'bottom',
               // showQuickJumper:true,
               // showSizeChanger:true
@@ -64,7 +66,7 @@ class Home extends React.Component {
             renderItem={item => (
               <a className="search-item" href={item.href}>
 
-                <List.Item
+                {/* <List.Item
                   key={item.title}
                   // actions={[
                   //   <IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
@@ -79,12 +81,18 @@ class Home extends React.Component {
                     />
                   }
                 >
-                  {/* <List.Item.Meta
-                  avatar={<Avatar src={item.avatar} />}
-                  title={<a href={item.href}>{item.title}</a>}
-                  description={item.description}
-                /> */}
                   {item.content}
+                </List.Item> */}
+                <List.Item>
+                  <Card
+                    hoverable
+                    tabBarExtraContent
+                    className="search-result-card"
+                    // style={{ width: 240 }}
+                    cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />}
+                  >
+                    <Meta className="search-result-card-meta" title={item.title} description="" />
+                  </Card>
                 </List.Item>
               </a>
             )}
