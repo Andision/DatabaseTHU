@@ -158,7 +158,7 @@ export default class Home extends React.Component {
                                     {this.state.allData.details.map((sub_item, sub_index) => {
                                         return (
                                             <div key={sub_index}>
-                                                <Text>{sub_item}</Text>
+                                                <Text>· {sub_item}</Text>
                                                 <br />
                                             </div>
                                         )
