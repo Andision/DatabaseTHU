@@ -5,7 +5,8 @@ export const Nav00DataSource = {
   page: { className: 'home-page' },
   logo: {
     className: 'header0-logo',
-    children: 'https://s1.ax1x.com/2022/09/12/vXgva4.png',
+    children: '多尺度生态水文数据库',
+    // children: 'https://s1.ax1x.com/2022/09/12/vXgva4.png',
   },
   Menu: {
     className: 'header0-menu',
@@ -23,15 +24,15 @@ export const Banner00DataSource = {
   textWrapper: { className: 'banner0-text-wrapper' },
   title: {
     className: 'banner0-title',
-    children: 'This is Title',
+    children: '多尺度生态水文数据库',
     // children: 'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
   },
   content: {
     className: 'banner0-content',
     children: (
       <span>
-        <p>dsdf</p>
-        <p>aaaaa</p>
+        <p>黄河流域内蒙古段亟待建立示范区一体化综合观测试验平台和多尺度生态水文数据库，形成天-空-地交互的嵌套式多尺度生态水文一体化综合观测试验网络，揭示气象-土壤-环境多维要素的时空变化特征及其协同效应，解析气候变化和人类活动影响下，不同地貌类型区生态系统与水资源间互馈驱动机制，提出植被格局可持续性、水文功能与生态恢复模式适宜性评估方法，为机理分析、模型构建、模拟预测等研究提供坚实基础。</p>
+        {/* <p>aaaaa</p> */}
       </span>
     ),
   },
@@ -174,11 +175,11 @@ export const Feature60DataSource = {
             name: 'child0',
             number: {
               className: 'feature6-number',
-              unit: { className: 'feature6-unit', children: '万' },
+              unit: { className: 'feature6-unit', children: '个' },
               toText: true,
               children: '116',
             },
-            children: { className: 'feature6-text', children: '模型数据' },
+            children: { className: 'feature6-text', children: '数据集数量' },
           },
           {
             md: 8,
@@ -187,11 +188,11 @@ export const Feature60DataSource = {
             name: 'child1',
             number: {
               className: 'feature6-number',
-              unit: { className: 'feature6-unit', children: '亿' },
+              unit: { className: 'feature6-unit', children: 'GB' },
               toText: true,
-              children: '1.17',
+              children: '1234.56',
             },
-            children: { className: 'feature6-text', children: '模型迭代数量' },
+            children: { className: 'feature6-text', children: '数据总量' },
           },
           {
             md: 8,
@@ -200,60 +201,60 @@ export const Feature60DataSource = {
             name: 'child2',
             number: {
               className: 'feature6-number',
-              unit: { className: 'feature6-unit', children: '亿' },
+              unit: { className: 'feature6-unit', children: '次' },
               toText: true,
-              children: '2.10',
+              children: '114514',
             },
-            children: { className: 'feature6-text', children: '训练样本数量' },
+            children: { className: 'feature6-text', children: '网站访问量' },
           },
         ],
       },
-      {
-        title: { className: 'feature6-title-text', children: '服务指标' },
-        className: 'feature6-item',
-        name: 'block1',
-        children: [
-          {
-            md: 8,
-            xs: 24,
-            name: 'child0',
-            className: 'feature6-number-wrapper',
-            number: {
-              className: 'feature6-number',
-              unit: { className: 'feature6-unit', children: '万' },
-              toText: true,
-              children: '116',
-            },
-            children: { className: 'feature6-text', children: '模型数据' },
-          },
-          {
-            md: 8,
-            xs: 24,
-            name: 'child1',
-            className: 'feature6-number-wrapper',
-            number: {
-              className: 'feature6-number',
-              unit: { className: 'feature6-unit', children: '亿' },
-              toText: true,
-              children: '1.17',
-            },
-            children: { className: 'feature6-text', children: '模型迭代数量' },
-          },
-          {
-            md: 8,
-            xs: 24,
-            name: 'child2',
-            className: 'feature6-number-wrapper',
-            number: {
-              className: 'feature6-number',
-              unit: { className: 'feature6-unit', children: '亿' },
-              toText: true,
-              children: '2.10',
-            },
-            children: { className: 'feature6-text', children: '训练样本数量' },
-          },
-        ],
-      },
+      // {
+      //   title: { className: 'feature6-title-text', children: '服务指标' },
+      //   className: 'feature6-item',
+      //   name: 'block1',
+      //   children: [
+      //     {
+      //       md: 8,
+      //       xs: 24,
+      //       name: 'child0',
+      //       className: 'feature6-number-wrapper',
+      //       number: {
+      //         className: 'feature6-number',
+      //         unit: { className: 'feature6-unit', children: '万' },
+      //         toText: true,
+      //         children: '116',
+      //       },
+      //       children: { className: 'feature6-text', children: '模型数据' },
+      //     },
+      //     {
+      //       md: 8,
+      //       xs: 24,
+      //       name: 'child1',
+      //       className: 'feature6-number-wrapper',
+      //       number: {
+      //         className: 'feature6-number',
+      //         unit: { className: 'feature6-unit', children: '亿' },
+      //         toText: true,
+      //         children: '1.17',
+      //       },
+      //       children: { className: 'feature6-text', children: '模型迭代数量' },
+      //     },
+      //     {
+      //       md: 8,
+      //       xs: 24,
+      //       name: 'child2',
+      //       className: 'feature6-number-wrapper',
+      //       number: {
+      //         className: 'feature6-number',
+      //         unit: { className: 'feature6-unit', children: '亿' },
+      //         toText: true,
+      //         children: '2.10',
+      //       },
+      //       children: { className: 'feature6-text', children: '训练样本数量' },
+      //     },
+      //   ],
+      // },
     ],
   },
 };
