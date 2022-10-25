@@ -1,6 +1,6 @@
 .search-bg {
     margin: auto;
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
 }
 
@@ -18,8 +18,10 @@
 }
 
 .search-result {
-    margin-top: 150px;
-    margin-bottom: 200px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    max-width: 1200px;
 }
 
 .search-title {
@@ -38,20 +40,35 @@
     box-shadow: 0 0 4px #eee;
 } */
 
-.search-result-card-meta > .ant-card-meta-detail > .ant-card-meta-title{
+.search-result-card-meta>.ant-card-meta-detail>.ant-card-meta-title {
     /* background-color: aqua; */
     text-overflow: -o-ellipsis-lastline;
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    display: -webkit-box; 
-    -webkit-line-clamp: 2; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
     white-space: normal;
+    font-size: small;
+    min-height: 40px;
 }
 
-.search-result-card{
-    height: 240px;
+.search-result-card {
+    height: 260px;
+    /* max-width: 270px; */
+    background-color: #f6f6f6;
+}
+
+.search-result-card :hover {
+    color: #40a9ff;
+}
+
+.search-result-card-pic {
+    height: 150px;
+    border: 10px solid #f6f6f6;
+
+    /* width: 200px; */
 }
 
 /* .detail-card-content{
