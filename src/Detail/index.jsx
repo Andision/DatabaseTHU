@@ -82,21 +82,21 @@ export default class Home extends React.Component {
                 <div className='detail-bg'>
                     <Row gutter={20}>
                         <Col xs={24} sm={24} md={15} lg={15} xl={15}>
-                            <Card>
+                            <Card className='detail-card'>
                                 <Row className='detail-title'>
                                     <Title level={2}>{this.state.allData.title}</Title>
                                 </Row>
                                 <Row className='detail-section'>
                                     <Title level={4}>{list_name.description}</Title>
                                     <Row gutter={20}>
-                                        <Col span={16}>
+                                        <Col xs={24} sm={24} md={16} lg={16} xl={16}>
                                             {this.state.allData.description.map((sub_item, sub_index) => {
                                                 return (
                                                     <Paragraph key={sub_index}>{sub_item}</Paragraph>
                                                 )
                                             })}
                                         </Col>
-                                        <Col span={8}>
+                                        <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                                             <img src="https://s1.ax1x.com/2022/09/07/vH5QhR.png" alt='alt' width="100%"></img>
                                         </Col>
                                     </Row>
@@ -116,7 +116,7 @@ export default class Home extends React.Component {
                         </Col>
                         <Col xs={24} sm={24} md={9} lg={9} xl={9}>
                             <Row className='detail-section'>
-                                <Card className='detail-keyword'>
+                                <Card className='detail-keyword detail-card'>
                                     <Title level={4}>{list_name.keyword}</Title>
                                     <Text>学科：</Text>
                                     <br></br>

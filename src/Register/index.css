@@ -13,11 +13,12 @@
 
 .register-bg{
     margin: 50px;
-    height: 80%;
+    min-height: 1000px;
+    /* height: 80%; */
 }
 
 .register-card{
-    width: 50%;
+    /* width: 100%; */
     max-width: 500px;
     margin: auto;
 }

@@ -37,3 +37,7 @@
 .detail-button-row > .ant-btn {
     width: 100%;
 }
+
+.detail-card{
+    margin-top: 20px;
+}
