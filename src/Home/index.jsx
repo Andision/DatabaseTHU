@@ -2,10 +2,13 @@
 /* eslint arrow-parens: 0 */
 import React from 'react';
 import { enquireScreen } from 'enquire-js';
-import { Divider } from 'antd';
+// import { Divider } from 'antd';
 
 
 import Banner0 from './Banner0';
+import Content4 from './Content4';
+// import Feature4 from './Feature4';
+// import Contact0 from './Contact0';
 // import Banner3 from './Banner3';
 // import Content0 from './Content0';
 // import Content7 from './Content7';
@@ -15,8 +18,8 @@ import Banner0 from './Banner0';
 import Feature6 from './Feature6';
 // import Content1 from './Content1';
 // import Feature2 from './Feature2';
-import Feature40 from './Feature40';
-import Feature41 from './Feature41';
+// import Feature40 from './Feature40';
+// import Feature41 from './Feature41';
 
 import {
   Banner00DataSource,
@@ -26,10 +29,11 @@ import {
   // Content120DataSource,
 
   Feature60DataSource,
+  Content40DataSource,
+  Content41DataSource,
   // Content10DataSource,
   // Feature20DataSource,
-  Feature40DataSource,
-  Feature41DataSource,
+  // Feature41DataSource,
 } from './data.source.js';
 
 import './less/antMotionStyle.less';
@@ -76,20 +80,19 @@ export default class Home extends React.Component {
         dataSource={Banner00DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Feature40
-        id="Feature4_0"
-        key="Feature4_0"
-        dataSource={Feature40DataSource}
+      <Content4
+        id="Content4_0"
+        key="Content4_0"
+        dataSource={Content40DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Divider key="d_1"/>,
-      <Feature41
-        id="Feature4_1"
-        key="Feature4_1"
-        dataSource={Feature41DataSource}
+      <Content4
+        id="Content4_1"
+        key="Content4_1"
+        dataSource={Content41DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Divider  key="d_2"/>,
+      // <Divider  key="d_2"/>,
       <Feature6
         id="Feature6_0"
         key="Feature6_0"

@@ -147,6 +147,61 @@ export const Footer00DataSource = {
   },
 };
 
+export const Content40DataSource = {
+  wrapper: { className: 'home-page-wrapper content4-wrapper' },
+  page: { className: 'home-page content4' },
+  OverPack: { playScale: 0.3, className: '' },
+  titleWrapper: {
+    className: 'title-wrapper',
+    children: [
+      {
+        name: 'title',
+        children: '黄河流域内蒙古段',
+        className: 'title-h1',
+      },
+      {
+        name: 'content',
+        className: 'title-content content4-title-content',
+        children: '内蒙古黄河流域（37°30′～41°50′N，106°～113°E）地处黄河几字湾的上半部分，总面积 15.10×104 km2，主要流经乌海市、巴彦淖尔市、鄂尔多斯市、包头市以及呼和浩特市五个行政区划，这一区域国土面积、常住人口分别占全区的 44%、50%，占整个黄河流域面积的 19%。该区海拔范围在718-3526 m，流域地貌类型多样，分布有沙漠、高原、丘陵、山地和平原，其中分布有腾格里沙漠、乌兰布和沙漠、库布其沙漠和毛乌素沙地，以及大面积有明显沙化趋势的土地。气候以温带大陆性气候为主，年均温约6.6 ℃，多年平均降水量为297.25 mm，空间分布上多年年均降水量介于120～450 mm之间，时间和空间上分布不均；土壤类型以黄绵土为主，土质疏松、脱水固结快、易侵蚀崩解，此外，还有褐土、黑垆土、风沙土、灰漠土等类型。该区水系干流上有“海勃湾”、三盛公、“万家寨”等重要枢纽工程，研究区包括“乌梁素海”和“哈素海”。',
+      },
+    ],
+  },
+  video: {
+    className: 'content4-video',
+    children: {
+      video: 'https://os.alipayobjects.com/rmsportal/EejaUGsyExkXyXr.mp4',
+      image: 'https://zos.alipayobjects.com/rmsportal/HZgzhugQZkqUwBVeNyfz.jpg',
+    },
+  },
+};
+export const Content41DataSource = {
+  wrapper: { className: 'home-page-wrapper content4-wrapper' },
+  page: { className: 'home-page content4' },
+  OverPack: { playScale: 0.3, className: '' },
+  titleWrapper: {
+    className: 'title-wrapper',
+    children: [
+      {
+        name: 'title',
+        children: '黄河流域内蒙古段研究重点',
+        className: 'title-h1',
+      },
+      {
+        name: 'content',
+        className: 'title-content content4-title-content',
+        children: '黄河流域内蒙古段分布有平原农田、温带草原、山地森林与灌丛草地、沙漠等多种地貌植被景观，生态环境极其脆弱，不同类型区生态水文关系复杂多样。在气候变化和人类活动的双重影响下，流域生态及水文功能严重退化。对于不同生态系统，其生态格局与水文功能的适宜性存在显著差异，探明生态系统在不同时空尺度的环境因子影响机制、水文功能及其可持续性和适宜的生态修复模式等方面的研究还不充分。在气候变化和人类活动的双重影响下，流域生态水文协同退化，生态环境恶化加剧，水资源保障形势严峻。因此，黄河流域内蒙古段生态系统、水文功能协调恢复是个复杂的系统动力工程，需要空间协调、生态和水文协同。为解决上述问题，亟待建立示范区一体化综合观测试验平台和多尺度生态水文数据库，形成天-空-地交互的嵌套式多尺度生态水文一体化综合观测试验网络，揭示气象-土壤-环境多维要素的时空变化特征及其协同效应，解析气候变化和人类活动影响下，不同地貌类型区生态系统与水资源间互馈驱动机制，提出植被格局可持续性、水文功能与生态恢复模式适宜性评估方法，为机理分析、模型构建、模拟预测等研究提供坚实基础。',
+      },
+    ],
+  },
+  video: {
+    className: 'content4-video',
+    children: {
+      video: 'https://os.alipayobjects.com/rmsportal/EejaUGsyExkXyXr.mp4',
+      image: 'https://zos.alipayobjects.com/rmsportal/HZgzhugQZkqUwBVeNyfz.jpg',
+    },
+  },
+};
+
 export const Feature60DataSource = {
   wrapper: { className: 'home-page-wrapper feature6-wrapper' },
   OverPack: { className: 'home-page feature6', playScale: 0.3 },

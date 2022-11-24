@@ -15,7 +15,8 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "react-sublime-video": "^0.2.5"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -39,5 +40,5 @@
     "less-loader": "^4.1.0",
     "react-app-rewired": "^2.1.0"
   },
-  "proxy":"http://cloud.gutemorgan.com:9000"
+  "proxy": "http://cloud.gutemorgan.com:9000"
 }
