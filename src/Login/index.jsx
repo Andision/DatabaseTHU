@@ -22,22 +22,22 @@ class FormLogin extends React.Component {
                     <Form onSubmit={handleSubmit} className="login-form">
                         <Form.Item>
                             {getFieldDecorator('username', {
-                                rules: [{ required: true, message: 'Please input your username!' }],
+                                rules: [{ required: true, message: '请输入用户名！' }],
                             })(
                                 <Input
                                     prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                                    placeholder="Username"
+                                    placeholder="用户名"
                                 />,
                             )}
                         </Form.Item>
                         <Form.Item>
                             {getFieldDecorator('password', {
-                                rules: [{ required: true, message: 'Please input your Password!' }],
+                                rules: [{ required: true, message: '请输入密码！' }],
                             })(
                                 <Input
                                     prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                                     type="password"
-                                    placeholder="Password"
+                                    placeholder="密码"
                                 />,
                             )}
                         </Form.Item>
@@ -45,14 +45,14 @@ class FormLogin extends React.Component {
                             {getFieldDecorator('remember', {
                                 valuePropName: 'checked',
                                 initialValue: false,
-                            })(<Checkbox>Remember me</Checkbox>)}
-                            <a className="login-form-forgot" href="/password">
-                                Forgot password
-                            </a>
+                            })(<Checkbox>记住账号</Checkbox>)}
+                            {/* <a className="login-form-forgot" href="/password">
+                                忘记密码？
+                            </a> */}
                             <Button type="primary" htmlType="submit" className="login-form-button">
-                                Log in
+                                登录
                             </Button>
-                            Or <a href="/register">register now!</a>
+                            <a href="/register">注册账号</a>
                         </Form.Item>
                     </Form>
                 </Card>

@@ -43,7 +43,7 @@ class FormRegister extends React.Component {
         const compareToFirstPassword = (rule, value, callback) => {
             const { form } = this.props;
             if (value && value !== form.getFieldValue('password')) {
-                callback('Two passwords that you enter is inconsistent!');
+                callback('两次输入的密码不一致！');
             } else {
                 callback();
             }
@@ -71,10 +71,10 @@ class FormRegister extends React.Component {
                             {getFieldDecorator('username', {
                                 rules: [
                                     {
-                                        required: true, message: 'Please input your username!'
+                                        required: true, message: '请输入您的用户名！'
                                     },
                                     {
-                                        pattern: /^[a-zA_Z0-9]*$/, message: 'Username should only have letters and numbers!'
+                                        pattern: /^[a-zA_Z0-9]*$/, message: '用户名只允许有英文字母和数字！'
                                     }],
                             })(<Input />)}
                         </Form.Item>
@@ -83,11 +83,11 @@ class FormRegister extends React.Component {
                                 rules: [
                                     {
                                         type: 'email',
-                                        message: 'The input is not valid E-mail!',
+                                        message: '电子邮箱格式不合法！',
                                     },
                                     {
                                         required: true,
-                                        message: 'Please input your E-mail!',
+                                        message: '请输入您的电子邮箱！',
                                     },
                                 ],
                             })(<Input />)}
@@ -97,14 +97,14 @@ class FormRegister extends React.Component {
                                 rules: [
                                     {
                                         required: true,
-                                        message: 'Please input your password!',
+                                        message: '请输入您的密码！',
                                     },
                                     {
                                         validator: validateToNextPassword,
                                     },
                                     {
                                         min: 6,
-                                        message: 'Password should not be less than 6 characters!',
+                                        message: '密码长度应大于6个字符！',
                                     },
                                 ],
                             })(<Input.Password />)}
@@ -114,7 +114,7 @@ class FormRegister extends React.Component {
                                 rules: [
                                     {
                                         required: true,
-                                        message: 'Please confirm your password!',
+                                        message: '请再次输入您的密码！',
                                     },
                                     {
                                         validator: compareToFirstPassword,
@@ -124,7 +124,7 @@ class FormRegister extends React.Component {
                         </Form.Item>
                         <Form.Item {...tailFormItemLayout}>
                             <Button type="primary" htmlType="submit" className='register-form-button'>
-                                Register
+                                注册
                             </Button>
                         </Form.Item>
                     </Form>
