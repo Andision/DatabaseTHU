@@ -1,5 +1,8 @@
 import React from 'react';
-import { Row, Col, Typography, Button, Modal, Table, Card, Tag } from 'antd';
+import { Row, Col, Typography, Button, Modal, Table, Card, Tag, Skeleton } from 'antd';
+import { withRouter } from 'react-router-dom';
+import axios from 'axios';
+import querystring from "querystring"
 
 import './index.css'
 
@@ -37,7 +40,35 @@ const columns = [
         dataIndex: 'size',
     },
 ];
-export default class Home extends React.Component {
+class Home extends React.Component {
+    dataProcess = (getData) => {
+        console.log("IN DATAPROCESS")
+        console.log(getData)
+        var myFirstData = []
+        var mySecondData = []
+        for (var item in getData) {
+            if (first_child.indexOf(item) !== -1) {
+                myFirstData.push({
+                    name: list_name[item],
+                    content: getData[item]
+                })
+                // console.log('good', item, testData[item])
+            }
+            else if (second_child.indexOf(item) !== -1) {
+                mySecondData.push({
+                    name: list_name[item],
+                    content: getData[item]
+                })
+            }
+        }
+        this.setState({
+            firstData: myFirstData,
+            secondData: mySecondData,
+            allData: getData,
+            visible: false,
+            loading: false
+        })
+    };
     constructor() {
         super();
         var myFirstData = []
@@ -61,9 +92,24 @@ export default class Home extends React.Component {
             firstData: myFirstData,
             secondData: mySecondData,
             allData: testData,
-            visible: false
+            visible: false,
+            loading: true
         }
         // console.log(myFirstData)
+    };
+    componentDidMount() {
+        const data_id = querystring.parse(this.props.location.search.slice(1)).id
+        console.log(data_id)
+        if (data_id === undefined) {
+
+        }
+        else {
+
+            axios.post('/hydrologyAPI/data/', { "data_id": data_id }).then((response) => {
+                console.log(response)
+                this.dataProcess(response.data.data)
+            });
+        }
     }
     render() {
         const showModal = () => {
@@ -77,71 +123,73 @@ export default class Home extends React.Component {
             });
         };
         return (
-            <div className='detail-background'>
+            <div className='detail-background' >
 
                 <div className='detail-bg'>
-                    <Row gutter={20}>
-                        <Col xs={24} sm={24} md={15} lg={15} xl={15}>
-                            <Card className='detail-card'>
-                                <Row className='detail-title'>
-                                    <Title level={2}>{this.state.allData.title}</Title>
-                                </Row>
-                                <Row className='detail-section'>
-                                    <Title level={4}>{list_name.description}</Title>
-                                    <Row gutter={20}>
-                                        <Col xs={24} sm={24} md={16} lg={16} xl={16}>
-                                            {this.state.allData.description.map((sub_item, sub_index) => {
-                                                return (
-                                                    <Paragraph key={sub_index}>{sub_item}</Paragraph>
-                                                )
-                                            })}
-                                        </Col>
-                                        <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-                                            <img src="https://s1.ax1x.com/2022/09/07/vH5QhR.png" alt='alt' width="100%"></img>
-                                        </Col>
+                    <Skeleton active loading={this.state.loading} paragraph={{ rows: 30 }}>
+                        <Row gutter={20}>
+                            <Col xs={24} sm={24} md={15} lg={15} xl={15}>
+                                <Card className='detail-card'>
+                                    <Row className='detail-title'>
+                                        <Title level={2}>{this.state.allData.title}</Title>
                                     </Row>
-                                </Row>
-                                {this.state.firstData.map((item, i) => {
-                                    return (
-                                        <Row className='detail-section' key={i}>
-                                            <Title level={4}>{item.name}</Title>
-                                            {item.content.map((sub_item, sub_index) => {
-                                                return (
-                                                    <Paragraph key={sub_index}>{sub_item}</Paragraph>
-                                                )
-                                            })}
-                                        </Row>)
-                                })}
-                            </Card>
-                        </Col>
-                        <Col xs={24} sm={24} md={9} lg={9} xl={9}>
-                            <Row className='detail-section'>
-                                <Card className='detail-keyword detail-card'>
-                                    <Title level={4}>{list_name.keyword}</Title>
-                                    <Text>学科：</Text>
-                                    <br></br>
-                                    <Tag color="gold">土壤湿度</Tag>
-                                    <Tag color="gold">亚洲区域</Tag>
+                                    <Row className='detail-section'>
+                                        <Title level={4}>{list_name.description}</Title>
+                                        <Row gutter={20}>
+                                            <Col xs={24} sm={24} md={16} lg={16} xl={16}>
+                                                {this.state.allData.description.map((sub_item, sub_index) => {
+                                                    return (
+                                                        <Paragraph key={sub_index}>{sub_item}</Paragraph>
+                                                    )
+                                                })}
+                                                {/* <Paragraph >{this.state.allData.description}</Paragraph> */}
+                                            </Col>
+                                            <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+                                                <img src="https://s1.ax1x.com/2022/09/07/vH5QhR.png" alt='alt' width="100%"></img>
+                                            </Col>
+                                        </Row>
+                                    </Row>
+                                    {this.state.firstData.map((item, i) => {
+                                        return (
+                                            <Row className='detail-section' key={i}>
+                                                <Title level={4}>{item.name}</Title>
+                                                {item.content.map((sub_item, sub_index) => {
+                                                    return (
+                                                        <Paragraph key={sub_index}>{sub_item}</Paragraph>
+                                                    )
+                                                })}
+                                            </Row>)
+                                    })}
+                                </Card>
+                            </Col>
+                            <Col xs={24} sm={24} md={9} lg={9} xl={9}>
+                                <Row className='detail-section'>
+                                    <Card className='detail-keyword detail-card'>
+                                        <Title level={4}>{list_name.keyword}</Title>
+                                        <Text>学科：</Text>
+                                        <br></br>
+                                        <Tag color="gold">土壤湿度</Tag>
+                                        <Tag color="gold">亚洲区域</Tag>
 
-                                    <br></br>
+                                        <br></br>
 
-                                    <Text>主题：</Text>
-                                    <br></br>
-                                    <Tag color="green">地表水</Tag>
-                                    <Tag color="green">水文断面</Tag>
-                                    <Tag color="green">流量</Tag>
-                                    <Tag color="green">径流</Tag>
-                                    <br></br>
+                                        <Text>主题：</Text>
+                                        <br></br>
+                                        <Tag color="green">地表水</Tag>
+                                        <Tag color="green">水文断面</Tag>
+                                        <Tag color="green">流量</Tag>
+                                        <Tag color="green">径流</Tag>
+                                        <br></br>
 
-                                    <Text>时间：</Text>
-                                    <br></br>
-                                    <Tag color="blue">2018</Tag>
-                                    <Tag color="blue">2019</Tag>
-                                    <Tag color="blue">2020</Tag>
-                                    <br></br>
+                                        <Text>时间：</Text>
+                                        <br></br>
+                                        <Tag color="blue">2018</Tag>
+                                        <Tag color="blue">2019</Tag>
+                                        <Tag color="blue">2020</Tag>
+                                        <br></br>
 
 
-                                    {/* {this.state.allData.details.map((sub_item, sub_index) => {
+                                        {/* {this.state.allData.details.map((sub_item, sub_index) => {
                                         return (
                                             <div key={sub_index}>
                                                 <Text>{sub_item}</Text>
@@ -149,42 +197,43 @@ export default class Home extends React.Component {
                                             </div>
                                         )
                                     })} */}
-                                </Card>
-                            </Row>
+                                    </Card>
+                                </Row>
 
-                            <Row className='detail-section'>
-                                <Card>
-                                    <Title level={4}>{list_name.details}</Title>
-                                    {this.state.allData.details.map((sub_item, sub_index) => {
-                                        return (
-                                            <div key={sub_index}>
-                                                <Text>· {sub_item}</Text>
-                                                <br />
-                                            </div>
-                                        )
-                                    })}
-                                </Card>
-                            </Row>
-                            <Row className='detail-section'>
-                                <Card>
-                                    <Title level={4}>{list_name.download}</Title>
+                                <Row className='detail-section'>
+                                    <Card>
+                                        <Title level={4}>{list_name.details}</Title>
+                                        {this.state.allData.details.map((sub_item, sub_index) => {
+                                            return (
+                                                <div key={sub_index}>
+                                                    <Text>· {sub_item}</Text>
+                                                    <br />
+                                                </div>
+                                            )
+                                        })}
+                                    </Card>
+                                </Row>
+                                <Row className='detail-section'>
+                                    <Card>
+                                        <Title level={4}>{list_name.download}</Title>
 
-                                    <Row className='detail-button-row'>
-                                        <Button icon="unordered-list" onClick={showModal}>
-                                            文件列表
-                                        </Button>
+                                        <Row className='detail-button-row'>
+                                            <Button icon="unordered-list" onClick={showModal}>
+                                                文件列表
+                                            </Button>
 
-                                    </Row>
-                                    <Row className='detail-button-row'>
+                                        </Row>
+                                        <Row className='detail-button-row'>
 
-                                        <Button type="primary" icon="download" href={this.state.allData.download}>
-                                            数据下载
-                                        </Button>
-                                    </Row>
-                                </Card>
-                            </Row>
-                        </Col>
-                    </Row>
+                                            <Button type="primary" icon="download" href={this.state.allData.download}>
+                                                数据下载
+                                            </Button>
+                                        </Row>
+                                    </Card>
+                                </Row>
+                            </Col>
+                        </Row>
+                    </Skeleton>
                     <Modal
                         title={list_name.file_list}
                         visible={this.state.visible}
@@ -202,3 +251,4 @@ export default class Home extends React.Component {
         )
     }
 }
+export default withRouter(Home);
