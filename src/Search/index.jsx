@@ -114,7 +114,8 @@ class Home extends React.Component {
                     tabBarExtraContent
                     className="search-result-card"
                     // style={{ width: 240 }}
-                    cover={<img alt="example" src={item.pic} className="search-result-card-pic" />}
+                    cover={ <div className="mask" style={{"background-image":"url("+item.pic+")","height":"150px","background-size":"contain","background-position": "center center","background-repeat": "no-repeat","background-color":"white"}}></div>}
+                    // cover={<img alt="example" src={item.pic} className="search-result-card-pic" />}
                   >
                     <Meta className="search-result-card-meta" title={item.title} description={<div><EyeOutlined />{' ' + item.description}</div>} />
                   </Card>
