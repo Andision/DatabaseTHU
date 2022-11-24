@@ -36,7 +36,7 @@ class FormRegister extends React.Component {
             e.preventDefault();
             this.props.form.validateFields((err, values) => {
                 if (!err) {
-                    console.log('Received values of form: ', values);
+                    // console.log('Received values of form: ', values);
                 }
             });
         };
