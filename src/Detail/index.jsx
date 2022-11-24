@@ -42,8 +42,8 @@ const columns = [
 ];
 class Home extends React.Component {
     dataProcess = (getData) => {
-        console.log("IN DATAPROCESS")
-        console.log(getData)
+        // console.log("IN DATAPROCESS")
+        // console.log(getData)
         var myFirstData = []
         var mySecondData = []
         for (var item in getData) {
@@ -99,14 +99,14 @@ class Home extends React.Component {
     };
     componentDidMount() {
         const data_id = querystring.parse(this.props.location.search.slice(1)).id
-        console.log(data_id)
+        // console.log(data_id)
         if (data_id === undefined) {
 
         }
         else {
 
             axios.post('/hydrologyAPI/data/', { "data_id": data_id }).then((response) => {
-                console.log(response)
+                // console.log(response)
                 this.dataProcess(response.data.data)
             });
         }
