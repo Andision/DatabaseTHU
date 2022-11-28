@@ -13,7 +13,7 @@ export const Nav00DataSource = {
     children: [
       { name: 'item0', a: { children: '首页', href: '/' } },
       { name: 'item1', a: { children: '数据', href: '/search' } },
-      { name: 'item2', a: { children: '登录', href: '/login?source=/' } },
+      { name: 'item2', a: { children: '登录', href: '/login' } },
       { name: 'item3', a: { children: '注册', href: '/register' } },
     ],
   },
