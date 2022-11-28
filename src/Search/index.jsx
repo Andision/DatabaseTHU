@@ -26,7 +26,7 @@ const test_title = [
 ]
 
 const data = Array.from({ length: 23 }).map((_, i) => ({
-  href: '/detail',
+  href: '/detail?id='+(i % 4 + 1),
   title: test_title[(i % 4 + Math.floor(i / 4)) % 4],
   pic: test_pic[(i % 4 + Math.floor(i / 4)) % 4],
   avatar: 'https://joeschmoe.io/api/v1/random',
