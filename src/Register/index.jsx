@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, Input, Button, Card } from 'antd';
+import { Form, Input, Button, Card, message } from 'antd';
+import axios from 'axios';
 
 import './index.css'
 
@@ -36,7 +37,27 @@ class FormRegister extends React.Component {
             e.preventDefault();
             this.props.form.validateFields((err, values) => {
                 if (!err) {
-                    // console.log('Received values of form: ', values);
+                    console.log('Received values of form: ', values);
+                    axios.post('/hydrologyAPI/register/', { "name": values.username, "email": values.username, "password": values.password }).then((response) => {
+                        console.log(response.data.code, response)
+                        if (response.status === 200) {
+                            if (response.data.code === 0) {
+                                message.success('注册成功，正在跳转！');
+                                setTimeout(() => this.props.history.push("/login"), 3000);
+                            }
+                            else if (response.data.code === -1) {
+                                message.warning('用户名或邮箱已被注册！');
+                            }
+                            else {
+                                message.error('注册失败，请稍后重试！');
+                            }
+                        }
+                        else {
+                            message.error('网络错误，请稍后重试！');
+                        }
+
+                    });
+
                 }
             });
         };
@@ -74,7 +95,7 @@ class FormRegister extends React.Component {
                                         required: true, message: '请输入您的用户名！'
                                     },
                                     {
-                                        pattern: /^[a-zA_Z0-9]*$/, message: '用户名只允许有英文字母和数字！'
+                                        pattern: /^[a-zA_Z0-9]*$/, message: '用户名只允许字母和数字！'
                                     }],
                             })(<Input />)}
                         </Form.Item>
