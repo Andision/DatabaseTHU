@@ -24,6 +24,7 @@
 
 .detail-section {
     margin-bottom: 15px;
+    display: block;
 }
 
 .detail-section-title {
@@ -40,4 +41,8 @@
 
 .detail-card{
     margin-top: 20px;
+}
+
+.detail-card-second{
+    width: 100%;
 }

@@ -1,12 +1,13 @@
 import React from 'react';
-import { Row, Col, Typography, Button, Modal, Table, Card, Tag, Skeleton } from 'antd';
+import { Row, Col, Typography, Button, Modal, Table, Card, Tag, Skeleton, Image } from 'antd';
+import { DownloadOutlined, UnorderedListOutlined } from '@ant-design/icons';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import querystring from "querystring"
 
 import './index.css'
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph, Text} = Typography;
 
 const testData = {
     "title": "CLDAS土壤湿度分析产品（2018-2020）",
@@ -128,7 +129,7 @@ class Home extends React.Component {
                 <div className='detail-bg'>
                     <Skeleton active loading={this.state.loading} paragraph={{ rows: 30 }}>
                         <Row gutter={20}>
-                            <Col xs={24} sm={24} md={15} lg={15} xl={15}>
+                            <Col xs={24} sm={24} md={16} lg={16} xl={16}>
                                 <Card className='detail-card'>
                                     <Row className='detail-title'>
                                         <Title level={2}>{this.state.allData.title}</Title>
@@ -145,7 +146,11 @@ class Home extends React.Component {
                                                 {/* <Paragraph >{this.state.allData.description}</Paragraph> */}
                                             </Col>
                                             <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-                                                <img src="https://s1.ax1x.com/2022/09/07/vH5QhR.png" alt='alt' width="100%"></img>
+                                                <Image
+                                                    width="100%"
+                                                    src="https://s1.ax1x.com/2022/09/07/vH5QhR.png"
+                                                />
+                                                {/* <img src="https://s1.ax1x.com/2022/09/07/vH5QhR.png" alt='alt' width="100%"></img> */}
                                             </Col>
                                         </Row>
                                     </Row>
@@ -162,9 +167,9 @@ class Home extends React.Component {
                                     })}
                                 </Card>
                             </Col>
-                            <Col xs={24} sm={24} md={9} lg={9} xl={9}>
+                            <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                                 <Row className='detail-section'>
-                                    <Card className='detail-keyword detail-card'>
+                                    <Card className='detail-keyword detail-card detail-card-second'>
                                         <Title level={4}>{list_name.keyword}</Title>
                                         <Text>学科：</Text>
                                         <br></br>
@@ -201,7 +206,7 @@ class Home extends React.Component {
                                 </Row>
 
                                 <Row className='detail-section'>
-                                    <Card>
+                                    <Card className='detail-card-second'>
                                         <Title level={4}>{list_name.details}</Title>
                                         {this.state.allData.details.map((sub_item, sub_index) => {
                                             return (
@@ -214,18 +219,18 @@ class Home extends React.Component {
                                     </Card>
                                 </Row>
                                 <Row className='detail-section'>
-                                    <Card>
+                                    <Card className='detail-card-second'>
                                         <Title level={4}>{list_name.download}</Title>
 
                                         <Row className='detail-button-row'>
-                                            <Button icon="unordered-list" onClick={showModal}>
+                                            <Button icon={<UnorderedListOutlined />} onClick={showModal}>
                                                 文件列表
                                             </Button>
 
                                         </Row>
                                         <Row className='detail-button-row'>
 
-                                            <Button type="primary" icon="download" href={this.state.allData.download}>
+                                            <Button type="primary" icon={<DownloadOutlined />} href={this.state.allData.download}>
                                                 数据下载
                                             </Button>
                                         </Row>
