@@ -8,8 +8,8 @@ import Home from './Home';
 import Search from './Search';
 import Detail from './Detail';
 import Login from './Login';
-import Register from './Register';
-import Password from './Password';
+// import Register from './Register';
+// import Password from './Password';
 
 import {
   Nav00DataSource,
@@ -46,8 +46,8 @@ class App extends Component {
           <Route path="/search" component={Search} />
           <Route path="/detail" component={Detail} />
           <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/password" component={Password} />
+          {/* <Route path="/register" component={Register} /> */}
+          {/* <Route path="/password" component={Password} /> */}
           <Footer dataSource={Footer10DataSource} isMobile={this.state.isMobile} />
         </div>
       </BrowserRouter>
