@@ -29,6 +29,7 @@
     margin: 50px 0px;
     font-size: 50px;
     font-weight: bolder;
+    display: block;
 }
 
 /* .search-item {

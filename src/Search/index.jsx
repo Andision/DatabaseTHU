@@ -111,6 +111,7 @@ class Home extends React.Component {
                 <List.Item>
                   <Card
                     hoverable
+                    bordered
                     tabBarExtraContent
                     className="search-result-card"
                     // style={{ width: 240 }}
