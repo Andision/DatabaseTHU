@@ -7,6 +7,7 @@ import {
 } from '@ant-design/icons';
 
 import './index.css'
+import axios from 'axios';
 
 const { Search } = Input;
 const { Meta } = Card;
@@ -26,7 +27,7 @@ const test_title = [
 ]
 
 const data = Array.from({ length: 23 }).map((_, i) => ({
-  href: '/detail?id='+(i % 4 + 1),
+  href: '/detail?id=' + (i % 4 + 1),
   title: test_title[(i % 4 + Math.floor(i / 4)) % 4],
   pic: test_pic[(i % 4 + Math.floor(i / 4)) % 4],
   avatar: 'https://joeschmoe.io/api/v1/random',
@@ -38,7 +39,30 @@ const data = Array.from({ length: 23 }).map((_, i) => ({
 // const search = querystring.parse(this.props.location.search.slice(1))
 
 class Home extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      showData: data
+    }
+  }
   componentDidMount() {
+    axios.post('/hydrologyAPI/data_list/', { "text": '' }).then((response) => {
+      // console.log(response.data.data)
+      // this.dataProcess(response.data.data)
+      var ret = []
+      for (var i = 0; i < response.data.data.length; i++) {
+        ret.push({
+          href: '/detail?id=' + response.data.data[i].id,
+          title: response.data.data[i].title,
+          pic: '/' + response.data.data[i].picture,
+          description: Math.floor(Math.random() * 1000),
+        })
+      }
+      this.setState({
+        showData: ret
+      })
+    });
+
     // console.log(this.props.location.search)
     // console.log(querystring.parse(this.props.location.search.slice(1)))
     // this.setState(querystring.parse(this.props.location.search.slice(1)))
@@ -48,6 +72,22 @@ class Home extends React.Component {
       // this.setState({search:search})
       // console.log(search)
       window.history.pushState({}, '', '/search?search=' + search);
+      axios.post('/hydrologyAPI/data_list/', { "text": search }).then((response) => {
+        // console.log(response.data.data)
+        // this.dataProcess(response.data.data)
+        var ret = []
+        for (var i = 0; i < response.data.data.length; i++) {
+          ret.push({
+            href: '/detail?id=' + response.data.data[i].id,
+            title: response.data.data[i].title,
+            pic: '/' + response.data.data[i].picture,
+            description: Math.floor(Math.random() * 1000),
+          })
+        }
+        this.setState({
+          showData: ret
+        })
+      });
     };
     return (
       <div className='search-bg'>
@@ -82,7 +122,7 @@ class Home extends React.Component {
               // showSizeChanger:true
             }
             }
-            dataSource={data}
+            dataSource={this.state.showData}
             footer={
               <div>
                 {/* <b>ant design</b> footer part */}
@@ -115,8 +155,8 @@ class Home extends React.Component {
                     tabBarExtraContent
                     className="search-result-card"
                     // style={{ width: 240 }}
-                    cover={ <div className="mask" style={{backgroundImage:"url("+item.pic+")",height:"150px",backgroundSize:"contain",backgroundPosition: "center center",backgroundRepeat: "no-repeat",backgroundColor:"white"}}></div>}
-                    // cover={<img alt="example" src={item.pic} className="search-result-card-pic" />}
+                    cover={<div className="mask" style={{ backgroundImage: "url(" + item.pic + ")", height: "150px", backgroundSize: "contain", backgroundPosition: "center center", backgroundRepeat: "no-repeat", backgroundColor: "white" }}></div>}
+                  // cover={<img alt="example" src={item.pic} className="search-result-card-pic" />}
                   >
                     <Meta className="search-result-card-meta" title={item.title} description={<div><EyeOutlined />{' ' + item.description}</div>} />
                   </Card>
