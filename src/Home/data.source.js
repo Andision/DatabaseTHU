@@ -12,6 +12,7 @@ export const Nav00DataSource = {
     className: 'header0-menu',
     children: [
       { name: 'item0', a: { children: '首页', href: '/' } },
+      // { name: 'item0', a: { children: '地图', href: '/test' } },
       { name: 'item1', a: { children: '数据', href: '/search' } },
       { name: 'item2', a: { children: '登录', href: '/login' } },
       { name: 'item3', a: { children: '注册', href: '/register' } },

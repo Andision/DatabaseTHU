@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, List, Input, Card } from 'antd';
+import { Row, List, Input, Card, Skeleton } from 'antd';
 import { withRouter } from 'react-router-dom';
 import querystring from "querystring"
 import {
@@ -42,7 +42,8 @@ class Home extends React.Component {
   constructor() {
     super()
     this.state = {
-      showData: data
+      showData: data,
+      loading: true
     }
   }
   componentDidMount() {
@@ -54,12 +55,13 @@ class Home extends React.Component {
         ret.push({
           href: '/detail?id=' + response.data.data[i].id,
           title: response.data.data[i].title,
-          pic: '/' + response.data.data[i].picture,
+          pic: response.data.data[i].picture,
           description: Math.floor(Math.random() * 1000),
         })
       }
       this.setState({
-        showData: ret
+        showData: ret,
+        loading: false
       })
     });
 
@@ -71,6 +73,9 @@ class Home extends React.Component {
     const onSearch = (search) => {
       // this.setState({search:search})
       // console.log(search)
+      this.setState({
+        loading: true
+      })
       window.history.pushState({}, '', '/search?search=' + search);
       axios.post('/hydrologyAPI/data_list/', { "text": search }).then((response) => {
         // console.log(response.data.data)
@@ -85,7 +90,8 @@ class Home extends React.Component {
           })
         }
         this.setState({
-          showData: ret
+          showData: ret,
+          loading: false
         })
       });
     };
@@ -100,38 +106,39 @@ class Home extends React.Component {
           <Search className='search-searchbar' placeholder="搜索关键字" defaultValue={querystring.parse(this.props.location.search.slice(1)).search} onSearch={onSearch} enterButton allowClear size="large" />
         </Row>
         <Row className='search-result'>
-          <List
-            grid={{
-              gutter: 16,
-              xs: 1,
-              sm: 2,
-              md: 3,
-              lg: 4,
-              xl: 4,
-              xxl: 4,
-            }}
-            itemLayout="vertical"
-            size="large"
-            pagination={{
-              onChange: page => {
-                // console.log(page);
-              },
-              pageSize: 12,
-              position: 'bottom',
-              // showQuickJumper:true,
-              // showSizeChanger:true
-            }
-            }
-            dataSource={this.state.showData}
-            footer={
-              <div>
-                {/* <b>ant design</b> footer part */}
-              </div>
-            }
-            renderItem={item => (
-              <a className="search-item" href={item.href}>
+          <Skeleton active loading={this.state.loading} paragraph={{ rows: 30 }}>
+            <List
+              grid={{
+                gutter: 16,
+                xs: 1,
+                sm: 2,
+                md: 3,
+                lg: 4,
+                xl: 4,
+                xxl: 4,
+              }}
+              itemLayout="vertical"
+              size="large"
+              pagination={{
+                onChange: page => {
+                  // console.log(page);
+                },
+                pageSize: 12,
+                position: 'bottom',
+                // showQuickJumper:true,
+                // showSizeChanger:true
+              }
+              }
+              dataSource={this.state.showData}
+              footer={
+                <div>
+                  {/* <b>ant design</b> footer part */}
+                </div>
+              }
+              renderItem={item => (
+                <a className="search-item" href={item.href}>
 
-                {/* <List.Item
+                  {/* <List.Item
                   key={item.title}
                   // actions={[
                   //   <IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
@@ -148,22 +155,23 @@ class Home extends React.Component {
                 >
                   {item.content}
                 </List.Item> */}
-                <List.Item>
-                  <Card
-                    hoverable
-                    bordered
-                    tabBarExtraContent
-                    className="search-result-card"
-                    // style={{ width: 240 }}
-                    cover={<div className="mask" style={{ backgroundImage: "url(" + item.pic + ")", height: "150px", backgroundSize: "contain", backgroundPosition: "center center", backgroundRepeat: "no-repeat", backgroundColor: "white" }}></div>}
-                  // cover={<img alt="example" src={item.pic} className="search-result-card-pic" />}
-                  >
-                    <Meta className="search-result-card-meta" title={item.title} description={<div><EyeOutlined />{' ' + item.description}</div>} />
-                  </Card>
-                </List.Item>
-              </a>
-            )}
-          />
+                  <List.Item>
+                    <Card
+                      hoverable
+                      bordered
+                      tabBarExtraContent
+                      className="search-result-card"
+                      // style={{ width: 240 }}
+                      cover={<div className="mask" style={{ backgroundImage: "url(" + item.pic + ")", height: "150px", backgroundSize: "contain", backgroundPosition: "center center", backgroundRepeat: "no-repeat", backgroundColor: "white" }}></div>}
+                    // cover={<img alt="example" src={item.pic} className="search-result-card-pic" />}
+                    >
+                      <Meta className="search-result-card-meta" title={item.title} description={<div><EyeOutlined />{' ' + item.description}</div>} />
+                    </Card>
+                  </List.Item>
+                </a>
+              )}
+            />
+          </Skeleton>
         </Row>
       </div>
     )
