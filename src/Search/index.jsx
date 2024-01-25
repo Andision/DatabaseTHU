@@ -108,6 +108,7 @@ class Home extends React.Component {
         <Row className='search-result'>
           <Skeleton active loading={this.state.loading} paragraph={{ rows: 30 }}>
             <List
+              style={{ width: "100%" }}
               grid={{
                 gutter: 16,
                 xs: 1,

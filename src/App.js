@@ -7,6 +7,7 @@ import Footer from './Home/Footer1';
 import Home from './Home';
 import Search from './Search';
 import Detail from './Detail';
+import Observe from './Observe';
 import Login from './Login';
 import Register from './Register';
 import Test from './Test';
@@ -45,6 +46,7 @@ class App extends Component {
           <Header dataSource={Nav00DataSource} isMobile={this.state.isMobile} />
           <Route exact path="/" component={Home} />
           <Route path="/search" component={Search} />
+          <Route path="/observe" component={Observe} />
           <Route path="/detail" component={Detail} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
