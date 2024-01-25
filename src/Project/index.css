@@ -1,0 +1,65 @@
+.project-background {
+    min-height: 100%;
+    background-color: aqua;
+    background-color: #f6f6f6;
+    padding-bottom: 50px;
+
+}
+
+.project-row {
+    width: 100%;
+}
+
+.project-row-margin {
+    margin-top: 50px;
+}
+
+.project-banner {
+    background: url("https://heihe.tpdc.ac.cn/static/static-heihe/img/observe-hiwater/test1.jpg") no-repeat center;
+    background-size: cover;
+    height: 220px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.project-banner-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+
+}
+
+.project-banner-content>h1 {
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+
+.project-banner-content>p {
+    margin: 0;
+}
+
+
+.project-content {
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    max-width: 800px;
+}
+
+.project-tab{
+    margin-top: 50px;
+}
+
+.project-tab>.ant-tabs-content-holder {
+    text-align: left;
+    white-space: pre-line;
+    min-height: 200px;
+}
+
+.project-title{
+    margin-top: 50px;
+}
+
+.project-partner-list .ant-card-meta-description{
+    color: black;
+}
