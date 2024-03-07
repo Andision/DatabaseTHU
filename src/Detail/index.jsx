@@ -148,7 +148,8 @@ class Home extends React.Component {
                                             <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                                                 <Image
                                                     width="100%"
-                                                    src="https://s1.ax1x.com/2022/09/07/vH5QhR.png"
+                                                    src={this.state.allData.picture}
+                                                    // src="https://s1.ax1x.com/2022/09/07/vH5QhR.png"
                                                 />
                                                 {/* <img src="https://s1.ax1x.com/2022/09/07/vH5QhR.png" alt='alt' width="100%"></img> */}
                                             </Col>
