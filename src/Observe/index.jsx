@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Typography, Button, Modal, List, Card, Tag, Image, Avatar } from 'antd';
+import { Row, Col, Typography, Button, Modal, List, Card, Tag, Image, Avatar,Divider  } from 'antd';
 import { DownloadOutlined, UnorderedListOutlined } from '@ant-design/icons';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
@@ -14,20 +14,20 @@ const staticData = {
     project: [
         {
             logo: "https://heihe.tpdc.ac.cn/static/static-heihe/img/hiwaterLogo.png",
-            title: "HiWATER",
-            subtitle: "黑河生态水文遥感试验",
-            picture: "https://heihe.tpdc.ac.cn/static/static-heihe/img/hiwater.jpg",
-            text: "“黑河流域生态-水文过程综合遥感观测联合试验”是围绕基金委“黑河流域生态-水文集成研究”重大研究计划中的核心科学目标，以黑河流域已建立的观测系统以及2007～2009年开展的“黑河综合遥感联合试验”成果为基础，联合多学科、多机构、多项目的科研人员，于2012～2015年在黑河流域开展的一次卫星和航空遥感及地面观测互相配合的多尺度综合观测试验。",
-            link: "https://heihe.tpdc.ac.cn/static/static-heihe/img/hiwaterLogo.png"
+            title: "黄河内蒙古段生态水文综合观测试验",
+            subtitle: "",
+            picture: "https://s21.ax1x.com/2024/03/09/pFs4dnH.png",
+            text: "“黄河流域内蒙古段生态-水文过程综合观测试验”是围绕内蒙古科技厅“黑河流域生态-水文集成研究”重大研究计划中的核心科学目标，以黄河流域内蒙古段已建立的观测系统以及2020～2023年开展的“黄河流域内蒙古段综合观测试验”成果为基础，联合多学科、多机构、多项目的科研人员，于2020～2023年在黄河流域内蒙古段开展的卫星、无人机及地面观测互相配合的多尺度综合观测试验。",
+            link: "/project"
 
         },
         {
             logo: "https://heihe.tpdc.ac.cn/static/static-heihe/img/waterLogo.png",
-            title: "WATER实验",
-            subtitle: "黑河综合遥感联合试验",
-            picture: "https://heihe.tpdc.ac.cn/static/static-heihe/img/water.png",
-            text: "“黑河综合遥感联合试验”是由中国科学院西部行动计划（二期）项目“黑河流域遥感 -地面观测同步试验与综合模拟平台建设”与国家重点基础研究发展计划（973计划）项目“陆表生态环境要素主被动遥感协同反演理论与方法”共同设计并组织实施。是在流域尺度上开展的，以水循环及与之密切联系的生态过程为主要研究对象的大型航空、卫星遥感与地面同步观测科学试验...",
-            link: "https://heihe.tpdc.ac.cn/static/static-heihe/img/waterLogo.png"
+            title: "黄河内蒙古段生态水文专题试验",
+            subtitle: "",
+            picture: "https://s21.ax1x.com/2024/03/09/pFs4Uje.jpg",
+            text: "“黄河内蒙古段生态水文综合观测试验”专题试验是针对特定的水文或生态过程，组织开展的综合性加强试验，包括流域植被生态和土壤特性调查试验、中小尺度无人机遥感观测试验、不同侵蚀类型区植被格局的生态及水文观测实验等。为系统辨析流域生态水文与气象、土壤、环境要素的时空演变规律，提出符合流域内不同地貌单元自身生态特点的生态修复模式，研究流域生态水文耦合机理、退化和恢复机制等提供坚实的基础。",
+            link: "/project"
 
         }
     ],
@@ -75,6 +75,10 @@ class Home extends React.Component {
             <div className='observe-background' >
                 {staticData.project.map((item, index) => (
                     <div className='observe-project-row'>
+                        {index != 0 && 
+                        <Row className='observe-project-divider'>
+                            <Divider />
+                        </Row>}
                         <Row className='observe-project-title-row observe-project-title-row'>
                             <Col span={24} style={{ textAlign: "center" }}>
                                 <div style={{ textAlign: "center" }}>
