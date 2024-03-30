@@ -9,4 +9,8 @@ module.exports = override(
   addLessLoader({
     javascriptEnabled: true,
   }),
+  addBabelPlugin([
+    '@babel/plugin-proposal-nullish-coalescing-operator',
+    { loose: true }
+  ])
  );
