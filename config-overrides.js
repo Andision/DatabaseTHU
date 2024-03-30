@@ -1,4 +1,4 @@
-const { override, fixBabelImports, addLessLoader,addBabelPlugin } = require('customize-cra');
+const { override, fixBabelImports, addLessLoader } = require('customize-cra');
 
 module.exports = override(
    fixBabelImports('import', {
@@ -8,9 +8,5 @@ module.exports = override(
   }),
   addLessLoader({
     javascriptEnabled: true,
-  }),
-  addBabelPlugin([
-    '@babel/plugin-proposal-nullish-coalescing-operator',
-    { loose: true }
-  ])
+  })
  );

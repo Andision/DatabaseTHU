@@ -13,10 +13,10 @@ export const Nav00DataSource = {
     children: [
       { name: 'item0', a: { children: '首页', href: '/' } },
       { name: 'item1', a: { children: '观测', href: '/observe' } },
-      // { name: 'item0', a: { children: '地图', href: '/test' } },
-      { name: 'item2', a: { children: '数据', href: '/search' } },
-      { name: 'item3', a: { children: '登录', href: '/login' } },
-      { name: 'item4', a: { children: '注册', href: '/register' } },
+      { name: 'item2', a: { children: '地图', href: '/map' } },
+      { name: 'item3', a: { children: '数据', href: '/search' } },
+      { name: 'item4', a: { children: '登录', href: '/login' } },
+      { name: 'item5', a: { children: '注册', href: '/register' } },
     ],
   },
   mobileMenu: { className: 'header0-mobile-menu' },
@@ -171,8 +171,8 @@ export const Content40DataSource = {
   video: {
     className: 'content4-video',
     children: {
-      video: 'https://os.alipayobjects.com/rmsportal/EejaUGsyExkXyXr.mp4',
-      image: 'https://zos.alipayobjects.com/rmsportal/HZgzhugQZkqUwBVeNyfz.jpg',
+      video: 'http://cloud.gutemorgan.com:18888/ads/huanghe/huanghe24jieqi.mp4',
+      image: 'http://cloud.gutemorgan.com:18888/ads/huanghe/huanghe24jieqi.jpg',
     },
   },
 };
@@ -198,8 +198,8 @@ export const Content41DataSource = {
   video: {
     className: 'content4-video',
     children: {
-      video: 'https://os.alipayobjects.com/rmsportal/EejaUGsyExkXyXr.mp4',
-      image: 'https://zos.alipayobjects.com/rmsportal/HZgzhugQZkqUwBVeNyfz.jpg',
+      video: 'http://cloud.gutemorgan.com:18888/ads/huanghe/huangheneimenggu.mp4',
+      image: 'http://cloud.gutemorgan.com:18888/ads/huanghe/huangheneimenggu.jpg',
     },
   },
 };

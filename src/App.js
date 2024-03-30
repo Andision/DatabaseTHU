@@ -11,7 +11,7 @@ import Observe from './Observe';
 import Project from './Project';
 import Login from './Login';
 import Register from './Register';
-import Test from './Test';
+import Map from './Map';
 // import Password from './Password';
 
 import {
@@ -52,7 +52,7 @@ class App extends Component {
           <Route path="/detail" component={Detail} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/test" component={Test} />
+          <Route path="/map" component={Map} />
           {/* <Route path="/password" component={Password} /> */}
           <Footer dataSource={Footer10DataSource} isMobile={this.state.isMobile} />
         </div>
