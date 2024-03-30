@@ -16,18 +16,18 @@ const staticData = {
             logo: "https://heihe.tpdc.ac.cn/static/static-heihe/img/hiwaterLogo.png",
             title: "黄河内蒙古段生态水文综合观测试验",
             subtitle: "",
-            picture: "https://s21.ax1x.com/2024/03/09/pFs4dnH.png",
+            picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project1.title.png",
             text: "“黄河流域内蒙古段生态-水文过程综合观测试验”是围绕内蒙古科技厅“黑河流域生态-水文集成研究”重大研究计划中的核心科学目标，以黄河流域内蒙古段已建立的观测系统以及2020～2023年开展的“黄河流域内蒙古段综合观测试验”成果为基础，联合多学科、多机构、多项目的科研人员，于2020～2023年在黄河流域内蒙古段开展的卫星、无人机及地面观测互相配合的多尺度综合观测试验。",
-            link: "/project"
+            link: "/project?id=1"
 
         },
         {
             logo: "https://heihe.tpdc.ac.cn/static/static-heihe/img/waterLogo.png",
             title: "黄河内蒙古段生态水文专题试验",
             subtitle: "",
-            picture: "https://s21.ax1x.com/2024/03/09/pFs4Uje.jpg",
+            picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project2.title.jpg",
             text: "“黄河内蒙古段生态水文综合观测试验”专题试验是针对特定的水文或生态过程，组织开展的综合性加强试验，包括流域植被生态和土壤特性调查试验、中小尺度无人机遥感观测试验、不同侵蚀类型区植被格局的生态及水文观测实验等。为系统辨析流域生态水文与气象、土壤、环境要素的时空演变规律，提出符合流域内不同地貌单元自身生态特点的生态修复模式，研究流域生态水文耦合机理、退化和恢复机制等提供坚实的基础。",
-            link: "/project"
+            link: "/project?id=2"
 
         }
     ],
@@ -82,7 +82,7 @@ class Home extends React.Component {
                         <Row className='observe-project-title-row observe-project-title-row'>
                             <Col span={24} style={{ textAlign: "center" }}>
                                 <div style={{ textAlign: "center" }}>
-                                    <Avatar style={{ float: "none" }} size={64} src={item.logo} />
+                                    {/* <Avatar style={{ float: "none" }} size={64} src={item.logo} /> */}
                                     <h1>{item.title}</h1>
                                     <p>{item.subtitle}</p>
                                 </div>
@@ -122,7 +122,12 @@ class Home extends React.Component {
 
                 ))}
 
-                <Row className='observe-project-title-row observe-project-title-row' style={{marginTop: "80px"}}>
+
+
+
+
+
+                {/* <Row className='observe-project-title-row observe-project-title-row' style={{marginTop: "80px"}}>
                     <Col span={24} style={{ textAlign: "center" }}>
                         <div style={{ textAlign: "center" }}>
                             <h1>数据专题</h1>
@@ -151,7 +156,7 @@ class Home extends React.Component {
                             )}
                         />
                     </Col>
-                </Row>
+                </Row> */}
 
 
 

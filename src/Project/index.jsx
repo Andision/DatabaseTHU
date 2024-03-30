@@ -12,8 +12,8 @@ const { Meta } = Card;
 
 const staticData1 = {
     title: "黄河内蒙古段生态水文综合观测试验",
-    subtitle:"",
-    english_title:"Comprehensive ecological and hydrological observation experiment on the Inner Mongolia section of the Yellow River",
+    subtitle: "",
+    english_title: "Comprehensive ecological and hydrological observation experiment on the Inner Mongolia section of the Yellow River",
     plan: [
         {
             title: "实验介绍",
@@ -51,7 +51,7 @@ const staticData1 = {
                     title: "场地定标与卫星/航空遥感的真实性试验",
                     description: "针对关键生态-水文过程的航空和卫星遥感产品，依托传感器网络，并辅之以必要的地面同步和加密观测，获取用于遥感产品真实性检验的地面观测数据集。在黄河流域内蒙古段德格纽河流域、河套灌区、西柳沟流域、磴口、杭锦后旗等多地分别布设地表样方156个（每个样点6个地面样方），对中小尺度蒸散发解译与地表水分反演进行验证。"
                 },
-                
+
             ],
             description: "航空遥感包括以下试验内容：（a）开展激光雷达（LiDAR）、红外广角双模式成像仪（WIDAS）、成像光谱仪和CCD像机的航空遥感试验，利用激光雷达航空遥感获取葫芦沟流域的DEM，分辨率为1 m；结合激光雷达和航空高光谱遥感数据开展高分辨率植被功能型、土地利用、种植结构和植被结构参数制图，分辨率为1-5 m；发展和改进地表温度、发射率、叶面积指数、粗糙度、反照率、亚像元积雪面积比例等关键生态水文变量／参数的遥感反演和估计方法。（b）开展L, K和Ka波段微波辐射计航空遥感试验，获取高精度的亮度温度数据，研究多频率、多极化机载微波辐射计反演雪深和雪水当量的方法。研究利用机载微波辐射计反演地表土壤水分、监测地表冻融循环的方法；针对植被和地表粗糙度对微波观测的影响，发展和改进土壤水分反演方法。",
             picture: ""
@@ -103,10 +103,10 @@ const staticData1 = {
 
     ],
     map_enable: true,
-    map: ["https://s21.ax1x.com/2024/03/18/pFRSQDe.png"],
+    map: ["http://cloud.gutemorgan.com:18888/ads/huanghe/project1.1.png"],
     communication: {
         description: "“黄河流域内蒙古段生态水文遥感试验”热忱欢迎国内外相关研究机构和个人的参与，欢迎合作者共享已观测或研制出的与研究区相关生态水文要素数据产品。参与的程序如下：合作者围绕“黄河流域内蒙古段生态水文遥感试验”的总体设计，提供拟解决的科学问题、研究方案、数据和观测，并附加观测实验或产品研制相关说明等，提交试验数据和产品，通过试验总体组评估后，合作者按有的数据类型、格式，会交数据和产品，并有权获取本试验中相应的观测数据。",
-        picture: "https://s21.ax1x.com/2024/03/18/pFRSMuD.jpg"
+        picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project1.2.jpg"
     },
     partner_enable: false,
     partner: [
@@ -148,8 +148,8 @@ const staticData1 = {
 
 const staticData2 = {
     title: "黄河内蒙古段生态水文专题试验",
-    subtitle:"",
-    english_title:"Special Experiment on Ecology and Hydrology in the Inner Mongolia Section of the Yellow River",
+    subtitle: "",
+    english_title: "Special Experiment on Ecology and Hydrology in the Inner Mongolia Section of the Yellow River",
     plan: [
         {
             title: "实验介绍",
@@ -170,13 +170,15 @@ const staticData2 = {
                 {
                     title: "试验介绍",
                     description: "为全面掌握流域植物群落现状、分布及生境条件，同时考虑到人力和财力的限制以及荒漠区的特点，结合《中国植被分布图》，对流域主要植物群落进行调查，保证研究区中每一种主要自然群落类型都能得到调查；对研究区的地带性、特有、珍稀、濒危以及有特殊用途和重要经济价值的群落进行精查。在每个选定的调查点上，选择目标植物群落，设置一个100 m×100 m的样方，利用GPS定位。结合无人机低空航拍（垂直照片），清查样方内的所有乔、灌、草植物种类组成，记录珍稀濒危植物。在样方内系统设置10 m×10 m的灌木样方，1 m×1 m的草本样方，1个土壤剖面调查点（图1），开展主要植物群落特征调查。调查主要观测点区域的气候要素、地下水位、河流状况（季节性河流、冲沟）；调查观测点的土壤类型，测定土壤有机质、氮、磷、pH 值、机械组成和 土壤水分等理化性质；每个群落中，采样深度为0-100 cm（分 6层）。挖掘和拍摄典型土壤剖面1份（0-100 cm）。除了上述调查获取的数据以外，需要利用无人机航拍和植物群落成像系统真实记录植物群落的空间特征。",
-                    picture_enable:true,
-                    picture:""
+                    picture_enable: true,
+                    picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project2.1.png"
                 },
                 {
                     title: "试验区介绍",
-                    description: "在黄河流域内蒙古段不同片区进行野外实验调查，自东向西沿黄河向上游选取了乌兰布和沙漠片区、狼山片区、河套灌区片区；中游选取了西柳沟流域，乌梁素海片区，昆都仑河流域，十大孔兑片区，下游选取了大黑河大青山片区、黑河蜜汗山片区、红河片区、准格尔东南片区等地不同下垫面的典型实验点。根据不同片区的下垫面和特殊植被类型，比如大黑河流域草地耕地，灌木地，林地混合地带，杭锦后旗的玉米和葵花地，磴口林地灌木地交错带。"
-                }                
+                    description: "在黄河流域内蒙古段不同片区进行野外实验调查，自东向西沿黄河向上游选取了乌兰布和沙漠片区、狼山片区、河套灌区片区；中游选取了西柳沟流域，乌梁素海片区，昆都仑河流域，十大孔兑片区，下游选取了大黑河大青山片区、黑河蜜汗山片区、红河片区、准格尔东南片区等地不同下垫面的典型实验点。根据不同片区的下垫面和特殊植被类型，比如大黑河流域草地耕地，灌木地，林地混合地带，杭锦后旗的玉米和葵花地，磴口林地灌木地交错带。",
+                    picture_enable: true,
+                    picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project2.title.jpg"
+                }
             ],
             description: "",
             picture: ""
@@ -187,11 +189,15 @@ const staticData2 = {
             sublist: [
                 {
                     title: "试验介绍",
-                    description: "综合分析典型生态修复模式的稳定性及其适生环境，明确典型生态修复模式的空间生态位。阐明草地、沙漠、砒砂岩等类型区典型生态恢复模式的生态耗水特征，厘定典型生态恢复模式的适宜水文阈值。界定不同立地单元的生态修复空间，配置适宜的生态恢复模式。\n（1）选取风沙区、黄土丘陵沟壑区、砒砂岩丘陵沟壑区等区域典型植被格局建立长期观测样地9处。安装土壤水分、温度、盐分三参数设备18套，小型蒸渗仪9套，简易径流小区9个，薄层水流设备3套，入渗壤中流设备2套、茎流仪8套、叶绿素仪2套、降雨模拟设备1套。\n（2）选取沙柳、沙蒿、柠条等全流域范围内的共有性植被为研究对象。开展典型植被降雨截留、土壤入渗、蒸散发、冲刷试验和人工降雨模拟等试验，确定沙柳、沙蒿、柠条等全流域范围内的广布型物种，适宜对比分析。"
+                    description: "综合分析典型生态修复模式的稳定性及其适生环境，明确典型生态修复模式的空间生态位。阐明草地、沙漠、砒砂岩等类型区典型生态恢复模式的生态耗水特征，厘定典型生态恢复模式的适宜水文阈值。界定不同立地单元的生态修复空间，配置适宜的生态恢复模式。\n（1）选取风沙区、黄土丘陵沟壑区、砒砂岩丘陵沟壑区等区域典型植被格局建立长期观测样地9处。安装土壤水分、温度、盐分三参数设备18套，小型蒸渗仪9套，简易径流小区9个，薄层水流设备3套，入渗壤中流设备2套、茎流仪8套、叶绿素仪2套、降雨模拟设备1套。\n（2）选取沙柳、沙蒿、柠条等全流域范围内的共有性植被为研究对象。开展典型植被降雨截留、土壤入渗、蒸散发、冲刷试验和人工降雨模拟等试验，确定沙柳、沙蒿、柠条等全流域范围内的广布型物种，适宜对比分析。",
+                    picture_enable: true,
+                    picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project2.2.png"
                 },
                 {
                     title: "试验区介绍",
-                    description: "试验区位于十大孔兑西柳沟西柳沟流域属于半干旱大陆性气候，季节性差异较明显，降雨集中在植物生长季的六到九月份，年平均降雨量267.7mm。该区域蒸发强烈，潜在蒸发量为2000mm气候特征为夏季降雨多以暴雨形式发生，春冬多风沙,年均风速为3.1-3.5m/s。年均温在5.3-6.19°C之间，最高温度可达40°C,最低温度为-34°C,积温为2499.7-2942.1°C。"
+                    description: "试验区位于十大孔兑西柳沟西柳沟流域属于半干旱大陆性气候，季节性差异较明显，降雨集中在植物生长季的六到九月份，年平均降雨量267.7mm。该区域蒸发强烈，潜在蒸发量为2000mm气候特征为夏季降雨多以暴雨形式发生，春冬多风沙,年均风速为3.1-3.5m/s。年均温在5.3-6.19°C之间，最高温度可达40°C,最低温度为-34°C,积温为2499.7-2942.1°C。",
+                    picture_enable: true,
+                    picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project2.4.png"
                 }
             ],
         },
@@ -201,23 +207,33 @@ const staticData2 = {
             sublist: [
                 {
                     title: "试验介绍",
-                    description: "针对流域内森林、草原、湖泊、荒漠及沙漠等不同类型区，在景观群落、群落生态带、小流域等尺度，开展黄河流域内蒙段典型区中、小尺度蒸散发观测试验。观测蒸发、蒸腾、土壤呼吸、净光合速率、蒸腾速率、气孔导度、温室气体与生态系统水碳氮-能量通量等要素。结合稳定同位素观测，开展涡度相关测量，获取异质性地表的中小尺度蒸散发等通量观测资料。结合历史监测数据，经时间序列分析、小波分析、信息熵与地统计分析等多方法联用，识别流域降水、蒸散发、径流、气温、辐射、泥沙等水文气象变量/参数的时空特征，揭示蒸散发的时空异质性、尺度效应及其驱动力，系统辨析水文气象要素的时空演变规律及其协同变异性。基于热红外可见光的植被-土壤温度解译，在研究区内选取20个试验点，120个地标样方进行无人机航测试验，同时在地面标定样方内进行植被冠层、地表土壤、空气的温度测量进行协同验证。在每年的5-10月植被生长季，每月一次，调查植被参数包括植被类型、LAI、高度、叶宽、冠幅。"
+                    description: "针对流域内森林、草原、湖泊、荒漠及沙漠等不同类型区，在景观群落、群落生态带、小流域等尺度，开展黄河流域内蒙段典型区中、小尺度蒸散发观测试验。观测蒸发、蒸腾、土壤呼吸、净光合速率、蒸腾速率、气孔导度、温室气体与生态系统水碳氮-能量通量等要素。结合稳定同位素观测，开展涡度相关测量，获取异质性地表的中小尺度蒸散发等通量观测资料。结合历史监测数据，经时间序列分析、小波分析、信息熵与地统计分析等多方法联用，识别流域降水、蒸散发、径流、气温、辐射、泥沙等水文气象变量/参数的时空特征，揭示蒸散发的时空异质性、尺度效应及其驱动力，系统辨析水文气象要素的时空演变规律及其协同变异性。基于热红外可见光的植被-土壤温度解译，在研究区内选取20个试验点，120个地标样方进行无人机航测试验，同时在地面标定样方内进行植被冠层、地表土壤、空气的温度测量进行协同验证。在每年的5-10月植被生长季，每月一次，调查植被参数包括植被类型、LAI、高度、叶宽、冠幅。",
+                    picture_enable: true,
+                    picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project2.5.png"
                 },
                 {
                     title: "LAI叶面积指数测定",
-                    description: "对实验点不同下垫面的样方进行LAI的测定。具体步骤:使用英国SunScan type SS1植物冠层分析仪，在云层均匀或者晴天的的正午前后三小时的测量时间段内，先调整好三脚架，使顶部的BFS传感器位置水平，方向正北，无阴影和光线遮挡，然后连接手持数据记录仪和手持SunScan探测器，针对不同的植被类型设置好ELADP和叶片吸收率，再利用手持探测器对样方植被下层区域进行对角和中线位置的三次LAI测量，可进行重复多次测量，读取保存数据。"
+                    description: "对实验点不同下垫面的样方进行LAI的测定。具体步骤:使用英国SunScan type SS1植物冠层分析仪，在云层均匀或者晴天的的正午前后三小时的测量时间段内，先调整好三脚架，使顶部的BFS传感器位置水平，方向正北，无阴影和光线遮挡，然后连接手持数据记录仪和手持SunScan探测器，针对不同的植被类型设置好ELADP和叶片吸收率，再利用手持探测器对样方植被下层区域进行对角和中线位置的三次LAI测量，可进行重复多次测量，读取保存数据。",
+                    picture_enable: true,
+                    picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project2.6.jpg"
                 },
                 {
                     title: "地面温度信息测定",
-                    description: "在上述调查样方内，在无人机飞行同时，在地面使用测温枪对植被冠层和地表以及地面温度验证点黑白板进行温度测量；选取不同点测试冠层温度代表样方平均值；地表土壤温度同理，分别测试地表光照和阴影处，测试要能代表平均值，注意不要在无人机飞行至样方上空时遮挡样方光线；冠层上方1.5m处温度使用温度计测量。"
+                    description: "在上述调查样方内，在无人机飞行同时，在地面使用测温枪对植被冠层和地表以及地面温度验证点黑白板进行温度测量；选取不同点测试冠层温度代表样方平均值；地表土壤温度同理，分别测试地表光照和阴影处，测试要能代表平均值，注意不要在无人机飞行至样方上空时遮挡样方光线；冠层上方1.5m处温度使用温度计测量。",
+                    picture_enable: true,
+                    picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project2.7.jpg"
                 },
                 {
                     title: "土壤水分测定",
-                    description: "利用手持TDR选取不同采样点测试不同深度（3.8cm、7.5cm、12cm、21cm）土壤水分；并用取土钻对表层土壤（3.8cm、7.5cm）进行取土并装入标记好铝盒内用防水胶带进行密封。回到实验室先对土壤进行湿重称重，再对胶带纸进行称重；将铝盒打开放入烘箱中进行105℃十小时的烘干，取出后对其再次称重获得干重；再将烘干后的土倒出并清洗铝盒，待其完全晾干后对每个铝盒进行称重。最后可得出土壤的质量含水率用于进行对TDR的校准。根据实验室测得的土壤水分与TDR测量的土壤水分，分别对不同深度（3.8cm、7.5cm）进行拟合，分析对比校准TDR所测土壤水分数据。"
+                    description: "利用手持TDR选取不同采样点测试不同深度（3.8cm、7.5cm、12cm、21cm）土壤水分；并用取土钻对表层土壤（3.8cm、7.5cm）进行取土并装入标记好铝盒内用防水胶带进行密封。回到实验室先对土壤进行湿重称重，再对胶带纸进行称重；将铝盒打开放入烘箱中进行105℃十小时的烘干，取出后对其再次称重获得干重；再将烘干后的土倒出并清洗铝盒，待其完全晾干后对每个铝盒进行称重。最后可得出土壤的质量含水率用于进行对TDR的校准。根据实验室测得的土壤水分与TDR测量的土壤水分，分别对不同深度（3.8cm、7.5cm）进行拟合，分析对比校准TDR所测土壤水分数据。",
+                    picture_enable: true,
+                    picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project2.8.jpg"
                 },
                 {
                     title: "无人机飞行实验",
-                    description: "结合landsat和哨兵卫星过境的时间基础上，飞行参数设置为飞行高度100m, 航向重叠率70%，旁向重叠率80%，进行同步无人机遥感影像实验。保证黄河流域内蒙古段不同片区的试验点的卫星过境时间和无人机遥感测量时间相吻合，无人机每次航测时刻中间点在卫星过境时刻附近。以大黑河流域无人机影像为例，对其热红外影像及可见光影像进行拼接，通过植被指数提取植被分布图，并解译无人机热红外影像温度信息。将无人机热红外影像进行温度校准，利用地面验证点黑白板和样方冠层温度实测值与热红外影像相对应点的温度值进行线性校准。\n 试验区介绍：在黄河流域内蒙古段不同片区开展地面和无人机协同观测实验，自东向西选取了乌海、磴口、杭锦后旗、五原、乌梁素海、包头、达拉特旗、大黑河、草原所等20余个不同试验点，下垫面类型涉及耕地、草地、林地、灌木等植被类型，其中无人机热红外和开见光同步开展观测试验点包括9个、无人机可见光单独观测试验点包括11个。"
+                    description: "结合landsat和哨兵卫星过境的时间基础上，飞行参数设置为飞行高度100m, 航向重叠率70%，旁向重叠率80%，进行同步无人机遥感影像实验。保证黄河流域内蒙古段不同片区的试验点的卫星过境时间和无人机遥感测量时间相吻合，无人机每次航测时刻中间点在卫星过境时刻附近。以大黑河流域无人机影像为例，对其热红外影像及可见光影像进行拼接，通过植被指数提取植被分布图，并解译无人机热红外影像温度信息。将无人机热红外影像进行温度校准，利用地面验证点黑白板和样方冠层温度实测值与热红外影像相对应点的温度值进行线性校准。\n 试验区介绍：在黄河流域内蒙古段不同片区开展地面和无人机协同观测实验，自东向西选取了乌海、磴口、杭锦后旗、五原、乌梁素海、包头、达拉特旗、大黑河、草原所等20余个不同试验点，下垫面类型涉及耕地、草地、林地、灌木等植被类型，其中无人机热红外和开见光同步开展观测试验点包括9个、无人机可见光单独观测试验点包括11个。",
+                    picture_enable: true,
+                    picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project2.9.jpg"
                 }
             ],
         },
@@ -227,34 +243,37 @@ const staticData2 = {
         }
 
     ],
-    map_enable: true,
-    map: ["https://s21.ax1x.com/2024/03/18/pFRSQDe.png"],
+    map_enable: false,
+    map: ["http://cloud.gutemorgan.com:18888/ads/huanghe/project1.1.png"],
     communication: {
         description: "“黄河流域内蒙古段生态水文遥感试验”热忱欢迎国内外相关研究机构和个人的参与，欢迎合作者共享已观测或研制出的与研究区相关生态水文要素数据产品。参与的程序如下：合作者围绕“黄河流域内蒙古段生态水文遥感试验”的总体设计，提供拟解决的科学问题、研究方案、数据和观测，并附加观测实验或产品研制相关说明等，提交试验数据和产品，通过试验总体组评估后，合作者按有的数据类型、格式，会交数据和产品，并有权获取本试验中相应的观测数据。",
-        picture: "https://s21.ax1x.com/2024/03/18/pFRSMuD.jpg"
+        picture: "http://cloud.gutemorgan.com:18888/ads/huanghe/project1.2.jpg"
     },
     partner_enable: true,
     partner: [
         {
             title: "清华大学水利系",
-            logo: "https://heihe.tpdc.ac.cn/static/static-heihe/img/observe-hiwater/gjzrkxjjwyh.jpg"
+            logo: "http://cloud.gutemorgan.com:18888/ads/huanghe/tsinghua.png"
         },
         {
             title: "内蒙古农业大学",
-            logo: "https://heihe.tpdc.ac.cn/static/static-heihe/img/observe-hiwater/zgkxy.jpg"
+            logo: "http://cloud.gutemorgan.com:18888/ads/huanghe/imau.jpg"
         },
         {
             title: "中国水科院牧科所",
-            logo: "https://heihe.tpdc.ac.cn/static/static-heihe/img/observe-hiwater/zkyhhygydlxxkxyjs.jpg"
+            logo: "http://cloud.gutemorgan.com:18888/ads/huanghe/iwhr.png"
         }
     ]
 }
 
-const staticData = staticData2
+let staticData = staticData2
 
 class Home extends React.Component {
     constructor() {
         super();
+        this.state = {
+            staticData: staticData1,
+        }
     };
     componentDidMount() {
         const data_id = querystring.parse(this.props.location.search.slice(1)).id
@@ -263,11 +282,18 @@ class Home extends React.Component {
 
         }
         else {
-
-            // axios.post('/hydrologyAPI/data/', { "data_id": data_id }).then((response) => {
-            //     // console.log(response)
-            //     this.dataProcess(response.data.data)
-            // });
+            if (data_id === '1') {
+                this.setState({
+                    staticData: staticData1,
+                })
+            }
+            else if (data_id === "2") {
+                this.setState({
+                    staticData: staticData2,
+                })
+            }
+            else {
+            }
         }
     }
     render() {
@@ -277,9 +303,9 @@ class Home extends React.Component {
                     <Col span={24}>
                         <div className="project-banner">
                             <div className="project-banner-content">
-                                <h1>{staticData.title}</h1>
+                                <h1>{this.state.staticData.title}</h1>
                                 <p></p>
-                                <span>{staticData.english_title}</span>
+                                <span>{this.state.staticData.english_title}</span>
                             </div>
                         </div>
                     </Col>
@@ -301,7 +327,7 @@ class Home extends React.Component {
                                         defaultActiveKey="1"
                                         centered
                                         size="large"
-                                        items={staticData.plan.map((item, i) => {
+                                        items={this.state.staticData.plan.map((item, i) => {
                                             let child = item.description
                                             if (item.subtitle) {
                                                 child =
@@ -313,7 +339,19 @@ class Home extends React.Component {
                                                                 return {
                                                                     label: sub.title,
                                                                     key: subIndex,
-                                                                    children: sub.description,
+                                                                    children: (
+                                                                        <>
+                                                                            <Row>
+                                                                                <Col span={24}>{sub.description}</Col>
+                                                                            </Row>
+                                                                            {sub.picture_enable &&
+                                                                                <Row style={{marginTop:"50px"}}>
+                                                                                    <Col span={4}></Col>
+                                                                                    <Col span={16}><Image width="100%" src={sub.picture} /></Col>
+                                                                                    <Col span={4}></Col>
+                                                                                </Row>
+                                                                            }
+                                                                        </>),
                                                                 };
                                                             })}
                                                         />
@@ -330,18 +368,18 @@ class Home extends React.Component {
                             </Row>
 
 
-                            {staticData.map_enable && <Row className="project-row project-title">
+                            {this.state.staticData.map_enable && <Row className="project-row project-title">
                                 <Col span={24}>
                                     <h1>试验区地图</h1>
                                 </Col>
                             </Row>
                             }
 
-                            {staticData.map_enable && <Row className="project-row project-row-margin" gutter={30}>
+                            {this.state.staticData.map_enable && <Row className="project-row project-row-margin" gutter={30}>
                                 <Col span={24}>
                                     <Image
                                         width="100%"
-                                        src={staticData.map[0]}
+                                        src={this.state.staticData.map[0]}
                                     />
                                 </Col>
                             </Row>
@@ -356,11 +394,11 @@ class Home extends React.Component {
                             <Row className="project-row project-row-margin" gutter={30}>
 
                                 <Col span={16} style={{ textAlign: "left" }}>
-                                    {staticData.communication.description}
+                                    {this.state.staticData.communication.description}
                                 </Col>
                                 <Col span={8}>
                                     <Image
-                                        src={staticData.communication.picture}
+                                        src={this.state.staticData.communication.picture}
                                     />
                                 </Col>
 
@@ -368,14 +406,14 @@ class Home extends React.Component {
 
 
 
-                            {staticData.partner_enable && <Row className="project-row project-title">
+                            {this.state.staticData.partner_enable && <Row className="project-row project-title">
                                 <Col span={24}>
                                     <h1>合作单位</h1>
                                 </Col>
                             </Row>
                             }
 
-                            {staticData.partner_enable && <Row className="project-row project-row-margin" gutter={30}>
+                            {this.state.staticData.partner_enable && <Row className="project-row project-row-margin" gutter={30}>
                                 <Col span={24}>
                                     <List
                                         className='project-partner-list'
@@ -388,11 +426,11 @@ class Home extends React.Component {
                                             xl: 3,
                                             xxl: 3,
                                         }}
-                                        dataSource={staticData.partner}
+                                        dataSource={this.state.staticData.partner}
                                         renderItem={item => (
                                             <List.Item>
                                                 <Card
-                                                    style={{ height: 85 }}
+                                                    style={{ height: 70 }}
                                                 >
                                                     <Meta
                                                         avatar={<Avatar src={item.logo} />}
