@@ -675,14 +675,14 @@ export default class Home extends PureComponent {
         {/*  地图的挂载点，可以设置大小，控制地图的大小 */}
         {/* <div id="map" style={{ width: '1920px', height: "1080px" }} /> */}
         <Card
-          style={{
-            width: 400,
-            position: 'absolute',
-            top: '100px',
-            left: '100px',
-            backgroundColor: 'rgba(255, 255, 255, 0.6)'
-
-          }}
+        className='map-option-card'
+          // style={{
+          //   width: 400,
+          //   position: 'absolute',
+          //   top: '100px',
+          //   left: '100px',
+          //   backgroundColor: 'rgba(255, 255, 255, 0.6)'
+          // }}
         >
           {/* <Button onClick={onGetCenter}>GetCenter</Button>
           <Button onClick={onShowHaidian}>ShowHaidian</Button>
