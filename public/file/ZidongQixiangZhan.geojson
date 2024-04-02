@@ -1,0 +1,10 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.550031,41.278477]},"properties":{"气象站":"乌兰布隆沟","Lat":41.278477,"Long":107.550031}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.9829562,40.89662599]},"properties":{"气象站":"红旗村气象站","Lat":40.896626,"Long":107.982956}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.229,41.00348]},"properties":{"气象站":"五原永星村气象站","Lat":41.00348,"Long":108.229}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.600294,41.208664]},"properties":{"气象站":"天胜兴村气象站","Lat":41.208664,"Long":108.600294}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.291884,41.161514]},"properties":{"气象站":"屈老师气象站","Lat":41.161514,"Long":108.291884}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[110.19028590108488,40.291886371721176]},"properties":{"气象站":"","Lat":0,"Long":0}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[112.18556737062026,40.91804855917405]},"properties":{"气象站":"","Lat":0,"Long":0}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.5090172451417,40.29166425335527]},"properties":{"气象站":"","Lat":0,"Long":0}}
+]}
