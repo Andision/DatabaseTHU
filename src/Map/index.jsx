@@ -28,6 +28,12 @@ const fileToUrl = {
   XiliuGou: process.env.PUBLIC_URL + '/file/XiliuGou.geojson',
   WuliangsuDongbu: process.env.PUBLIC_URL + '/file/WuliangsuDongbu.geojson',
   WurenjiRehongwai: process.env.PUBLIC_URL + '/file/WurenjiRehongwai.geojson',
+  WurenjiKejianguang: process.env.PUBLIC_URL + '/file/WurenjiKejianguang.geojson',
+  KaochaDian: process.env.PUBLIC_URL + '/file/KaochaDian.geojson',
+  KaochaLuxian: process.env.PUBLIC_URL + '/file/KaochaLuxian.geojson',
+  ZidongJianceXitong: process.env.PUBLIC_URL + '/file/ZidongJianceXitong.geojson',
+  ChixuDiaochaDian1: process.env.PUBLIC_URL + '/file/ChixuDiaochaDian1.geojson',
+  ChixuDiaochaDian2: process.env.PUBLIC_URL + '/file/ChixuDiaochaDian2.geojson',
 
 }
 
@@ -52,8 +58,13 @@ let XiliuGou = new VectorLayer()
 let WuliangsuDongbu = new VectorLayer()
 
 let WurenjiRehongwai = new VectorLayer()
+let WurenjiKejianguang = new VectorLayer()
+let KaochaDian = new VectorLayer()
+let KaochaLuxian = new VectorLayer()
 
 let ZidongJianceXitong = new VectorLayer()
+let ChixuDiaochaDian1 = new VectorLayer()
+let ChixuDiaochaDian2 = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
@@ -590,7 +601,7 @@ export default class Home extends PureComponent {
           format: new GeoJSON({ featureProjection: 'EPSG:3857' })
         });
         WurenjiRehongwai = new VectorLayer({
-          // zIndex: 99,
+          zIndex: 98,
           source: vectorSource,
           style: new Style({
             image:
@@ -628,6 +639,123 @@ export default class Home extends PureComponent {
       }
 
     }
+    const KaochaDianList = ["阴山北麓国家野外站", "西黑岱流域油松林", "鄂尔多斯水土保持科技示范园", "淤地坝", "达拉特旗水土保持监测站", "乌梁素海", ""]
+    const onShowWurenjiKejianguang = (e) => {
+      console.log(`checked = ${e.target.checked}`);
+
+      if (e.target.checked) {
+        const tsinghua = fromLonLat([109, 40.5]);
+        var vectorSource = new VectorSource({
+          url: fileToUrl.WurenjiKejianguang,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        WurenjiKejianguang = new VectorLayer({
+          zIndex: 99,
+          source: vectorSource,
+          style: new Style({
+            image:
+              // new Circle({
+              //   radius: 9,// 圆的半径
+              //   fill: new Fill({ color: 'orange' }), // 填充颜色
+              //   stroke: new Stroke({  //边框
+              //     color: "rgb(255, 255, 255, 1)",
+              //     width: 2
+              //   }),
+              // })
+              new RegularShape({
+                fill: new Fill({ color: 'blue' }),
+                stroke: new Stroke({  //边框
+                  color: "rgb(255, 255, 255, 1)",
+                  width: 1
+                }),
+                points: 3,
+                radius: 6,
+                rotation: Math.PI / 4,
+                angle: 0,
+              }),
+          })
+        });
+        myMap.addLayer(WurenjiKejianguang)  // 把图层添加到地图
+
+        myView.animate({
+          center: tsinghua,
+          duration: 2000,
+          zoom: 7.5,
+        });
+      }
+      else {
+        myMap.removeLayer(WurenjiKejianguang)
+      }
+
+    }
+    const onShowKaochaDian = (e) => {
+      console.log(`checked = ${e.target.checked}`);
+
+      if (e.target.checked) {
+        const tsinghua = fromLonLat([109, 40.5]);
+        var vectorSource = new VectorSource({
+          url: fileToUrl.KaochaDian,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        KaochaDian = new VectorLayer({
+          zIndex: 99,
+          source: vectorSource,
+          style: function (feature) {
+            return (KaochaDianList.includes(feature.get('Name')) && new Style({
+              image:
+                new Circle({
+                  radius: 6,// 圆的半径
+                  fill: new Fill({ color: 'lime' }), // 填充颜色
+                  stroke: new Stroke({  //边框
+                    color: "rgb(255, 255, 255, 1)",
+                    width: 2
+                  }),
+                }),
+              text: new Text({
+                text: feature.get('Name'), // 根据特征属性显示文字
+                offsetY: -25,
+                font: "20px sans-serif",
+                fill: new Fill({
+                  color: 'white'
+                })
+              })
+            })
+            )
+          }
+        });
+
+        var vectorSource2 = new VectorSource({
+          url: fileToUrl.KaochaLuxian,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        KaochaLuxian = new VectorLayer({
+          zIndex: 98,
+          source: vectorSource2,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(255, 140, 200, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "lime",
+              width: 4
+            }),
+          })
+        });
+        myMap.addLayer(KaochaDian)  // 把图层添加到地图
+        myMap.addLayer(KaochaLuxian)  // 把图层添加到地图
+
+        myView.animate({
+          center: tsinghua,
+          duration: 2000,
+          zoom: 8,
+        });
+      }
+      else {
+        myMap.removeLayer(KaochaDian)
+        myMap.removeLayer(KaochaLuxian)
+      }
+
+    }
 
 
 
@@ -640,32 +768,14 @@ export default class Home extends PureComponent {
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
 
+        var vectorSource = new VectorSource({
+          url: fileToUrl.ZidongJianceXitong,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+
         ZidongJianceXitong = new VectorLayer({
           zIndex: 99,
-          source: new VectorSource({
-            features: [
-              new Feature({
-                geometry: new Point(fromLonLat([109, 40.5])),
-                name: "ZidongJianceXitong1"
-              }),
-              new Feature({
-                geometry: new Point(fromLonLat([108, 40.75])),
-                name: "ZidongJianceXitong1"
-              }),
-              new Feature({
-                geometry: new Point(fromLonLat([110.9197, 40.5727])),
-                name: "ZidongJianceXitong1"
-              }),
-              new Feature({
-                geometry: new Point(fromLonLat([108.1044, 40.5891])),
-                name: "ZidongJianceXitong1"
-              }),
-              new Feature({
-                geometry: new Point(fromLonLat([108.9011, 41.5201])),
-                name: "ZidongJianceXitong1"
-              }),
-            ]
-          }),
+          source: vectorSource,
           style: new Style({
             image: new Circle({
               radius: 9,// 圆的半径
@@ -696,32 +806,14 @@ export default class Home extends PureComponent {
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
 
-        ZidongJianceXitong = new VectorLayer({
+        var vectorSource1 = new VectorSource({
+          url: fileToUrl.ChixuDiaochaDian1,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+
+        ChixuDiaochaDian1 = new VectorLayer({
           zIndex: 99,
-          source: new VectorSource({
-            features: [
-              new Feature({
-                geometry: new Point(fromLonLat([1110, 40.5])),
-                name: "ZidongJianceXitong1"
-              }),
-              new Feature({
-                geometry: new Point(fromLonLat([107.15, 40.75])),
-                name: "ZidongJianceXitong1"
-              }),
-              new Feature({
-                geometry: new Point(fromLonLat([110.9197, 40.985])),
-                name: "ZidongJianceXitong1"
-              }),
-              new Feature({
-                geometry: new Point(fromLonLat([112.0844, 40.468])),
-                name: "ZidongJianceXitong1"
-              }),
-              new Feature({
-                geometry: new Point(fromLonLat([111.5428, 39.85201])),
-                name: "ZidongJianceXitong1"
-              }),
-            ]
-          }),
+          source: vectorSource1,
           style: new Style({
             image: new Circle({
               radius: 9,// 圆的半径
@@ -733,7 +825,28 @@ export default class Home extends PureComponent {
             })
           })
         })
-        myMap.addLayer(ZidongJianceXitong)
+
+        var vectorSource2 = new VectorSource({
+          url: fileToUrl.ChixuDiaochaDian2,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+
+        ChixuDiaochaDian2 = new VectorLayer({
+          zIndex: 99,
+          source: vectorSource1,
+          style: new Style({
+            image: new Circle({
+              radius: 9,// 圆的半径
+              fill: new Fill({ color: 'orange' }), // 填充颜色
+              stroke: new Stroke({  //边框
+                color: "rgb(255, 255, 255, 1)",
+                width: 2
+              }),
+            })
+          })
+        })
+        myMap.addLayer(ChixuDiaochaDian1)
+        myMap.addLayer(ChixuDiaochaDian2)
 
         myView.animate({
           center: tsinghua,
@@ -742,7 +855,8 @@ export default class Home extends PureComponent {
         });
       }
       else {
-        myMap.removeLayer(ZidongJianceXitong)
+        myMap.removeLayer(ChixuDiaochaDian1)
+        myMap.removeLayer(ChixuDiaochaDian2)
       }
 
     }
@@ -820,14 +934,14 @@ export default class Home extends PureComponent {
         {/*  地图的挂载点，可以设置大小，控制地图的大小 */}
         {/* <div id="map" style={{ width: '1920px', height: "1080px" }} /> */}
         <Card
-        className='map-option-card'
-          // style={{
-          //   width: 400,
-          //   position: 'absolute',
-          //   top: '100px',
-          //   left: '100px',
-          //   backgroundColor: 'rgba(255, 255, 255, 0.6)'
-          // }}
+          className='map-option-card'
+        // style={{
+        //   width: 400,
+        //   position: 'absolute',
+        //   top: '100px',
+        //   left: '100px',
+        //   backgroundColor: 'rgba(255, 255, 255, 0.6)'
+        // }}
         >
           {/* <Button onClick={onGetCenter}>GetCenter</Button>
           <Button onClick={onShowHaidian}>ShowHaidian</Button>
@@ -851,13 +965,13 @@ export default class Home extends PureComponent {
             <Col className='map-card-section-title' span={24}>中小尺度无人机观测</Col>
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowHetaoGuanqu}>无人机飞行采样</Checkbox></Col>
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowWurenjiRehongwai}>无人机热红外观测点</Checkbox></Col>
-            <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowXiliuGou}>可见光观测点</Checkbox></Col>
-            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowWuliangsuDongbu}>地貌、植被类型野外考察路线</Checkbox></Col>
+            <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowWurenjiKejianguang}>可见光观测点</Checkbox></Col>
+            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowKaochaDian}>地貌、植被类型野外考察路线</Checkbox></Col>
           </Row>
           <Row className='map-card-section'>
             <Col className='map-card-section-title' span={24}>典型区域</Col>
             <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowZidongJianceXitong}>自动气象-土壤环境监测系统</Checkbox></Col>
-            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowChixuDiaochaDian}>土壤-植被生态连续调查点</Checkbox></Col>
+            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowChixuDiaochaDian}>植被生态-土壤连续调查点</Checkbox></Col>
             {/* <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowXiliuGou}>热红外试验点</Checkbox></Col>
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowWuliangsuDongbu}>可见光试验点</Checkbox></Col> */}
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowZhuanxiangShiyanZhan}>专项试验站</Checkbox></Col>

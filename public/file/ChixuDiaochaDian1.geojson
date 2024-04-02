@@ -1,0 +1,22 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.77700000000004,40.58480000000003]},"properties":{"OBJECTID":1,"name":"草原研究所","Lat":40.5848,"Long":111.777}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.76000000000005,40.75120000000004]},"properties":{"OBJECTID":2,"name":"大黑河","Lat":40.7512,"Long":111.76}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.99000000000007,40.32000000000005]},"properties":{"OBJECTID":3,"name":"达旗实验站","Lat":40.32,"Long":109.99}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.72000000000008,40.49600000000004]},"properties":{"OBJECTID":4,"name":"包头昆都仑河南部","Lat":40.496,"Long":109.72}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[106.69000000000005,39.57000000000005]},"properties":{"OBJECTID":5,"name":"乌海","Lat":39.57,"Long":106.69}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.99500000000006,40.240000000000066]},"properties":{"OBJECTID":6,"name":"鄂尔多斯西柳沟流域","Lat":40.24,"Long":109.995}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.63000000000005,40.85000000000008]},"properties":{"OBJECTID":7,"name":"乌梁素海片区","Lat":40.85,"Long":108.63}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.23000000000008,41.09400000000005]},"properties":{"OBJECTID":8,"name":"乌拉特前期五原县","Lat":41.094,"Long":108.23}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.09500000000008,40.88300000000004]},"properties":{"OBJECTID":9,"name":"杭锦后期","Lat":40.883,"Long":107.095}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.03750000000008,40.32740000000007]},"properties":{"OBJECTID":10,"name":"磴口","Lat":40.3274,"Long":107.0375}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.68370000000004,40.462072000000035]},"properties":{"OBJECTID":11,"name":"西柳沟下游","Lat":40.462072,"Long":109.6837}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.78558597000006,40.30349000000007]},"properties":{"OBJECTID":12,"name":"西柳沟中游","Lat":40.30349,"Long":109.78558597}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.63425000000007,40.098307420000026]},"properties":{"OBJECTID":13,"name":"西柳沟上游","Lat":40.09830742,"Long":109.63425}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.54634140000007,41.59373000000005]},"properties":{"OBJECTID":14,"name":"德格纽上游","Lat":41.59373,"Long":107.5463414}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.48555000000005,41.507875940000076]},"properties":{"OBJECTID":15,"name":"德格纽中游","Lat":41.50787594,"Long":107.48555}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.47323990000007,41.40217000000007]},"properties":{"OBJECTID":16,"name":"德格纽下游","Lat":41.40217,"Long":107.4732399}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.55003100000005,41.27840000000003]},"properties":{"OBJECTID":17,"name":"乌兰布隆沟","Lat":41.2784,"Long":107.550031}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.91953000000007,39.92389000000003]},"properties":{"OBJECTID":18,"name":"20230724调查","Lat":39.92389,"Long":109.91953}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.80420000000004,40.12390000000005]},"properties":{"OBJECTID":19,"name":"30第一点","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.70424766000008,39.82187144000005]},"properties":{"OBJECTID":20,"name":"30第二点","Lat":39.82187144,"Long":107.70424766}}
+]}
