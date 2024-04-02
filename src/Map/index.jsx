@@ -37,6 +37,7 @@ const fileToUrl = {
   CeliuDuanmianDian: process.env.PUBLIC_URL + '/file/CeliuDuanmianDian.geojson',
   ZidongQixiangZhan: process.env.PUBLIC_URL + '/file/ZidongQixiangZhan.geojson',
   QixiangZhan: process.env.PUBLIC_URL + '/file/QixiangZhan.geojson',
+  ZhuanxiangShiyanZhan: process.env.PUBLIC_URL + '/file/ZhuanxiangShiyanZhan.geojson',
 
 }
 
@@ -71,6 +72,7 @@ let ChixuDiaochaDian2 = new VectorLayer()
 let CeliuDuanmianDian = new VectorLayer()
 let ZidongQixiangZhan = new VectorLayer()
 let QixiangZhan = new VectorLayer()
+let ZhuanxiangShiyanZhan = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
@@ -910,7 +912,7 @@ export default class Home extends PureComponent {
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
 
-        ZidongJianceXitong = new VectorLayer({
+        ZhuanxiangShiyanZhan = new VectorLayer({
           zIndex: 99,
           source: new VectorSource({
             features: [
@@ -959,7 +961,7 @@ export default class Home extends PureComponent {
               }),
           })
         })
-        myMap.addLayer(ZidongJianceXitong)
+        myMap.addLayer(ZhuanxiangShiyanZhan)
 
         myView.animate({
           center: tsinghua,
@@ -968,7 +970,7 @@ export default class Home extends PureComponent {
         });
       }
       else {
-        myMap.removeLayer(ZidongJianceXitong)
+        myMap.removeLayer(ZhuanxiangShiyanZhan)
       }
 
     }
