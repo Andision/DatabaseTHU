@@ -1,0 +1,19 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.777,40.5848]},"properties":{"name":"草原研究所","F2":"","Lat":40.5848,"Long":111.777}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.76,40.7512]},"properties":{"name":"大黑河","F2":"","Lat":40.7512,"Long":111.76}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.99,40.32]},"properties":{"name":"达旗实验站","F2":"","Lat":40.32,"Long":109.99}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.72,40.496]},"properties":{"name":"包头昆都仑河南部","F2":"","Lat":40.496,"Long":109.72}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[106.69,39.57]},"properties":{"name":"乌海","F2":"","Lat":39.57,"Long":106.69}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.995,40.24]},"properties":{"name":"鄂尔多斯西柳沟流域","F2":"","Lat":40.24,"Long":109.995}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.63,40.85]},"properties":{"name":"乌梁素海片区","F2":"","Lat":40.85,"Long":108.63}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.23,41.094]},"properties":{"name":"乌拉特前期五原县","F2":"","Lat":41.094,"Long":108.23}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.095,40.883]},"properties":{"name":"杭锦后期","F2":"","Lat":40.883,"Long":107.095}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.0375,40.3274]},"properties":{"name":"磴口","F2":"","Lat":40.3274,"Long":107.0375}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.73584347478042,40.78769276723522]},"properties":{"name":"","F2":"","Lat":0,"Long":0}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.17747077879102,40.88078003078773]},"properties":{"name":"","F2":"","Lat":0,"Long":0}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.25429874089198,40.49116186172164]},"properties":{"name":"","F2":"","Lat":0,"Long":0}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.54106387329576,40.11819385106203]},"properties":{"name":"","F2":"","Lat":0,"Long":0}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.152232962671,40.17166301858308]},"properties":{"name":"","F2":"","Lat":0,"Long":0}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.22270470989329,41.29368688241162]},"properties":{"name":"","F2":"","Lat":0,"Long":0}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.00288612952517,40.09982820524112]},"properties":{"name":"","F2":"","Lat":0,"Long":0}}
+]}

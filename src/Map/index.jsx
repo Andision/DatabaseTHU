@@ -19,10 +19,15 @@ import { gcj02Mecator } from './index.css'
 
 const fileToUrl = {
   HuangheLiuyu: process.env.PUBLIC_URL + '/file/HuangheLiuyu.geojson',
+  Heliu1: process.env.PUBLIC_URL + '/file/Heliu1.geojson',
+  Heliu2: process.env.PUBLIC_URL + '/file/Heliu2.geojson',
+  Heliu3: process.env.PUBLIC_URL + '/file/Heliu3.geojson',
+  HetaoGuanqu: process.env.PUBLIC_URL + '/file/HetaoGuanqu.geojson',
   YanjiuQuyu: process.env.PUBLIC_URL + '/file/YanjiuQuyu.geojson',
   WuliangsuHai: process.env.PUBLIC_URL + '/file/WuliangsuHai.geojson',
   XiliuGou: process.env.PUBLIC_URL + '/file/XiliuGou.geojson',
   WuliangsuDongbu: process.env.PUBLIC_URL + '/file/WuliangsuDongbu.geojson',
+  WurenjiRehongwai: process.env.PUBLIC_URL + '/file/WurenjiRehongwai.geojson',
 
 }
 
@@ -36,11 +41,18 @@ let myMap = new Map()
 
 let lineLayerTsinghua = new VectorLayer()
 let HuangheLiuyu = new VectorLayer()
+let Heliu1 = new VectorLayer()
+let Heliu2 = new VectorLayer()
+let Heliu3 = new VectorLayer()
+
 let YanjiuQuyu = new VectorLayer()
 let HetaoGuanqu = new VectorLayer()
 let WuliangsuHai = new VectorLayer()
 let XiliuGou = new VectorLayer()
 let WuliangsuDongbu = new VectorLayer()
+
+let WurenjiRehongwai = new VectorLayer()
+
 let ZidongJianceXitong = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
@@ -314,6 +326,79 @@ export default class Home extends PureComponent {
       }
 
     }
+    const onShowHeliuShuixi = (e) => {
+      console.log(`checked = ${e.target.checked}`);
+
+      if (e.target.checked) {
+        const tsinghua = fromLonLat([109, 40.5]);
+        var vectorSource1 = new VectorSource({
+          url: fileToUrl.Heliu1,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        var vectorSource2 = new VectorSource({
+          url: fileToUrl.Heliu2,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        var vectorSource3 = new VectorSource({
+          url: fileToUrl.Heliu3,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        Heliu1 = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSource1,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(255, 140, 200, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(255, 40, 160, 0.8)",
+              width: 2
+            }),
+          })
+        });
+        Heliu2 = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSource2,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(255, 140, 200, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(255, 40, 160, 0.8)",
+              width: 2
+            }),
+          })
+        });
+        Heliu3 = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSource3,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(255, 140, 200, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(255, 40, 160, 0.8)",
+              width: 2
+            }),
+          })
+        });
+        myMap.addLayer(Heliu1)  // 把图层添加到地图
+        myMap.addLayer(Heliu2)  // 把图层添加到地图
+        myMap.addLayer(Heliu3)  // 把图层添加到地图
+
+        myView.animate({
+          center: tsinghua,
+          duration: 2000,
+          zoom: 7.5,
+        });
+      }
+      else {
+        myMap.removeLayer(Heliu1)
+        myMap.removeLayer(Heliu2)
+        myMap.removeLayer(Heliu3)
+      }
+
+    }
     const onShowYanjiuQuyu = (e) => {
       console.log(`checked = ${e.target.checked}`);
 
@@ -349,13 +434,18 @@ export default class Home extends PureComponent {
       }
 
     }
+
+
+
+
+
     const onShowHetaoGuanqu = (e) => {
       console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
-        const tsinghua = fromLonLat([109, 40.5]);
+        const tsinghua = fromLonLat([107.90, 40.70]);
         var vectorSource = new VectorSource({
-          url: fileToUrl.YanjiuQuyu,
+          url: fileToUrl.HetaoGuanqu,
           format: new GeoJSON({ featureProjection: 'EPSG:3857' })
         });
         HetaoGuanqu = new VectorLayer({
@@ -376,7 +466,7 @@ export default class Home extends PureComponent {
         myView.animate({
           center: tsinghua,
           duration: 2000,
-          zoom: 7.5,
+          zoom: 8,
         });
       }
       else {
@@ -489,6 +579,61 @@ export default class Home extends PureComponent {
       }
 
     }
+
+    const onShowWurenjiRehongwai = (e) => {
+      console.log(`checked = ${e.target.checked}`);
+
+      if (e.target.checked) {
+        const tsinghua = fromLonLat([109, 40.5]);
+        var vectorSource = new VectorSource({
+          url: fileToUrl.WurenjiRehongwai,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        WurenjiRehongwai = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSource,
+          style: new Style({
+            image:
+              // new Circle({
+              //   radius: 9,// 圆的半径
+              //   fill: new Fill({ color: 'orange' }), // 填充颜色
+              //   stroke: new Stroke({  //边框
+              //     color: "rgb(255, 255, 255, 1)",
+              //     width: 2
+              //   }),
+              // })
+              new RegularShape({
+                fill: new Fill({ color: 'red' }),
+                stroke: new Stroke({  //边框
+                  color: "rgb(255, 255, 255, 1)",
+                  width: 2
+                }),
+                points: 3,
+                radius: 10,
+                rotation: Math.PI / 4,
+                angle: 0,
+              }),
+          })
+        });
+        myMap.addLayer(WurenjiRehongwai)  // 把图层添加到地图
+
+        myView.animate({
+          center: tsinghua,
+          duration: 2000,
+          zoom: 7.5,
+        });
+      }
+      else {
+        myMap.removeLayer(WurenjiRehongwai)
+      }
+
+    }
+
+
+
+
+
+
     const onShowZidongJianceXitong = (e) => {
       console.log(`checked = ${e.target.checked}`);
 
@@ -693,6 +838,7 @@ export default class Home extends PureComponent {
             <Col className='map-card-section-title' span={24}>区域边界</Col>
             <Col className='map-card-section-item' span={8}><Checkbox onChange={onShowHuangheLiuyu}>黄河流域</Checkbox></Col>
             <Col className='map-card-section-item' span={8}><Checkbox onChange={onShowYanjiuQuyu}>研究区域</Checkbox></Col>
+            <Col className='map-card-section-item' span={8}><Checkbox onChange={onShowHeliuShuixi}>河流水系</Checkbox></Col>
           </Row>
           <Row className='map-card-section'>
             <Col className='map-card-section-title' span={24}>典型区域</Col>
@@ -700,6 +846,13 @@ export default class Home extends PureComponent {
             <Col className='map-card-section-item' span={8}><Checkbox onChange={onShowWuliangsuHai}>乌梁素海</Checkbox></Col>
             <Col className='map-card-section-item' span={8}><Checkbox onChange={onShowXiliuGou}>西柳沟流域</Checkbox></Col>
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowWuliangsuDongbu}>乌梁素海东部流域</Checkbox></Col>
+          </Row>
+          <Row className='map-card-section'>
+            <Col className='map-card-section-title' span={24}>中小尺度无人机观测</Col>
+            <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowHetaoGuanqu}>无人机飞行采样</Checkbox></Col>
+            <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowWurenjiRehongwai}>无人机热红外观测点</Checkbox></Col>
+            <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowXiliuGou}>可见光观测点</Checkbox></Col>
+            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowWuliangsuDongbu}>地貌、植被类型野外考察路线</Checkbox></Col>
           </Row>
           <Row className='map-card-section'>
             <Col className='map-card-section-title' span={24}>典型区域</Col>
