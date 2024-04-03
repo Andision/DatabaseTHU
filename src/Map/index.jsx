@@ -76,6 +76,56 @@ let ZhuanxiangShiyanZhan = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
+const ZhuanxiangShiyanZhanList = [
+  {
+    station: 1,
+    name: "草原所观测试验站—土壤质量观测实验站",
+    position: [111.821, 40.533]
+  },
+  {
+    station: 2,
+    name: "达拉特旗草原所—沙地草原生态试验站",
+    position: [110.048, 40.294]
+  },
+  {
+    station: 3,
+    name: "牧科所准格尔旗砒砂岩区水土流失观测站",
+    position: [111.122, 39.969]
+  },
+  {
+    station: 4,
+    name: "牧科所杭锦旗毛布拉孔兑覆沙丘陵沟壑区生态水文监测站",
+    position: [109.0184, 39.8182]
+  },
+  {
+    station: 5,
+    name: "杭锦旗杭锦旗卜尔色太沟荒漠草原生态水文监测试验站",
+    position: [108.9068, 39.7193]
+  },
+  {
+    station: 6,
+    name: "林科院荒漠系统生态试验站",
+    position: [106.7301, 39.8710]
+  },
+  {
+    station: 7,
+    name: "牧科所黄河几字弯区域生态环境变化与综合治理野外科学观测研究站",
+    position: [106.7645, 40.1275]
+  },
+  {
+    station: 8,
+    name: "牧科所杭锦旗库布齐沙地生态水文观测区",
+    position: [108.7393, 39.9566]
+  },
+  {
+    station: 9,
+    name: "牧科所达拉特旗黄土丘陵沟壑区水土流失观测站",
+    position: [109.8856, 39.8973]
+  },
+
+
+]
+let ZhuanxiangShiyanZhanOverlay = []
 
 export default class Home extends PureComponent {
   // 生命周期函数时调用
@@ -206,42 +256,55 @@ export default class Home extends PureComponent {
     // })
     // myMap.addLayer(pointLayer)
 
-    //拿到弹出框元素
-    var container = document.getElementById("popup");
-    //拿到弹出框内容元素
-    var content = document.getElementById("popup-content");
+    // //拿到弹出框元素
+    // var container = document.getElementById("popup");
+    // //拿到弹出框内容元素
+    // var content = document.getElementById("popup-content");
 
-    var overlay1 = new Overlay({
+    // var overlay1 = new Overlay({
+    //   //设置弹出框的容器
+    //   element: container,
+    //   //是否自动平移，即假如标记在屏幕边缘，弹出时自动平移地图使弹出框完全可见
+    //   autoPan: true,
+    //   autoPanAnimation: {
+    //     duration: 250
+    //     //当Popup超出地图边界时，为了Popup全部可见，地图移动的速度.
+    //   }
+    // });
+
+    // myMap.on('click', function (e) {
+    //   var pixel = myMap.getEventPixel(e.originalEvent);
+    //   var showSomething = false
+    //   myMap.forEachFeatureAtPixel(pixel, function (feature) {
+
+    //     var attr = feature.getProperties();
+    //     var coodinate = e.coordinate;
+    //     console.log(attr, coodinate, attr.name)
+    //     // content.innerHTML = "<ul>" +
+    //     //   '<li>设备名称: ' + attr.name + '</li>' +
+    //     //   '<li>设备描述:' + attr.desc + '</li>' +
+    //     //   "</ul>";
+
+    //     if (attr.name === "obs_point") {
+    //       showSomething = true
+    //       overlay1.setPosition(coodinate);
+    //       myMap.addOverlay(overlay1);
+    //     }
+    //   });
+    //   if (!showSomething) {
+    //     myMap.removeOverlay(overlay1)
+    //   }
+    // });
+
+    ZhuanxiangShiyanZhanOverlay = ZhuanxiangShiyanZhanList.map(item => new Overlay({
       //设置弹出框的容器
-      element: container,
-      //是否自动平移，即假如标记在屏幕边缘，弹出时自动平移地图使弹出框完全可见
+      element: document.getElementById("popup-ZhuanxiangShiyanzhan" + item.station),
       autoPan: true,
       autoPanAnimation: {
         duration: 250
-        //当Popup超出地图边界时，为了Popup全部可见，地图移动的速度.
       }
-    });
-
-    myMap.on('click', function (e) {
-      var pixel = myMap.getEventPixel(e.originalEvent);
-      myMap.forEachFeatureAtPixel(pixel, function (feature) {
-
-        var attr = feature.getProperties();
-        var coodinate = e.coordinate;
-        console.log(attr, coodinate, attr.name)
-        // content.innerHTML = "<ul>" +
-        //   '<li>设备名称: ' + attr.name + '</li>' +
-        //   '<li>设备描述:' + attr.desc + '</li>' +
-        //   "</ul>";
-
-        if (attr.name === "obs_point") {
-
-          overlay1.setPosition(coodinate);
-          myMap.addOverlay(overlay1);
-        }
-
-      });
-    });
+    })
+    );
 
   }
   render() {
@@ -767,9 +830,6 @@ export default class Home extends PureComponent {
 
 
 
-
-
-
     const onShowZidongJianceXitong = (e) => {
       console.log(`checked = ${e.target.checked}`);
 
@@ -912,53 +972,27 @@ export default class Home extends PureComponent {
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
 
+        const vectorSource = new VectorSource();
+        ZhuanxiangShiyanZhanList.forEach(function (station) {
+          const pointFeature = new Feature({
+            geometry: new Point(fromLonLat(station.position)), // 将经纬度坐标转换为地图的投影坐标
+            name: "ZhuanxiangShiyanzhan" + station.station
+          });
+          vectorSource.addFeature(pointFeature);
+        })
+
         ZhuanxiangShiyanZhan = new VectorLayer({
           zIndex: 99,
-          source: new VectorSource({
-            features: [
-              new Feature({
-                geometry: new Point(fromLonLat([108.25698, 40.347])),
-                name: "ZidongJianceXitong1"
-              }),
-              new Feature({
-                geometry: new Point(fromLonLat([110.15, 40.697])),
-                name: "ZidongJianceXitong1"
-              }),
-              new Feature({
-                geometry: new Point(fromLonLat([107.9567, 40.146])),
-                name: "ZidongJianceXitong1"
-              }),
-              new Feature({
-                geometry: new Point(fromLonLat([109.0845, 40.444])),
-                name: "ZidongJianceXitong1"
-              }),
-              new Feature({
-                geometry: new Point(fromLonLat([112.2128, 39.99])),
-                name: "ZidongJianceXitong1"
-              }),
-            ]
-          }),
+          source: vectorSource,
           style: new Style({
-            image:
-              // new Circle({
-              //   radius: 9,// 圆的半径
-              //   fill: new Fill({ color: 'orange' }), // 填充颜色
-              //   stroke: new Stroke({  //边框
-              //     color: "rgb(255, 255, 255, 1)",
-              //     width: 2
-              //   }),
-              // })
-              new RegularShape({
-                fill: new Fill({ color: 'red' }),
-                stroke: new Stroke({  //边框
-                  color: "rgb(255, 255, 255, 1)",
-                  width: 2
-                }),
-                points: 3,
-                radius: 10,
-                rotation: Math.PI / 4,
-                angle: 0,
+            image: new Circle({
+              radius: 9,// 圆的半径
+              fill: new Fill({ color: 'purple' }), // 填充颜色
+              stroke: new Stroke({  //边框
+                color: "rgb(255, 255, 255, 1)",
+                width: 2
               }),
+            })
           })
         })
         myMap.addLayer(ZhuanxiangShiyanZhan)
@@ -967,6 +1001,48 @@ export default class Home extends PureComponent {
           center: tsinghua,
           duration: 2000,
           zoom: 7.5,
+        });
+
+
+        myMap.on('click', function (e) {
+          var pixel = myMap.getEventPixel(e.originalEvent);
+          var showSomething = false
+
+          ZhuanxiangShiyanZhanOverlay.forEach(item => {
+            console.log("click",item)
+            myMap.removeOverlay(item)
+          });
+
+          // console.log("click before loop", showSomething, ZhuanxiangShiyanZhanOverlay)
+
+          myMap.forEachFeatureAtPixel(pixel, function (feature) {
+
+            // console.log("click loop 1")
+            var attr = feature.getProperties();
+            var coodinate = e.coordinate;
+            // console.log("click loop 2", attr.name, document.getElementById("popup-" + attr.name))
+
+            if (attr.name.startsWith("ZhuanxiangShiyanzhan")) {
+              // console.log("click loop 3")
+
+              showSomething = true
+              // console.log("click loop 4")
+
+              const index = attr.name.charAt(attr.name.length - 1)
+              ZhuanxiangShiyanZhanOverlay[+index].setPosition(coodinate);
+              // console.log("click loop 6")
+              // console.log("click loop 6", showSomething, ZhuanxiangShiyanZhanOverlay)
+              myMap.addOverlay(ZhuanxiangShiyanZhanOverlay[+index]);
+              // console.log("click loop 7")
+
+              return
+              // console.log("click loop 8")
+            }
+          });
+          // console.log("click after loop", showSomething, ZhuanxiangShiyanZhanOverlay)
+          // if (!showSomething) {
+          //   myMap.removeOverlay(ZhuanxiangShiyanZhanOverlay)
+          // }
         });
       }
       else {
@@ -1052,7 +1128,7 @@ export default class Home extends PureComponent {
     }
     return (
       <div style={{ width: '100%', height: '100%' }}>
-        <div id="map" style={{ width: '100%', height: "700px" }} />
+        <div id="map" className="map-container" style={{ width: '100%', height: "1000px" }} />
         {/*  地图的挂载点，可以设置大小，控制地图的大小 */}
         {/* <div id="map" style={{ width: '1920px', height: "1080px" }} /> */}
         <Card
@@ -1100,6 +1176,25 @@ export default class Home extends PureComponent {
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowQixiangZhan}>气象站</Checkbox></Col>
           </Row>
         </Card>
+
+        {ZhuanxiangShiyanZhanList.map(item => (
+          <Card
+            key={item.station}
+            id={"popup-ZhuanxiangShiyanzhan" + item.station}
+            style={{
+              width: 300,
+            }}
+            cover={
+              <img
+                alt="example"
+                src={"http://cloud.gutemorgan.com:18888/ads/huanghe/zhuanxiangzhan." + item.station + ".png"}
+              />
+            }
+          >
+            {item.name}
+          </Card>
+        ))}
+
         <Card
           id='popup'
           style={{
@@ -1119,7 +1214,8 @@ export default class Home extends PureComponent {
         >
           C楼
         </Card>
-      </div>
+
+      </div >
     );
   }
 }
