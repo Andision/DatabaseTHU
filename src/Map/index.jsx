@@ -310,7 +310,7 @@ export default class Home extends PureComponent {
   render() {
     const london = fromLonLat([-0.12755, 51.507222]);
     const onClickButton = () => {
-      console.log('click A')
+      // console.log('click A')
       myView.animate({
         center: london,
         duration: 2000,
@@ -319,7 +319,7 @@ export default class Home extends PureComponent {
 
     };
     const onGetCenter = () => {
-      console.log(myView.getCenter())
+      // console.log(myView.getCenter())
     }
     const onShowHaidian = () => {
       const haidian = fromLonLat([116.20845, 40]);
@@ -331,7 +331,7 @@ export default class Home extends PureComponent {
     }
 
     const onShowTsinghua = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([116.32845, 40.008]);
@@ -374,7 +374,7 @@ export default class Home extends PureComponent {
 
 
     const onShowHuangheLiuyu = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([107, 36.5]);
@@ -409,7 +409,7 @@ export default class Home extends PureComponent {
 
     }
     const onShowHeliuShuixi = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
@@ -482,7 +482,7 @@ export default class Home extends PureComponent {
 
     }
     const onShowYanjiuQuyu = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
@@ -522,7 +522,7 @@ export default class Home extends PureComponent {
 
 
     const onShowHetaoGuanqu = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([107.90, 40.70]);
@@ -557,7 +557,7 @@ export default class Home extends PureComponent {
 
     }
     const onShowWuliangsuHai = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([108.85, 40.95]);
@@ -592,7 +592,7 @@ export default class Home extends PureComponent {
 
     }
     const onShowXiliuGou = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109.72, 40.145]);
@@ -627,7 +627,7 @@ export default class Home extends PureComponent {
 
     }
     const onShowWuliangsuDongbu = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109.54, 41.06]);
@@ -663,7 +663,7 @@ export default class Home extends PureComponent {
     }
 
     const onShowWurenjiRehongwai = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
@@ -712,7 +712,7 @@ export default class Home extends PureComponent {
     }
     const KaochaDianList = ["阴山北麓国家野外站", "西黑岱流域油松林", "鄂尔多斯水土保持科技示范园", "淤地坝", "达拉特旗水土保持监测站", "乌梁素海", ""]
     const onShowWurenjiKejianguang = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
@@ -760,7 +760,7 @@ export default class Home extends PureComponent {
 
     }
     const onShowKaochaDian = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
@@ -831,7 +831,7 @@ export default class Home extends PureComponent {
 
 
     const onShowZidongJianceXitong = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
@@ -869,7 +869,7 @@ export default class Home extends PureComponent {
 
     }
     const onShowChixuDiaochaDian = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
@@ -929,7 +929,7 @@ export default class Home extends PureComponent {
 
     }
     const onShowCeliuDuanmianDian = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
@@ -967,7 +967,7 @@ export default class Home extends PureComponent {
 
     }
     const onShowZhuanxiangShiyanZhan = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
@@ -1009,7 +1009,7 @@ export default class Home extends PureComponent {
           var showSomething = false
 
           ZhuanxiangShiyanZhanOverlay.forEach(item => {
-            console.log("click",item)
+            // console.log("click",item)
             myMap.removeOverlay(item)
           });
 
@@ -1051,7 +1051,7 @@ export default class Home extends PureComponent {
 
     }
     const onShowZidongQixiangZhan = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
@@ -1089,7 +1089,7 @@ export default class Home extends PureComponent {
 
     }
     const onShowQixiangZhan = (e) => {
-      console.log(`checked = ${e.target.checked}`);
+      // console.log(`checked = ${e.target.checked}`);
 
       if (e.target.checked) {
         const tsinghua = fromLonLat([109, 40.5]);
