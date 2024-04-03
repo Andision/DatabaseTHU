@@ -1022,17 +1022,17 @@ export default class Home extends PureComponent {
             var coodinate = e.coordinate;
             // console.log("click loop 2", attr.name, document.getElementById("popup-" + attr.name))
 
-            if (attr.name.startsWith("ZhuanxiangShiyanzhan")) {
+            if (attr.name && attr.name.startsWith("ZhuanxiangShiyanzhan")) {
               // console.log("click loop 3")
 
               showSomething = true
               // console.log("click loop 4")
 
               const index = attr.name.charAt(attr.name.length - 1)
-              ZhuanxiangShiyanZhanOverlay[+index].setPosition(coodinate);
+              ZhuanxiangShiyanZhanOverlay[+index - 1].setPosition(coodinate);
               // console.log("click loop 6")
               // console.log("click loop 6", showSomething, ZhuanxiangShiyanZhanOverlay)
-              myMap.addOverlay(ZhuanxiangShiyanZhanOverlay[+index]);
+              myMap.addOverlay(ZhuanxiangShiyanZhanOverlay[+index - 1]);
               // console.log("click loop 7")
 
               return
