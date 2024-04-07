@@ -5,7 +5,7 @@ export const Nav00DataSource = {
   page: { className: 'home-page' },
   logo: {
     className: 'header0-logo',
-    children: '多尺度生态水文数据库',
+    children: '多尺度生态水文一体化综合观测试验平台及数据库',
     // children: 'https://s1.ax1x.com/2022/09/12/vXgva4.png',
   },
   Menu: {
@@ -26,7 +26,7 @@ export const Banner00DataSource = {
   textWrapper: { className: 'banner0-text-wrapper' },
   title: {
     className: 'banner0-title',
-    children: '多尺度生态水文数据库',
+    children: '多尺度生态水文一体化综合观测试验平台及数据库',
     // children: 'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
   },
   content: {
@@ -158,7 +158,7 @@ export const Content40DataSource = {
     children: [
       {
         name: 'title',
-        children: '黄河流域内蒙古段',
+        children: '黄河流域内蒙古段概况',
         className: 'title-h1',
       },
       {
@@ -247,7 +247,7 @@ export const Feature60DataSource = {
               className: 'feature6-number',
               unit: { className: 'feature6-unit', children: 'GB' },
               toText: true,
-              children: '1234.56',
+              children: '1332',
             },
             children: { className: 'feature6-text', children: '数据总量' },
           },
@@ -260,7 +260,7 @@ export const Feature60DataSource = {
               className: 'feature6-number',
               unit: { className: 'feature6-unit', children: '次' },
               toText: true,
-              children: '114514',
+              children: '4612',
             },
             children: { className: 'feature6-text', children: '网站访问量' },
           },
@@ -323,23 +323,38 @@ export const Footer10DataSource = {
     className: 'home-page',
     gutter: 0,
     children: [
+      // {
+      //   name: 'block0',
+      //   xs: 24,
+      //   md: 6,
+      //   className: 'block',
+      //   title: {
+      //     className: 'logo',
+      //     children:
+      //       '',
+      //       // 'https://s1.ax1x.com/2022/09/12/vXgva4.png',
+      //   },
+      //   childWrapper: {
+      //     className: 'slogan',
+      //     children: [
+      //       {
+      //         name: 'content0',
+      //         children: '内蒙古自治区科技重大专项-“河流域内蒙古段嵌套式多尺度生态水文一体化综合观测试验及其时空格局和适宜性评估”（项目号：2020ZD0009）',
+      //       },
+      //     ],
+      //   },
+      // },
       {
         name: 'block0',
         xs: 24,
         md: 6,
         className: 'block',
-        title: {
-          className: 'logo',
-          children:
-            'https://s1.ax1x.com/2022/09/12/vXgva4.png',
-        },
+        title: { children: '关于项目' },
         childWrapper: {
-          className: 'slogan',
           children: [
-            {
-              name: 'content0',
-              children: 'Coded by Andision Zhang ',
-            },
+            { href: '#', name: 'link0', children: '内蒙古自治区科技重大专项' },
+            { href: '#', name: 'link1', children: '“河流域内蒙古段嵌套式多尺度生态水文一体化综合观测试验及其时空格局和适宜性评估”' },
+            { href: '#', name: 'link2', children: '项目号：2020ZD0009' },
           ],
         },
       },
@@ -348,13 +363,12 @@ export const Footer10DataSource = {
         xs: 24,
         md: 6,
         className: 'block',
-        title: { children: '产品' },
+        title: { children: '联系我们' },
         childWrapper: {
           children: [
-            { name: 'link0', href: '#', children: '产品更新记录' },
-            { name: 'link1', href: '#', children: 'API文档' },
-            { name: 'link2', href: '#', children: '快速入门' },
-            { name: 'link3', href: '#', children: '参考指南' },
+            { href: '#', name: 'link0', children: '地址：北京市海淀区清华园1号' },
+            { href: '#', name: 'link1', children: '邮箱：example@example.com' },
+            { href: '#', name: 'link1', children: '电话：+86-010-62785566' },
           ],
         },
       },
@@ -363,27 +377,32 @@ export const Footer10DataSource = {
         xs: 24,
         md: 6,
         className: 'block',
-        title: { children: '关于' },
+        title: { children: '服务统计' },
         childWrapper: {
           children: [
-            { href: '#', name: 'link0', children: 'FAQ' },
-            { href: '#', name: 'link1', children: '联系我们' },
+            { name: 'link0', href: '#', children: '用户人数：212' },
+            { name: 'link1', href: '#', children: '数据下载总次数： 39951' },
+            { name: 'link2', href: '#', children: '快速入门' },
+            { name: 'link3', href: '#', children: '参考指南' },
           ],
         },
       },
       {
-        name: 'block3',
+        name: 'block0',
         xs: 24,
         md: 6,
         className: 'block',
-        title: { children: '资源' },
+        title: { children: '快速导航' },
         childWrapper: {
           children: [
-            { href: '#', name: 'link0', children: 'Andision' },
-            { href: '#', name: 'link1', children: 'ZHANG' },
+            { href: '/', name: 'link0', children: '回到首页' },
+            { href: '/observe', name: 'link1', children: '实验观测' },
+            { href: '/map', name: 'link2', children: '交互地图' },
+            { href: '/search', name: 'link3', children: '实验数据' },
           ],
         },
       },
+
     ],
   },
   copyrightWrapper: { className: 'copyright-wrapper' },
