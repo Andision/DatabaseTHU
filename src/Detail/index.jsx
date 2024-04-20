@@ -94,7 +94,8 @@ class Home extends React.Component {
             secondData: mySecondData,
             allData: testData,
             visible: false,
-            loading: true
+            loading: true,
+            download: false
         }
         // console.log(myFirstData)
     };
@@ -102,6 +103,7 @@ class Home extends React.Component {
         const data_id = querystring.parse(this.props.location.search.slice(1)).id
         // console.log(data_id)
         if (data_id === undefined) {
+            this.dataProcess(testData)
 
         }
         else {
@@ -121,6 +123,16 @@ class Home extends React.Component {
         const hideModal = () => {
             this.setState({
                 visible: false,
+            });
+        };
+        const showDownload = () => {
+            this.setState({
+                download: true,
+            });
+        };
+        const hideDownload = () => {
+            this.setState({
+                download: false,
             });
         };
         return (
@@ -231,8 +243,8 @@ class Home extends React.Component {
                                         </Row>
                                         <Row className='detail-button-row'>
 
-                                            <Button type="primary" icon={<DownloadOutlined />} href={this.state.allData.download}>
-                                                数据下载
+                                            <Button type="primary" icon={<DownloadOutlined />} onClick={showDownload}>
+                                                数据申请
                                             </Button>
                                         </Row>
                                     </Card>
@@ -249,7 +261,18 @@ class Home extends React.Component {
                             <Button key="confirm" type="primary" onClick={hideModal}>OK</Button>
                         ]}
                     >
-                        <Table columns={columns} dataSource={this.state.allData.file_list} size="small" />
+                        <Table columns={columns} dataSource={[{ "name": this.state.allData.title, "size": "0MB" }]} size="small" />
+                    </Modal>
+                    <Modal
+                        title={"数据申请"}
+                        visible={this.state.download}
+                        onOk={hideDownload}
+                        onCancel={hideDownload}
+                        footer={[
+                            <Button key="confirm" type="primary" onClick={hideModal}>OK</Button>
+                        ]}
+                    >
+                        <div>请下载并填写<a href={process.env.PUBLIC_URL + '/file/Heliu1.geojson'}>数据申请表</a>并发送到<a href='mailto:test@example.com'>申请邮箱</a>，我们会第一时间联系您。</div>
                     </Modal>
                 </div>
             </div>
