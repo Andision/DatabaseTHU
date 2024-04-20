@@ -272,7 +272,7 @@ class Home extends React.Component {
                             <Button key="confirm" type="primary" onClick={hideModal}>OK</Button>
                         ]}
                     >
-                        <div>请下载并填写<a href={process.env.PUBLIC_URL + '/file/Heliu1.geojson'}>数据申请表</a>并发送到<a href='mailto:test@example.com'>申请邮箱</a>，我们会第一时间联系您。</div>
+                        <div>请下载并填写<a href={"http://cloud.gutemorgan.com:18888/ads/huanghe/apply.doc"}>数据申请表</a>并发送到<a href='mailto:test@example.com'>申请邮箱</a>，我们会第一时间联系您。</div>
                     </Modal>
                 </div>
             </div>

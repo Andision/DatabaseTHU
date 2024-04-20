@@ -169,6 +169,7 @@ export const Content40DataSource = {
     ],
   },
   video: {
+    enable: false,
     className: 'content4-video',
     children: {
       video: 'http://cloud.gutemorgan.com:18888/ads/huanghe/huanghe24jieqi.mp4',
@@ -196,9 +197,10 @@ export const Content41DataSource = {
     ],
   },
   video: {
+    enable: true,
     className: 'content4-video',
     children: {
-      video: 'http://cloud.gutemorgan.com:18888/ads/huanghe/huangheneimenggu.mp4',
+      video: 'http://cloud.gutemorgan.com:18888/ads/huanghe/video.mp4',
       image: 'http://cloud.gutemorgan.com:18888/ads/huanghe/huangheneimenggu.jpg',
     },
   },
