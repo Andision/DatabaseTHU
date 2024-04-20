@@ -83,7 +83,7 @@ class Home extends React.Component {
                             <Col span={24} style={{ textAlign: "center" }}>
                                 <div style={{ textAlign: "center" }}>
                                     {/* <Avatar style={{ float: "none" }} size={64} src={item.logo} /> */}
-                                    <h1>{item.title}</h1>
+                                    <h1 className='observe-project-title-h1'>{item.title}</h1>
                                     <p>{item.subtitle}</p>
                                 </div>
                             </Col>
@@ -99,7 +99,7 @@ class Home extends React.Component {
                             }
                             <Col span={12}>
                                 <Row>
-                                    <Col>
+                                    <Col className='observe-project-description'>
                                         {item.text}
                                     </Col>
                                 </Row>

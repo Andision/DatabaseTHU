@@ -1,6 +1,7 @@
 .observe-background {
     min-height: 100%;
-    max-width: 800px;
+    max-width: 1000px;
+    width: 90%;
     margin: auto;
     padding-bottom: 80px;
 }
@@ -17,6 +18,14 @@
 
 .observe-project-divider{
     padding-top: 50px;
+}
+
+.observe-project-title-h1{
+    font-size: 30px;
+}
+
+.observe-project-description{
+    font-size: large;
 }
 
 
