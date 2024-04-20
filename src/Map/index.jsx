@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Card, Button, Checkbox, Row, Col } from 'antd';
+import { Card, Button, Checkbox, Row, Col, Descriptions } from 'antd';
 import { Map, View, Overlay } from 'ol';
 import { Tile as TileLayer, Heatmap, Vector as VectorLayer } from 'ol/layer';
 import { OSM, Vector as VectorSource, XYZ } from 'ol/source';
@@ -387,10 +387,10 @@ export default class Home extends PureComponent {
           source: vectorSource,
           style: new Style({
             fill: new Fill({
-              color: "rgb(255, 140, 200, 0.4)",
+              color: "rgb(255, 200, 0, 0.4)",
             }),
             stroke: new Stroke({  //边框
-              color: "rgb(255, 40, 160, 0.8)",
+              color: "rgb(255, 200, 0, 0.8)",
               width: 2
             }),
           })
@@ -430,10 +430,10 @@ export default class Home extends PureComponent {
           source: vectorSource1,
           style: new Style({
             fill: new Fill({
-              color: "rgb(255, 140, 200, 0.4)",
+              color: "rgb(125, 200, 255, 0.4)",
             }),
             stroke: new Stroke({  //边框
-              color: "rgb(255, 40, 160, 0.8)",
+              color: "rgb(0, 145, 255, 0.8)",
               width: 2
             }),
           })
@@ -443,10 +443,10 @@ export default class Home extends PureComponent {
           source: vectorSource2,
           style: new Style({
             fill: new Fill({
-              color: "rgb(255, 140, 200, 0.4)",
+              color: "rgb(125, 200, 255, 0.4)",
             }),
             stroke: new Stroke({  //边框
-              color: "rgb(255, 40, 160, 0.8)",
+              color: "rgb(0, 145, 255, 0.8)",
               width: 2
             }),
           })
@@ -456,10 +456,10 @@ export default class Home extends PureComponent {
           source: vectorSource3,
           style: new Style({
             fill: new Fill({
-              color: "rgb(255, 140, 200, 0.4)",
+              color: "rgb(125, 200, 255, 0.4)",
             }),
             stroke: new Stroke({  //边框
-              color: "rgb(255, 40, 160, 0.8)",
+              color: "rgb(0, 145, 255, 0.8)",
               width: 2
             }),
           })
@@ -535,10 +535,10 @@ export default class Home extends PureComponent {
           source: vectorSource,
           style: new Style({
             fill: new Fill({
-              color: "rgb(255, 140, 200, 0.4)",
+              color: "rgb(70, 255, 0, 0.4)",
             }),
             stroke: new Stroke({  //边框
-              color: "rgb(255, 40, 160, 0.8)",
+              color: "rgb(70, 255, 0, 0.8)",
               width: 2
             }),
           })
@@ -674,28 +674,60 @@ export default class Home extends PureComponent {
         WurenjiRehongwai = new VectorLayer({
           zIndex: 98,
           source: vectorSource,
-          style: new Style({
-            image:
-              // new Circle({
-              //   radius: 9,// 圆的半径
-              //   fill: new Fill({ color: 'orange' }), // 填充颜色
-              //   stroke: new Stroke({  //边框
-              //     color: "rgb(255, 255, 255, 1)",
-              //     width: 2
-              //   }),
-              // })
-              new RegularShape({
-                fill: new Fill({ color: 'red' }),
-                stroke: new Stroke({  //边框
-                  color: "rgb(255, 255, 255, 1)",
-                  width: 2
-                }),
-                points: 3,
-                radius: 10,
-                rotation: Math.PI / 4,
-                angle: 0,
-              }),
-          })
+          style: function (feature) {
+            const zoom = myMap.getView().getZoom();
+            if (zoom < 10) { // 设定最小缩放级别为10
+              return (
+                new Style({
+                  image:
+                    // new Circle({
+                    //   radius: 9,// 圆的半径
+                    //   fill: new Fill({ color: 'orange' }), // 填充颜色
+                    //   stroke: new Stroke({  //边框
+                    //     color: "rgb(255, 255, 255, 1)",
+                    //     width: 2
+                    //   }),
+                    // })
+                    new RegularShape({
+                      fill: new Fill({ color: 'red' }),
+                      stroke: new Stroke({  //边框
+                        color: "rgb(255, 255, 255, 1)",
+                        width: 2
+                      }),
+                      points: 3,
+                      radius: 10,
+                      rotation: Math.PI / 4,
+                      angle: 0,
+                    }),
+                })
+              ); // 在小于10级别时不显示文字
+            }
+            else {
+              return (new Style({
+                image:
+                  new RegularShape({
+                    fill: new Fill({ color: 'red' }),
+                    stroke: new Stroke({  //边框
+                      color: "rgb(255, 255, 255, 1)",
+                      width: 2
+                    }),
+                    points: 3,
+                    radius: 10,
+                    rotation: Math.PI / 4,
+                    angle: 0,
+                  }),
+                text: new Text({
+                  text: feature.get('name'), // 根据特征属性显示文字
+                  offsetY: -25,
+                  font: "20px sans-serif",
+                  fill: new Fill({
+                    color: 'white'
+                  })
+                })
+              })
+              )
+            }
+          }
         });
         myMap.addLayer(WurenjiRehongwai)  // 把图层添加到地图
 
@@ -723,28 +755,60 @@ export default class Home extends PureComponent {
         WurenjiKejianguang = new VectorLayer({
           zIndex: 99,
           source: vectorSource,
-          style: new Style({
-            image:
-              // new Circle({
-              //   radius: 9,// 圆的半径
-              //   fill: new Fill({ color: 'orange' }), // 填充颜色
-              //   stroke: new Stroke({  //边框
-              //     color: "rgb(255, 255, 255, 1)",
-              //     width: 2
-              //   }),
-              // })
-              new RegularShape({
-                fill: new Fill({ color: 'blue' }),
-                stroke: new Stroke({  //边框
-                  color: "rgb(255, 255, 255, 1)",
-                  width: 1
-                }),
-                points: 3,
-                radius: 6,
-                rotation: Math.PI / 4,
-                angle: 0,
-              }),
-          })
+          style: function (feature) {
+            const zoom = myMap.getView().getZoom();
+            if (zoom < 10) { // 设定最小缩放级别为10
+              return (
+                new Style({
+                  image:
+                    // new Circle({
+                    //   radius: 9,// 圆的半径
+                    //   fill: new Fill({ color: 'orange' }), // 填充颜色
+                    //   stroke: new Stroke({  //边框
+                    //     color: "rgb(255, 255, 255, 1)",
+                    //     width: 2
+                    //   }),
+                    // })
+                    new RegularShape({
+                      fill: new Fill({ color: 'blue' }),
+                      stroke: new Stroke({  //边框
+                        color: "rgb(255, 255, 255, 1)",
+                        width: 1
+                      }),
+                      points: 3,
+                      radius: 6,
+                      rotation: Math.PI / 4,
+                      angle: 0,
+                    }),
+                })
+              ); // 在小于10级别时不显示文字
+            }
+            else {
+              return (new Style({
+                image:
+                  new RegularShape({
+                    fill: new Fill({ color: 'blue' }),
+                    stroke: new Stroke({  //边框
+                      color: "rgb(255, 255, 255, 1)",
+                      width: 1
+                    }),
+                    points: 3,
+                    radius: 6,
+                    rotation: Math.PI / 4,
+                    angle: 0,
+                  }),
+                text: new Text({
+                  text: feature.get('name'), // 根据特征属性显示文字
+                  offsetY: -25,
+                  font: "20px sans-serif",
+                  fill: new Fill({
+                    color: 'white'
+                  })
+                })
+              })
+              )
+            }
+          }
         });
         myMap.addLayer(WurenjiKejianguang)  // 把图层添加到地图
 
@@ -844,17 +908,55 @@ export default class Home extends PureComponent {
         ZidongJianceXitong = new VectorLayer({
           zIndex: 99,
           source: vectorSource,
-          style: new Style({
-            image: new Circle({
-              radius: 9,// 圆的半径
-              fill: new Fill({ color: 'blue' }), // 填充颜色
-              stroke: new Stroke({  //边框
-                color: "rgb(255, 255, 255, 1)",
-                width: 2
-              }),
-            })
-          })
-        })
+          style: function (feature) {
+            const zoom = myMap.getView().getZoom();
+            if (zoom < 10) { // 设定最小缩放级别为10
+              return (
+                new Style({
+                  image:
+                    // new Circle({
+                    //   radius: 9,// 圆的半径
+                    //   fill: new Fill({ color: 'orange' }), // 填充颜色
+                    //   stroke: new Stroke({  //边框
+                    //     color: "rgb(255, 255, 255, 1)",
+                    //     width: 2
+                    //   }),
+                    // })
+                    new Circle({
+                      radius: 9,// 圆的半径
+                      fill: new Fill({ color: 'blue' }), // 填充颜色
+                      stroke: new Stroke({  //边框
+                        color: "rgb(255, 255, 255, 1)",
+                        width: 2
+                      }),
+                    })
+                })
+              ); // 在小于10级别时不显示文字
+            }
+            else {
+              return (new Style({
+                image:
+                  new Circle({
+                    radius: 9,// 圆的半径
+                    fill: new Fill({ color: 'blue' }), // 填充颜色
+                    stroke: new Stroke({  //边框
+                      color: "rgb(255, 255, 255, 1)",
+                      width: 2
+                    }),
+                  }),
+                text: new Text({
+                  text: feature.get('气象站'), // 根据特征属性显示文字
+                  offsetY: -25,
+                  font: "20px sans-serif",
+                  fill: new Fill({
+                    color: 'white'
+                  })
+                })
+              })
+              )
+            }
+          }
+        });
         myMap.addLayer(ZidongJianceXitong)
 
         myView.animate({
@@ -882,17 +984,61 @@ export default class Home extends PureComponent {
         ChixuDiaochaDian1 = new VectorLayer({
           zIndex: 99,
           source: vectorSource1,
-          style: new Style({
-            image: new Circle({
-              radius: 9,// 圆的半径
-              fill: new Fill({ color: 'orange' }), // 填充颜色
-              stroke: new Stroke({  //边框
-                color: "rgb(255, 255, 255, 1)",
-                width: 2
-              }),
-            })
-          })
-        })
+          style: function (feature) {
+            const zoom = myMap.getView().getZoom();
+            if (zoom < 10) { // 设定最小缩放级别为10
+              return (
+                new Style({
+                  image:
+                    // new Circle({
+                    //   radius: 9,// 圆的半径
+                    //   fill: new Fill({ color: 'orange' }), // 填充颜色
+                    //   stroke: new Stroke({  //边框
+                    //     color: "rgb(255, 255, 255, 1)",
+                    //     width: 2
+                    //   }),
+                    // })
+                    new Circle({
+                      radius: 9,// 圆的半径
+                      fill: new Fill({ color: 'orange' }), // 填充颜色
+                      stroke: new Stroke({  //边框
+                        color: "rgb(255, 255, 255, 1)",
+                        width: 2
+                      }),
+                    })
+                })
+              ); // 在小于10级别时不显示文字
+            }
+            else {
+              return (new Style({
+                image:
+                  new Circle({
+                    radius: 9,// 圆的半径
+                    fill: new Fill({ color: 'orange' }), // 填充颜色
+                    stroke: new Stroke({  //边框
+                      color: "rgb(255, 255, 255, 1)",
+                      width: 2
+                    }),
+                  }),
+                text: new Text({
+                  text: feature.get('name'), // 根据特征属性显示文字
+                  offsetY: -25,
+                  font: "20px sans-serif",
+                  fill: new Fill({
+                    color: 'white'
+                  })
+                })
+              })
+              )
+            }
+          }
+        });
+
+
+
+
+
+
 
         var vectorSource2 = new VectorSource({
           url: fileToUrl.ChixuDiaochaDian2,
@@ -942,17 +1088,56 @@ export default class Home extends PureComponent {
         CeliuDuanmianDian = new VectorLayer({
           zIndex: 99,
           source: vectorSource,
-          style: new Style({
-            image: new Circle({
-              radius: 9,// 圆的半径
-              fill: new Fill({ color: 'blue' }), // 填充颜色
-              stroke: new Stroke({  //边框
-                color: "rgb(255, 255, 255, 1)",
-                width: 2
-              }),
-            })
-          })
-        })
+          style: function (feature) {
+            const zoom = myMap.getView().getZoom();
+            if (zoom < 10) { // 设定最小缩放级别为10
+              return (
+                new Style({
+                  image:
+                    // new Circle({
+                    //   radius: 9,// 圆的半径
+                    //   fill: new Fill({ color: 'orange' }), // 填充颜色
+                    //   stroke: new Stroke({  //边框
+                    //     color: "rgb(255, 255, 255, 1)",
+                    //     width: 2
+                    //   }),
+                    // })
+                    new Circle({
+                      radius: 9,// 圆的半径
+                      fill: new Fill({ color: 'darkgreen' }), // 填充颜色
+                      stroke: new Stroke({  //边框
+                        color: "rgb(255, 255, 255, 1)",
+                        width: 2
+                      }),
+                    })
+                })
+              ); // 在小于10级别时不显示文字
+            }
+            else {
+              return (new Style({
+                image:
+                  new Circle({
+                    radius: 9,// 圆的半径
+                    fill: new Fill({ color: 'darkgreen' }), // 填充颜色
+                    stroke: new Stroke({  //边框
+                      color: "rgb(255, 255, 255, 1)",
+                      width: 2
+                    }),
+                  }),
+                text: new Text({
+                  text: feature.get('name'), // 根据特征属性显示文字
+                  offsetY: -25,
+                  font: "20px sans-serif",
+                  fill: new Fill({
+                    color: 'white'
+                  })
+                })
+              })
+              )
+            }
+          }
+        });
+
         myMap.addLayer(CeliuDuanmianDian)
 
         myView.animate({
@@ -1064,17 +1249,55 @@ export default class Home extends PureComponent {
         ZidongQixiangZhan = new VectorLayer({
           zIndex: 99,
           source: vectorSource,
-          style: new Style({
-            image: new Circle({
-              radius: 9,// 圆的半径
-              fill: new Fill({ color: 'blue' }), // 填充颜色
-              stroke: new Stroke({  //边框
-                color: "rgb(255, 255, 255, 1)",
-                width: 2
-              }),
-            })
-          })
-        })
+          style: function (feature) {
+            const zoom = myMap.getView().getZoom();
+            if (zoom < 10) { // 设定最小缩放级别为10
+              return (
+                new Style({
+                  image:
+                    // new Circle({
+                    //   radius: 9,// 圆的半径
+                    //   fill: new Fill({ color: 'orange' }), // 填充颜色
+                    //   stroke: new Stroke({  //边框
+                    //     color: "rgb(255, 255, 255, 1)",
+                    //     width: 2
+                    //   }),
+                    // })
+                    new Circle({
+                      radius: 9,// 圆的半径
+                      fill: new Fill({ color: 'skyblue' }), // 填充颜色
+                      stroke: new Stroke({  //边框
+                        color: "rgb(255, 255, 255, 1)",
+                        width: 2
+                      }),
+                    })
+                })
+              ); // 在小于10级别时不显示文字
+            }
+            else {
+              return (new Style({
+                image:
+                  new Circle({
+                    radius: 9,// 圆的半径
+                    fill: new Fill({ color: 'skyblue' }), // 填充颜色
+                    stroke: new Stroke({  //边框
+                      color: "rgb(255, 255, 255, 1)",
+                      width: 2
+                    }),
+                  }),
+                text: new Text({
+                  text: feature.get('气象站'), // 根据特征属性显示文字
+                  offsetY: -25,
+                  font: "20px sans-serif",
+                  fill: new Fill({
+                    color: 'white'
+                  })
+                })
+              })
+              )
+            }
+          }
+        });
         myMap.addLayer(ZidongQixiangZhan)
 
         myView.animate({
@@ -1102,17 +1325,55 @@ export default class Home extends PureComponent {
         QixiangZhan = new VectorLayer({
           zIndex: 99,
           source: vectorSource,
-          style: new Style({
-            image: new Circle({
-              radius: 9,// 圆的半径
-              fill: new Fill({ color: 'blue' }), // 填充颜色
-              stroke: new Stroke({  //边框
-                color: "rgb(255, 255, 255, 1)",
-                width: 2
-              }),
-            })
-          })
-        })
+          style: function (feature) {
+            const zoom = myMap.getView().getZoom();
+            if (zoom < 10) { // 设定最小缩放级别为10
+              return (
+                new Style({
+                  image:
+                    // new Circle({
+                    //   radius: 9,// 圆的半径
+                    //   fill: new Fill({ color: 'orange' }), // 填充颜色
+                    //   stroke: new Stroke({  //边框
+                    //     color: "rgb(255, 255, 255, 1)",
+                    //     width: 2
+                    //   }),
+                    // })
+                    new Circle({
+                      radius: 9,// 圆的半径
+                      fill: new Fill({ color: 'mediumspringgreen' }), // 填充颜色
+                      stroke: new Stroke({  //边框
+                        color: "rgb(255, 255, 255, 1)",
+                        width: 2
+                      }),
+                    })
+                })
+              ); // 在小于10级别时不显示文字
+            }
+            else {
+              return (new Style({
+                image:
+                  new Circle({
+                    radius: 9,// 圆的半径
+                    fill: new Fill({ color: 'mediumspringgreen' }), // 填充颜色
+                    stroke: new Stroke({  //边框
+                      color: "rgb(255, 255, 255, 1)",
+                      width: 2
+                    }),
+                  }),
+                text: new Text({
+                  text: feature.get('sheng') + feature.get('name') + feature.get('type'), // 根据特征属性显示文字
+                  offsetY: -25,
+                  font: "20px sans-serif",
+                  fill: new Fill({
+                    color: 'white'
+                  })
+                })
+              })
+              )
+            }
+          }
+        });
         myMap.addLayer(QixiangZhan)
 
         myView.animate({
@@ -1131,6 +1392,18 @@ export default class Home extends PureComponent {
         <div id="map" className="map-container" style={{ width: '100%', height: "1000px" }} />
         {/*  地图的挂载点，可以设置大小，控制地图的大小 */}
         {/* <div id="map" style={{ width: '1920px', height: "1080px" }} /> */}
+        <Card
+          className='map-sample-card'
+        >
+          <div><span className='map-icon-triangle' style={{ borderTopColor: "red" }}></span>　无人机热红外观测点</div>
+          <div><span className='map-icon-triangle' style={{ borderTopColor: "blue" }}></span>　可见光观测点</div>
+          <div><span className='map-icon-circle' style={{ backgroundColor: "blue" }}></span>　自动气象-土壤环境监测系统</div>
+          <div><span className='map-icon-circle' style={{ backgroundColor: "orange" }}></span>　植被生态-土壤连续调查点</div>
+          <div><span className='map-icon-circle' style={{ backgroundColor: "darkgreen" }}></span>　测流断面点</div>
+          <div><span className='map-icon-circle' style={{ backgroundColor: "purple" }}></span>　专项试验站</div>
+          <div><span className='map-icon-circle' style={{ backgroundColor: "skyblue" }}></span>　自动气象站</div>
+          <div><span className='map-icon-circle' style={{ backgroundColor: "mediumspringgreen" }}></span>　气象站</div>
+        </Card>
         <Card
           className='map-option-card'
         // style={{
@@ -1195,7 +1468,7 @@ export default class Home extends PureComponent {
           </Card>
         ))}
 
-        <Card
+        {/* <Card
           id='popup'
           style={{
             width: 300,
@@ -1213,7 +1486,7 @@ export default class Home extends PureComponent {
           ]}
         >
           C楼
-        </Card>
+        </Card> */}
 
       </div >
     );
