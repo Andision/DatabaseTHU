@@ -18,5 +18,49 @@
 {"type":"Feature","geometry":{"type":"Point","coordinates":[107.55003100000005,41.27840000000003]},"properties":{"OBJECTID":17,"name":"乌兰布隆沟","Lat":41.2784,"Long":107.550031}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[109.91953000000007,39.92389000000003]},"properties":{"OBJECTID":18,"name":"20230724调查","Lat":39.92389,"Long":109.91953}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[107.80420000000004,40.12390000000005]},"properties":{"OBJECTID":19,"name":"30第一点","Lat":40.1239,"Long":107.8042}},
-{"type":"Feature","geometry":{"type":"Point","coordinates":[107.70424766000008,39.82187144000005]},"properties":{"OBJECTID":20,"name":"30第二点","Lat":39.82187144,"Long":107.70424766}}
-]}
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.70424766000008,39.82187144000005]},"properties":{"OBJECTID":20,"name":"30第二点","Lat":39.82187144,"Long":107.70424766}},
+
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.573056,40.855278]},"properties":{"OBJECTID":21,"name":"呼和浩特市国家气象站（林地）","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.6066667,40.065556]},"properties":{"OBJECTID":22,"name":"清水河流域（草地）","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.623611,40.801111]},"properties":{"OBJECTID":23,"name":"昆都仑水库附近（山地草原）","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.036389,40.818611]},"properties":{"OBJECTID":24,"name":"乌拉特前旗沙公线附近（沙地灌丛）","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.621582,40.296287]},"properties":{"OBJECTID":25,"name":"达拉特旗库布齐沙漠（沙漠）","Lat":40.1239,"Long":107.8042}},
+
+
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.62,40.10]},"properties":{"OBJECTID":21,"name":"西柳沟上游","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.78,40.30]},"properties":{"OBJECTID":22,"name":"西柳沟中游","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.67,40.43]},"properties":{"OBJECTID":23,"name":"西柳沟下游","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.69,39.89]},"properties":{"OBJECTID":24,"name":"乌梁素海示范区草地灌木移栽点","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.34,41.37]},"properties":{"OBJECTID":25,"name":"乌拉特中旗荒漠草原重度退化区","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.52,41.54]},"properties":{"OBJECTID":23,"name":"乌拉特中旗荒漠草原重度沙化区","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.9,41.30]},"properties":{"OBJECTID":24,"name":"乌拉特中旗荒漠草原中度退化区","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.38,41.01]},"properties":{"OBJECTID":25,"name":"大青山典型草原围封样点","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.24,39.86]},"properties":{"OBJECTID":23,"name":"准噶尔旗典型草原样点","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.95,41.23]},"properties":{"OBJECTID":24,"name":"达茂旗昭和典型草原荒漠草原过渡带","Lat":40.1239,"Long":107.8042}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[110.21,40.25]},"properties":{"OBJECTID":25,"name":"达拉特旗人工草地物种配置实验样点","Lat":40.1239,"Long":107.8042}},
+
+{"type":"Feature","geometry":{"type":"Point","coordinates":[106.77,39.77]},"properties":{"name":"WD1 （灰绿藜）灰绿藜","草地地上生物量（g/m2）":99.42}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[106.78,39.76]},"properties":{"name":"WD1 （灰绿藜）猪毛菜，驼绒藜，灰绿藜","草地地上生物量（g/m2）":185.06}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[106.77,39.78]},"properties":{"name":"WD1 （灰绿藜）风毛菊，芦苇，苦苣菜","草地地上生物量（g/m2）":130.74}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[106.76,39.82]},"properties":{"name":"WD2 碱蓬，繁穗苋","草地地上生物量（g/m2）":170.44}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[106.81,40.08]},"properties":{"name":"WD3 骆驼蓬","草地地上生物量（g/m2）":60.64}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[106.89,40.15]},"properties":{"name":"WD4 刺沙蓬","草地地上生物量（g/m2）":40.9}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.00,40.22]},"properties":{"name":"WD5 盐生草","草地地上生物量（g/m2）":127.9}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[106.89,40.26]},"properties":{"name":"WD6 油蒿，寥子林","草地地上生物量（g/m2）":91.66}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[106.89,40.27]},"properties":{"name":"WD6 芦苇，油蒿，雾冰藜","草地地上生物量（g/m2）":131.82}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[106.89,40.28]},"properties":{"name":"WD6 油蒿，雾冰藜","草地地上生物量（g/m2）":91.88}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[107.73,40.86]},"properties":{"name":"BW1","草地地上生物量（g/m2）":149.52}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.73,40.75]},"properties":{"name":"BW2","草地地上生物量（g/m2）":37.5}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.81,40.64]},"properties":{"name":"WB1","草地地上生物量（g/m2）":102.86}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.66,40.48]},"properties":{"name":"WB2","草地地上生物量（g/m2）":41.9}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.65,40.47]},"properties":{"name":"WB2","草地地上生物量（g/m2）":28.16}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.65,40.47]},"properties":{"name":"WB2","草地地上生物量（g/m2）":37.44}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.09,40.44]},"properties":{"name":"WB3","草地地上生物量（g/m2）":31.42}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[110.04,40.32]},"properties":{"name":"WB4 沙柳","草地地上生物量（g/m2）":70.74}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.78,40.59]},"properties":{"name":"H1","草地地上生物量（g/m2）":43.74}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.77,40.59]},"properties":{"name":"H1","草地地上生物量（g/m2）":51.82}}
+
+
+
+
+    ]}

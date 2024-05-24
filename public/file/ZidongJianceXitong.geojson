@@ -3,5 +3,9 @@
 {"type":"Feature","geometry":{"type":"Point","coordinates":[107.98295620000005,40.896625990000075]},"properties":{"OBJECTID":2,"气象站":"红旗村气象站","Lat":40.89662599,"Long":107.9829562}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[108.22900000000004,41.003480000000025]},"properties":{"OBJECTID":3,"气象站":"五原永星村气象站","Lat":41.00348,"Long":108.229}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[108.60029400000008,41.208664000000056]},"properties":{"OBJECTID":4,"气象站":"天胜兴村气象站","Lat":41.208664,"Long":108.600294}},
-{"type":"Feature","geometry":{"type":"Point","coordinates":[108.29188400000004,41.16151400000007]},"properties":{"OBJECTID":5,"气象站":"屈老师气象站","Lat":41.161514,"Long":108.291884}}
-]}
+{"type":"Feature","geometry":{"type":"Point","coordinates":[108.29188400000004,41.16151400000007]},"properties":{"OBJECTID":5,"气象站":"屈老师气象站","Lat":41.161514,"Long":108.291884}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[109.210278,38.883056]},"properties":{"OBJECTID":5,"气象站":"乌审旗乌兰陶勒盖治沙站","Lat":41.161514,"Long":108.291884}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[110.653889,40.240000]},"properties":{"OBJECTID":5,"气象站":"鄂尔多斯造林总场沟心召分场","Lat":41.161514,"Long":108.291884}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[111.741111,40.021111]},"properties":{"OBJECTID":3,"气象站":"大青山国家级自然保护区","Lat":41.00348,"Long":108.229}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[112.428611,40.260000]},"properties":{"OBJECTID":3,"气象站":"蛮汉山林场","Lat":41.00348,"Long":108.229}}
+    ]}

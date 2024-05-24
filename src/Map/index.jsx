@@ -38,6 +38,11 @@ const fileToUrl = {
   ZidongQixiangZhan: process.env.PUBLIC_URL + '/file/ZidongQixiangZhan.geojson',
   QixiangZhan: process.env.PUBLIC_URL + '/file/QixiangZhan.geojson',
   ZhuanxiangShiyanZhan: process.env.PUBLIC_URL + '/file/ZhuanxiangShiyanZhan.geojson',
+  ShuituWeishengtai: process.env.PUBLIC_URL + '/file/ShuituWeishengtai.geojson',
+  Landsat: process.env.PUBLIC_URL + '/file/Landsat.geojson',
+  MODIS1: process.env.PUBLIC_URL + '/file/MODIS1.geojson',
+  MODIS: process.env.PUBLIC_URL + '/file/MODIS.geojson',
+  Sentinel: process.env.PUBLIC_URL + '/file/Sentinel.geojson',
 
 }
 
@@ -73,6 +78,12 @@ let CeliuDuanmianDian = new VectorLayer()
 let ZidongQixiangZhan = new VectorLayer()
 let QixiangZhan = new VectorLayer()
 let ZhuanxiangShiyanZhan = new VectorLayer()
+let ShuituWeishengtai = new VectorLayer()
+
+let Landsat = new VectorLayer()
+let MODIS1 = new VectorLayer()
+let MODIS = new VectorLayer()
+let Sentinel = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
@@ -121,6 +132,27 @@ const ZhuanxiangShiyanZhanList = [
     station: 9,
     name: "牧科所达拉特旗黄土丘陵沟壑区水土流失观测站",
     position: [109.8856, 39.8973]
+  },
+
+  {
+    station: 10,
+    name: "罕台川水文站",
+    position: [109.943866,40.240989]
+  },
+  {
+    station: 11,
+    name: "毛不拉孔兑覆沙区生态水文观测站",
+    position: [109.188695,39.982406]
+  },
+  {
+    station: 12,
+    name: "罕台川丘陵沟壑区生态水文观测站",
+    position: [110.035243,40.052032]
+  },
+  {
+    station: 13,
+    name: "乌兰布和入黄风沙观测站",
+    position: [106.698189,39.637422]
   },
 
 
@@ -1161,7 +1193,7 @@ export default class Home extends PureComponent {
         ZhuanxiangShiyanZhanList.forEach(function (station) {
           const pointFeature = new Feature({
             geometry: new Point(fromLonLat(station.position)), // 将经纬度坐标转换为地图的投影坐标
-            name: "ZhuanxiangShiyanzhan" + station.station
+            name: "ZhuanxiangShiyanzhan." + station.station
           });
           vectorSource.addFeature(pointFeature);
         })
@@ -1208,12 +1240,13 @@ export default class Home extends PureComponent {
             // console.log("click loop 2", attr.name, document.getElementById("popup-" + attr.name))
 
             if (attr.name && attr.name.startsWith("ZhuanxiangShiyanzhan")) {
-              // console.log("click loop 3")
+              console.log(attr.name)
 
               showSomething = true
               // console.log("click loop 4")
 
-              const index = attr.name.charAt(attr.name.length - 1)
+              const index = attr.name.split(".")[1]
+              // const index = attr.name.charAt(attr.name.length - 1)
               ZhuanxiangShiyanZhanOverlay[+index - 1].setPosition(coodinate);
               // console.log("click loop 6")
               // console.log("click loop 6", showSomething, ZhuanxiangShiyanZhanOverlay)
@@ -1387,6 +1420,229 @@ export default class Home extends PureComponent {
       }
 
     }
+
+    const onShowShuituWeishengtai = (e) => {
+      // console.log(`checked = ${e.target.checked}`);
+
+      if (e.target.checked) {
+        const tsinghua = fromLonLat([109, 40.5]);
+
+        var vectorSource = new VectorSource({
+          url: fileToUrl.ShuituWeishengtai,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+
+        ShuituWeishengtai = new VectorLayer({
+          zIndex: 99,
+          source: vectorSource,
+          style: function (feature) {
+            const zoom = myMap.getView().getZoom();
+            if (zoom < 10) { // 设定最小缩放级别为10
+              return (
+                new Style({
+                  image:
+                    // new Circle({
+                    //   radius: 9,// 圆的半径
+                    //   fill: new Fill({ color: 'orange' }), // 填充颜色
+                    //   stroke: new Stroke({  //边框
+                    //     color: "rgb(255, 255, 255, 1)",
+                    //     width: 2
+                    //   }),
+                    // })
+                    new Circle({
+                      radius: 9,// 圆的半径
+                      fill: new Fill({ color: 'black' }), // 填充颜色
+                      stroke: new Stroke({  //边框
+                        color: "rgb(255, 255, 255, 1)",
+                        width: 2
+                      }),
+                    })
+                })
+              ); // 在小于10级别时不显示文字
+            }
+            else {
+              return (new Style({
+                image:
+                  new Circle({
+                    radius: 9,// 圆的半径
+                    fill: new Fill({ color: 'black' }), // 填充颜色
+                    stroke: new Stroke({  //边框
+                      color: "rgb(255, 255, 255, 1)",
+                      width: 2
+                    }),
+                  }),
+                text: new Text({
+                  text: feature.get('name'), // 根据特征属性显示文字
+                  offsetY: -25,
+                  font: "20px sans-serif",
+                  fill: new Fill({
+                    color: 'white'
+                  })
+                })
+              })
+              )
+            }
+          }
+        });
+        myMap.addLayer(ShuituWeishengtai)
+
+        myView.animate({
+          center: tsinghua,
+          duration: 2000,
+          zoom: 7.5,
+        });
+      }
+      else {
+        myMap.removeLayer(ShuituWeishengtai)
+      }
+
+    }
+
+
+
+
+
+
+    const onShowLandsat = (e) => {
+      // console.log(`checked = ${e.target.checked}`);
+
+      if (e.target.checked) {
+        const tsinghua = fromLonLat([109, 40.5]);
+        var vectorSource = new VectorSource({
+          url: fileToUrl.Landsat,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        Landsat = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSource,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(125, 200, 255, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(0, 145, 255, 0.8)",
+              width: 2
+            }),
+          })
+        });
+        myMap.addLayer(Landsat)  // 把图层添加到地图
+
+        myView.animate({
+          center: tsinghua,
+          duration: 2000,
+          zoom: 7.5,
+        });
+      }
+      else {
+        myMap.removeLayer(Landsat)
+      }
+
+    }
+    const onShowMODIS1 = (e) => {
+      // console.log(`checked = ${e.target.checked}`);
+
+      if (e.target.checked) {
+        const tsinghua = fromLonLat([109, 40.5]);
+        var vectorSource = new VectorSource({
+          url: fileToUrl.MODIS1,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        MODIS1 = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSource,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(125, 200, 255, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(0, 145, 255, 0.8)",
+              width: 2
+            }),
+          })
+        });
+        myMap.addLayer(MODIS1)  // 把图层添加到地图
+
+        myView.animate({
+          center: tsinghua,
+          duration: 2000,
+          zoom: 7.5,
+        });
+      }
+      else {
+        myMap.removeLayer(MODIS1)
+      }
+
+    }
+    const onShowMODIS = (e) => {
+      // console.log(`checked = ${e.target.checked}`);
+
+      if (e.target.checked) {
+        const tsinghua = fromLonLat([109, 40.5]);
+        var vectorSource = new VectorSource({
+          url: fileToUrl.MODIS,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        MODIS = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSource,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(125, 200, 255, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(0, 145, 255, 0.8)",
+              width: 2
+            }),
+          })
+        });
+        myMap.addLayer(MODIS)  // 把图层添加到地图
+
+        myView.animate({
+          center: tsinghua,
+          duration: 2000,
+          zoom: 5,
+        });
+      }
+      else {
+        myMap.removeLayer(MODIS)
+      }
+
+    }
+    const onShowSentinel = (e) => {
+      // console.log(`checked = ${e.target.checked}`);
+
+      if (e.target.checked) {
+        const tsinghua = fromLonLat([109, 40.5]);
+        var vectorSource = new VectorSource({
+          url: fileToUrl.Sentinel,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        Sentinel = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSource,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(125, 200, 255, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(0, 145, 255, 0.8)",
+              width: 2
+            }),
+          })
+        });
+        myMap.addLayer(Sentinel)  // 把图层添加到地图
+
+        myView.animate({
+          center: tsinghua,
+          duration: 2000,
+          zoom: 7.5,
+        });
+      }
+      else {
+        myMap.removeLayer(Sentinel)
+      }
+
+    }
     return (
       <div style={{ width: '100%', height: '100%' }}>
         <div id="map" className="map-container" style={{ width: '100%', height: "1000px" }} />
@@ -1403,6 +1659,7 @@ export default class Home extends PureComponent {
           <div><span className='map-icon-circle' style={{ backgroundColor: "purple" }}></span>　专项试验站</div>
           <div><span className='map-icon-circle' style={{ backgroundColor: "skyblue" }}></span>　自动气象站</div>
           <div><span className='map-icon-circle' style={{ backgroundColor: "mediumspringgreen" }}></span>　气象站</div>
+          <div><span className='map-icon-circle' style={{ backgroundColor: "black" }}></span>　水土微生态监测</div>
         </Card>
         <Card
           className='map-option-card'
@@ -1447,6 +1704,14 @@ export default class Home extends PureComponent {
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowZhuanxiangShiyanZhan}>专项试验站</Checkbox></Col>
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowZidongQixiangZhan}>自动气象站</Checkbox></Col>
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowQixiangZhan}>气象站</Checkbox></Col>
+            <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowShuituWeishengtai}>水土微生态监测</Checkbox></Col>
+          </Row>
+          <Row className='map-card-section'>
+            <Col className='map-card-section-title' span={24}>典型区域</Col>
+            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowLandsat}>Landsat对地观测 (30 m/16d)</Checkbox></Col>
+            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowMODIS1}>MODIS对地观测 (500 m/d)</Checkbox></Col>
+            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowMODIS}>MODIS对地观测 (1 km/d)</Checkbox></Col>
+            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowSentinel}>Sentinel对地观测 (10 m/5d)</Checkbox></Col>
           </Row>
         </Card>
 
@@ -1459,7 +1724,7 @@ export default class Home extends PureComponent {
             }}
             cover={
               <img
-                alt="example"
+                alt=""
                 src={"http://cloud.gutemorgan.com:18888/ads/huanghe/zhuanxiangzhan." + item.station + ".png"}
               />
             }
