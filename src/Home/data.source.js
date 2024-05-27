@@ -384,8 +384,8 @@ export const Footer10DataSource = {
           children: [
             { name: 'link0', href: '#', children: '用户人数：212' },
             { name: 'link1', href: '#', children: '数据下载总次数： 39951' },
-            { name: 'link2', href: '#', children: '快速入门' },
-            { name: 'link3', href: '#', children: '参考指南' },
+            // { name: 'link2', href: '#', children: '快速入门' },
+            // { name: 'link3', href: '#', children: '参考指南' },
           ],
         },
       },

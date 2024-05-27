@@ -43,7 +43,13 @@ const fileToUrl = {
   MODIS1: process.env.PUBLIC_URL + '/file/MODIS1.geojson',
   MODIS: process.env.PUBLIC_URL + '/file/MODIS.geojson',
   Sentinel: process.env.PUBLIC_URL + '/file/Sentinel.geojson',
-
+  WurenjiFeixingBaotou: process.env.PUBLIC_URL + '/file/Wurenji.Baotou.geojson',
+  WurenjiFeixingCaoyuansuo: process.env.PUBLIC_URL + '/file/Wurenji.Caoyuansuo.geojson',
+  WurenjiFeixingDaqi: process.env.PUBLIC_URL + '/file/Wurenji.Daqi.geojson',
+  WurenjiFeixingDaheihe: process.env.PUBLIC_URL + '/file/Wurenji.Daheihe.geojson',
+  WurenjiFeixingDengkou: process.env.PUBLIC_URL + '/file/Wurenji.Dengkou.geojson',
+  WurenjiFeixingHangjinhouqi: process.env.PUBLIC_URL + '/file/Wurenji.Hangjinhouqi.geojson',
+  WurenjiFeixingWuliangsuhaiXibu: process.env.PUBLIC_URL + '/file/Wurenji.WuliangsuhaiXibu.geojson',
 }
 
 const control = require('ol/control');
@@ -84,6 +90,14 @@ let Landsat = new VectorLayer()
 let MODIS1 = new VectorLayer()
 let MODIS = new VectorLayer()
 let Sentinel = new VectorLayer()
+
+let WurenjiFeixingBaotou = new VectorLayer()
+let WurenjiFeixingCaoyuansuo = new VectorLayer()
+let WurenjiFeixingDaqi = new VectorLayer()
+let WurenjiFeixingDaheihe = new VectorLayer()
+let WurenjiFeixingDengkou = new VectorLayer()
+let WurenjiFeixingHangjinhouqi = new VectorLayer()
+let WurenjiFeixingWuliangsuhaiXibu = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
 // let lineLayerTsinghua = new VectorLayer()
@@ -137,22 +151,22 @@ const ZhuanxiangShiyanZhanList = [
   {
     station: 10,
     name: "罕台川水文站",
-    position: [109.943866,40.240989]
+    position: [109.943866, 40.240989]
   },
   {
     station: 11,
     name: "毛不拉孔兑覆沙区生态水文观测站",
-    position: [109.188695,39.982406]
+    position: [109.188695, 39.982406]
   },
   {
     station: 12,
     name: "罕台川丘陵沟壑区生态水文观测站",
-    position: [110.035243,40.052032]
+    position: [110.035243, 40.052032]
   },
   {
     station: 13,
     name: "乌兰布和入黄风沙观测站",
-    position: [106.698189,39.637422]
+    position: [106.698189, 39.637422]
   },
 
 
@@ -188,7 +202,7 @@ export default class Home extends PureComponent {
       view: myView,
       //加载控件到地图容器中
       controls: control.defaults({
-        // zoom: false,
+        zoom: false,
         rotate: false,
         attribution: false
       })
@@ -552,7 +566,227 @@ export default class Home extends PureComponent {
 
 
 
+    const onShowWurenjiFeixing = (e) => {
+      // console.log(`checked = ${e.target.checked}`);
 
+      if (e.target.checked) {
+        const tsinghua = fromLonLat([109, 40.5]);
+        var vectorSourceBaotou = new VectorSource({
+          url: fileToUrl.WurenjiFeixingBaotou,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        var vectorSourceCaoyuansuo = new VectorSource({
+          url: fileToUrl.WurenjiFeixingCaoyuansuo,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        var vectorSourceDaqi = new VectorSource({
+          url: fileToUrl.WurenjiFeixingDaqi,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        var vectorSourceDaheihe = new VectorSource({
+          url: fileToUrl.WurenjiFeixingDaheihe,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        var vectorSourceDengkou = new VectorSource({
+          url: fileToUrl.WurenjiFeixingDengkou,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        var vectorSourceHangjinhouqi = new VectorSource({
+          url: fileToUrl.WurenjiFeixingHangjinhouqi,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        });
+        var vectorSourceWuliangsuhaiXibu = new VectorSource({
+          url: fileToUrl.WurenjiFeixingWuliangsuhaiXibu,
+          format: new GeoJSON({ featureProjection: 'EPSG:3857' })
+        })
+
+        WurenjiFeixingBaotou = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSourceBaotou,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(255, 140, 200, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(255, 40, 160, 0.8)",
+              width: 2
+            }),
+            text: new Text({
+              text: "包头", // 根据特征属性显示文字
+              // offsetX: -30,
+              // offsetY: -30,
+              overflow: true,
+              font: "20px sans-serif",
+              fill: new Fill({
+                color: 'white'
+              })
+            })
+          })
+          
+        });
+        WurenjiFeixingCaoyuansuo = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSourceCaoyuansuo,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(255, 140, 200, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(255, 40, 160, 0.8)",
+              width: 2
+            }),
+            text: new Text({
+              text: "草原所", // 根据特征属性显示文字
+              // offsetX: -30,
+              // offsetY: -30,
+              overflow: true,
+              font: "20px sans-serif",
+              fill: new Fill({
+                color: 'white'
+              })
+            })
+          })
+        });
+        WurenjiFeixingDaqi = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSourceDaqi,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(255, 140, 200, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(255, 40, 160, 0.8)",
+              width: 2
+            }),
+            text: new Text({
+              text: "达旗", // 根据特征属性显示文字
+              // offsetX: -30,
+              // offsetY: -30,
+              overflow: true,
+              font: "20px sans-serif",
+              fill: new Fill({
+                color: 'white'
+              })
+            })
+          })
+        });
+        WurenjiFeixingDaheihe = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSourceDaheihe,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(255, 140, 200, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(255, 40, 160, 0.8)",
+              width: 2
+            }),
+            text: new Text({
+              text: "大黑河", // 根据特征属性显示文字
+              // offsetX: -30,
+              // offsetY: -30,
+              overflow: true,
+              font: "20px sans-serif",
+              fill: new Fill({
+                color: 'white'
+              })
+            })
+          })
+        });
+        WurenjiFeixingDengkou = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSourceDengkou,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(255, 140, 200, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(255, 40, 160, 0.8)",
+              width: 2
+            }),
+            text: new Text({
+              text: "磴口", // 根据特征属性显示文字
+              // offsetX: -30,
+              // offsetY: -30,
+              overflow: true,
+              font: "20px sans-serif",
+              fill: new Fill({
+                color: 'white'
+              })
+            })
+          })
+        });
+        WurenjiFeixingHangjinhouqi = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSourceHangjinhouqi,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(255, 140, 200, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(255, 40, 160, 0.8)",
+              width: 2
+            }),
+            text: new Text({
+              text: "杭锦后旗", // 根据特征属性显示文字
+              // offsetX: -30,
+              // offsetY: -30,
+              overflow: true,
+              font: "20px sans-serif",
+              fill: new Fill({
+                color: 'white'
+              })
+            })
+          })
+        });
+        WurenjiFeixingWuliangsuhaiXibu = new VectorLayer({
+          // zIndex: 99,
+          source: vectorSourceWuliangsuhaiXibu,
+          style: new Style({
+            fill: new Fill({
+              color: "rgb(255, 140, 200, 0.4)",
+            }),
+            stroke: new Stroke({  //边框
+              color: "rgb(255, 40, 160, 0.8)",
+              width: 2
+            }),
+            text: new Text({
+              text: "乌梁素海西部", // 根据特征属性显示文字
+              // offsetX: -30,
+              // offsetY: -30,
+              overflow: true,
+              font: "20px sans-serif",
+              fill: new Fill({
+                color: 'white'
+              })
+            })
+          })
+        });
+
+        myMap.addLayer(WurenjiFeixingBaotou)
+        myMap.addLayer(WurenjiFeixingCaoyuansuo)
+        myMap.addLayer(WurenjiFeixingDaqi)
+        myMap.addLayer(WurenjiFeixingDaheihe)
+        myMap.addLayer(WurenjiFeixingDengkou)
+        myMap.addLayer(WurenjiFeixingHangjinhouqi)
+        myMap.addLayer(WurenjiFeixingWuliangsuhaiXibu)
+
+        myView.animate({
+          center: tsinghua,
+          duration: 2000,
+          zoom: 7.5,
+        });
+      }
+      else {
+        myMap.removeLayer(WurenjiFeixingBaotou)
+        myMap.removeLayer(WurenjiFeixingCaoyuansuo)
+        myMap.removeLayer(WurenjiFeixingDaqi)
+        myMap.removeLayer(WurenjiFeixingDaheihe)
+        myMap.removeLayer(WurenjiFeixingDengkou)
+        myMap.removeLayer(WurenjiFeixingHangjinhouqi)
+        myMap.removeLayer(WurenjiFeixingWuliangsuhaiXibu)
+      }
+    }
     const onShowHetaoGuanqu = (e) => {
       // console.log(`checked = ${e.target.checked}`);
 
@@ -1690,14 +1924,21 @@ export default class Home extends PureComponent {
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowWuliangsuDongbu}>乌梁素海东部流域</Checkbox></Col>
           </Row>
           <Row className='map-card-section'>
+            <Col className='map-card-section-title' span={24}>区域/流域尺度卫星遥感对地观测</Col>
+            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowLandsat}>Landsat对地观测 (30 m/16d)</Checkbox></Col>
+            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowMODIS1}>MODIS对地观测 (500 m/d)</Checkbox></Col>
+            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowMODIS}>MODIS对地观测 (1 km/d)</Checkbox></Col>
+            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowSentinel}>Sentinel对地观测 (10 m/5d)</Checkbox></Col>
+          </Row>
+          <Row className='map-card-section'>
             <Col className='map-card-section-title' span={24}>中小尺度无人机观测</Col>
-            <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowHetaoGuanqu}>无人机飞行采样</Checkbox></Col>
+            <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowWurenjiFeixing}>无人机飞行采样</Checkbox></Col>
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowWurenjiRehongwai}>无人机热红外观测点</Checkbox></Col>
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowWurenjiKejianguang}>可见光观测点</Checkbox></Col>
             <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowKaochaDian}>地貌、植被类型野外考察路线</Checkbox></Col>
           </Row>
           <Row className='map-card-section'>
-            <Col className='map-card-section-title' span={24}>观测站</Col>
+            <Col className='map-card-section-title' span={24}>地面站网观测</Col>
             <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowZidongJianceXitong}>自动气象-土壤环境监测系统</Checkbox></Col>
             <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowChixuDiaochaDian}>植被生态-土壤连续调查点</Checkbox></Col>
             <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowCeliuDuanmianDian}>测流断面点</Checkbox></Col>
@@ -1705,13 +1946,6 @@ export default class Home extends PureComponent {
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowZidongQixiangZhan}>自动气象站</Checkbox></Col>
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowQixiangZhan}>气象站</Checkbox></Col>
             <Col className='map-card-section-item' span={12}><Checkbox onChange={onShowShuituWeishengtai}>水土微生态监测</Checkbox></Col>
-          </Row>
-          <Row className='map-card-section'>
-            <Col className='map-card-section-title' span={24}>典型区域</Col>
-            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowLandsat}>Landsat对地观测 (30 m/16d)</Checkbox></Col>
-            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowMODIS1}>MODIS对地观测 (500 m/d)</Checkbox></Col>
-            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowMODIS}>MODIS对地观测 (1 km/d)</Checkbox></Col>
-            <Col className='map-card-section-item' span={24}><Checkbox onChange={onShowSentinel}>Sentinel对地观测 (10 m/5d)</Checkbox></Col>
           </Row>
         </Card>
 
